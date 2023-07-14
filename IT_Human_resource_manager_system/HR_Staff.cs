@@ -24,7 +24,7 @@ namespace IT_Human_resource_manager_system
             loadCandidates();
         }
 
-        private void ClearText()
+        private void ClearTextCandidate()
         {
             txtCandidatesID.Text = string.Empty;
             txtCandidatesName.Text = string.Empty;
@@ -79,7 +79,7 @@ namespace IT_Human_resource_manager_system
 
         private void btnCandidatesAdd_Click(object sender, EventArgs e)
         {
-            ClearText();
+            ClearTextCandidate();
             frmCandidateDetail frmCandidateDetail = new frmCandidateDetail()
             {
                 Text = "Add Candidtae",
@@ -131,6 +131,70 @@ namespace IT_Human_resource_manager_system
                     MessageBox.Show(ex.Message, "Delete an Candidate");
                 }
             }
+        }
+
+        /*======================================================================================================================*/
+        /*======================================================================================================================*/
+
+
+        public void loadLogOTs()
+        {
+            var candidates = candidatesRepo.GetCandidates();
+            try
+            {
+                source = new BindingSource();
+                source.DataSource = candidates;
+
+                txtCandidatesID.DataBindings.Clear();
+                txtCandidatesName.DataBindings.Clear();
+                txtCandidatesDescription.DataBindings.Clear();
+
+                txtCandidatesID.DataBindings.Add("Text", source, "ID");
+                txtCandidatesName.DataBindings.Add("Text", source, "Name");
+                txtCandidatesDescription.DataBindings.Add("Text", source, "Description");
+
+                dgvCandidates.DataSource = null;
+                dgvCandidates.DataSource = source;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Load Candidates list");
+            }
+        }
+
+        private Overtime GetLogOTObject()
+        {
+            Overtime overtime = null;
+            try
+            {
+                overtime = new Overtime
+                {
+                    Id = Guid.Parse(txtOTID.Text),
+                    Date = DateTime.Parse(txtOTDate.Text),
+                    Time = int.Parse(txtOT.Text),
+                    //Employee = Guid.Parse(txt.Text),
+                };
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Get Candidates");
+            }
+            return overtime;
+        }
+
+        private void ClearTextLogOT()
+        {
+            txtOTID.Text = string.Empty;
+            txtOTName.Text = string.Empty;
+            txtOT.Text = string.Empty;
+            txtOTDate.Text = string.Empty;
+        }
+
+        /*======================================================================================================================*/
+
+        private void btnOTAdd_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

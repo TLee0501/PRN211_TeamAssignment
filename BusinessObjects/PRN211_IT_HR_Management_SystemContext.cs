@@ -63,6 +63,8 @@ namespace BusinessObjects
                     .ValueGeneratedNever()
                     .HasColumnName("ID");
 
+                entity.Property(e => e.Email).IsUnicode(false);
+
                 entity.Property(e => e.Name)
                     .HasMaxLength(50)
                     .IsUnicode(false);
