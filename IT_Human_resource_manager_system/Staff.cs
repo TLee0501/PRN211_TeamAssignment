@@ -16,5 +16,10 @@ namespace IT_Human_resource_manager_system
         {
             InitializeComponent();
         }
+
+        private void Staff_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
