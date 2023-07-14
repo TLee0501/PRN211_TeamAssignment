@@ -30,12 +30,13 @@
         {
             tabControl1 = new System.Windows.Forms.TabControl();
             tabPage2 = new System.Windows.Forms.TabPage();
-            button3 = new System.Windows.Forms.Button();
-            button2 = new System.Windows.Forms.Button();
-            button1 = new System.Windows.Forms.Button();
-            dataGridView1 = new System.Windows.Forms.DataGridView();
-            textBox2 = new System.Windows.Forms.TextBox();
-            textBox1 = new System.Windows.Forms.TextBox();
+            txtCandidatesID = new System.Windows.Forms.TextBox();
+            label10 = new System.Windows.Forms.Label();
+            btnCandidatesDelete = new System.Windows.Forms.Button();
+            btnCandidatesAdd = new System.Windows.Forms.Button();
+            dgvCandidates = new System.Windows.Forms.DataGridView();
+            txtCandidatesDescription = new System.Windows.Forms.TextBox();
+            txtCandidatesName = new System.Windows.Forms.TextBox();
             label2 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             tabPage3 = new System.Windows.Forms.TabPage();
@@ -54,6 +55,9 @@
             lbTimeOut = new System.Windows.Forms.Label();
             lbTimeIn = new System.Windows.Forms.Label();
             tabPage4 = new System.Windows.Forms.TabPage();
+            button10 = new System.Windows.Forms.Button();
+            button11 = new System.Windows.Forms.Button();
+            button12 = new System.Windows.Forms.Button();
             textBox8 = new System.Windows.Forms.TextBox();
             label5 = new System.Windows.Forms.Label();
             dataGridView3 = new System.Windows.Forms.DataGridView();
@@ -64,11 +68,19 @@
             lbToDate = new System.Windows.Forms.Label();
             lbFromDate = new System.Windows.Forms.Label();
             tabPage1 = new System.Windows.Forms.TabPage();
+            textBox18 = new System.Windows.Forms.TextBox();
+            textBox19 = new System.Windows.Forms.TextBox();
+            label8 = new System.Windows.Forms.Label();
+            label9 = new System.Windows.Forms.Label();
+            textBox17 = new System.Windows.Forms.TextBox();
+            label7 = new System.Windows.Forms.Label();
+            textBox16 = new System.Windows.Forms.TextBox();
+            label6 = new System.Windows.Forms.Label();
+            button13 = new System.Windows.Forms.Button();
+            button14 = new System.Windows.Forms.Button();
+            button15 = new System.Windows.Forms.Button();
+            dataGridView5 = new System.Windows.Forms.DataGridView();
             tabPage5 = new System.Windows.Forms.TabPage();
-            tabPage6 = new System.Windows.Forms.TabPage();
-            button10 = new System.Windows.Forms.Button();
-            button11 = new System.Windows.Forms.Button();
-            button12 = new System.Windows.Forms.Button();
             button7 = new System.Windows.Forms.Button();
             button8 = new System.Windows.Forms.Button();
             button9 = new System.Windows.Forms.Button();
@@ -87,6 +99,7 @@
             lxDeductions = new System.Windows.Forms.Label();
             lbPayPeriod = new System.Windows.Forms.Label();
             lbEName = new System.Windows.Forms.Label();
+            tabPage6 = new System.Windows.Forms.TabPage();
             richTextBox1 = new System.Windows.Forms.RichTextBox();
             dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
@@ -95,30 +108,18 @@
             lbEndDate = new System.Windows.Forms.Label();
             lbStartDate = new System.Windows.Forms.Label();
             lbReportType = new System.Windows.Forms.Label();
-            button13 = new System.Windows.Forms.Button();
-            button14 = new System.Windows.Forms.Button();
-            button15 = new System.Windows.Forms.Button();
-            dataGridView5 = new System.Windows.Forms.DataGridView();
-            textBox16 = new System.Windows.Forms.TextBox();
-            label6 = new System.Windows.Forms.Label();
-            textBox17 = new System.Windows.Forms.TextBox();
-            label7 = new System.Windows.Forms.Label();
-            textBox18 = new System.Windows.Forms.TextBox();
-            textBox19 = new System.Windows.Forms.TextBox();
-            label8 = new System.Windows.Forms.Label();
-            label9 = new System.Windows.Forms.Label();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCandidates).BeginInit();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             tabPage1.SuspendLayout();
-            tabPage5.SuspendLayout();
-            tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView5).BeginInit();
+            tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
+            tabPage6.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -137,12 +138,13 @@
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(button3);
-            tabPage2.Controls.Add(button2);
-            tabPage2.Controls.Add(button1);
-            tabPage2.Controls.Add(dataGridView1);
-            tabPage2.Controls.Add(textBox2);
-            tabPage2.Controls.Add(textBox1);
+            tabPage2.Controls.Add(txtCandidatesID);
+            tabPage2.Controls.Add(label10);
+            tabPage2.Controls.Add(btnCandidatesDelete);
+            tabPage2.Controls.Add(btnCandidatesAdd);
+            tabPage2.Controls.Add(dgvCandidates);
+            tabPage2.Controls.Add(txtCandidatesDescription);
+            tabPage2.Controls.Add(txtCandidatesName);
             tabPage2.Controls.Add(label2);
             tabPage2.Controls.Add(label1);
             tabPage2.Location = new System.Drawing.Point(4, 29);
@@ -153,61 +155,72 @@
             tabPage2.Text = "Manage Candidates";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // txtCandidatesID
             // 
-            button3.Location = new System.Drawing.Point(826, 333);
-            button3.Name = "button3";
-            button3.Size = new System.Drawing.Size(94, 29);
-            button3.TabIndex = 7;
-            button3.Text = "Delete";
-            button3.UseVisualStyleBackColor = true;
+            txtCandidatesID.Location = new System.Drawing.Point(29, 52);
+            txtCandidatesID.Name = "txtCandidatesID";
+            txtCandidatesID.Size = new System.Drawing.Size(173, 27);
+            txtCandidatesID.TabIndex = 9;
             // 
-            // button2
+            // label10
             // 
-            button2.Location = new System.Drawing.Point(602, 333);
-            button2.Name = "button2";
-            button2.Size = new System.Drawing.Size(94, 29);
-            button2.TabIndex = 6;
-            button2.Text = "Update";
-            button2.UseVisualStyleBackColor = true;
+            label10.AutoSize = true;
+            label10.Location = new System.Drawing.Point(29, 29);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(24, 20);
+            label10.TabIndex = 8;
+            label10.Text = "ID";
             // 
-            // button1
+            // btnCandidatesDelete
             // 
-            button1.Location = new System.Drawing.Point(375, 333);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(94, 29);
-            button1.TabIndex = 5;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = true;
+            btnCandidatesDelete.Location = new System.Drawing.Point(826, 333);
+            btnCandidatesDelete.Name = "btnCandidatesDelete";
+            btnCandidatesDelete.Size = new System.Drawing.Size(94, 29);
+            btnCandidatesDelete.TabIndex = 7;
+            btnCandidatesDelete.Text = "Delete";
+            btnCandidatesDelete.UseVisualStyleBackColor = true;
+            btnCandidatesDelete.Click += btnCandidatesDelete_Click;
             // 
-            // dataGridView1
+            // btnCandidatesAdd
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new System.Drawing.Point(252, 28);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new System.Drawing.Size(789, 288);
-            dataGridView1.TabIndex = 4;
+            btnCandidatesAdd.Location = new System.Drawing.Point(375, 333);
+            btnCandidatesAdd.Name = "btnCandidatesAdd";
+            btnCandidatesAdd.Size = new System.Drawing.Size(94, 29);
+            btnCandidatesAdd.TabIndex = 5;
+            btnCandidatesAdd.Text = "Add";
+            btnCandidatesAdd.UseVisualStyleBackColor = true;
+            btnCandidatesAdd.Click += btnCandidatesAdd_Click;
             // 
-            // textBox2
+            // dgvCandidates
             // 
-            textBox2.Location = new System.Drawing.Point(36, 119);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new System.Drawing.Size(173, 27);
-            textBox2.TabIndex = 3;
+            dgvCandidates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCandidates.Location = new System.Drawing.Point(252, 28);
+            dgvCandidates.Name = "dgvCandidates";
+            dgvCandidates.ReadOnly = true;
+            dgvCandidates.RowHeadersWidth = 51;
+            dgvCandidates.RowTemplate.Height = 29;
+            dgvCandidates.Size = new System.Drawing.Size(789, 288);
+            dgvCandidates.TabIndex = 4;
+            dgvCandidates.CellContentDoubleClick += dgvCandidates_CellContentDoubleClick;
             // 
-            // textBox1
+            // txtCandidatesDescription
             // 
-            textBox1.Location = new System.Drawing.Point(36, 51);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new System.Drawing.Size(173, 27);
-            textBox1.TabIndex = 2;
+            txtCandidatesDescription.Location = new System.Drawing.Point(29, 185);
+            txtCandidatesDescription.Name = "txtCandidatesDescription";
+            txtCandidatesDescription.Size = new System.Drawing.Size(173, 27);
+            txtCandidatesDescription.TabIndex = 3;
+            // 
+            // txtCandidatesName
+            // 
+            txtCandidatesName.Location = new System.Drawing.Point(29, 117);
+            txtCandidatesName.Name = "txtCandidatesName";
+            txtCandidatesName.Size = new System.Drawing.Size(173, 27);
+            txtCandidatesName.TabIndex = 2;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(36, 96);
+            label2.Location = new System.Drawing.Point(29, 162);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(85, 20);
             label2.TabIndex = 1;
@@ -216,7 +229,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(36, 28);
+            label1.Location = new System.Drawing.Point(29, 94);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(49, 20);
             label1.TabIndex = 0;
@@ -385,6 +398,33 @@
             tabPage4.Text = "Take Leave";
             tabPage4.UseVisualStyleBackColor = true;
             // 
+            // button10
+            // 
+            button10.Location = new System.Drawing.Point(902, 320);
+            button10.Name = "button10";
+            button10.Size = new System.Drawing.Size(94, 29);
+            button10.TabIndex = 46;
+            button10.Text = "Delete";
+            button10.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            button11.Location = new System.Drawing.Point(678, 320);
+            button11.Name = "button11";
+            button11.Size = new System.Drawing.Size(94, 29);
+            button11.TabIndex = 45;
+            button11.Text = "Update";
+            button11.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            button12.Location = new System.Drawing.Point(451, 320);
+            button12.Name = "button12";
+            button12.Size = new System.Drawing.Size(94, 29);
+            button12.TabIndex = 44;
+            button12.Text = "Add";
+            button12.UseVisualStyleBackColor = true;
+            // 
             // textBox8
             // 
             textBox8.Location = new System.Drawing.Point(113, 38);
@@ -482,6 +522,107 @@
             tabPage1.Text = "Calculate Taxes";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // textBox18
+            // 
+            textBox18.Location = new System.Drawing.Point(16, 202);
+            textBox18.Name = "textBox18";
+            textBox18.Size = new System.Drawing.Size(211, 27);
+            textBox18.TabIndex = 73;
+            // 
+            // textBox19
+            // 
+            textBox19.Location = new System.Drawing.Point(16, 149);
+            textBox19.Name = "textBox19";
+            textBox19.Size = new System.Drawing.Size(212, 27);
+            textBox19.TabIndex = 72;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new System.Drawing.Point(16, 126);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(34, 20);
+            label8.TabIndex = 71;
+            label8.Text = " Tax";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new System.Drawing.Point(16, 179);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(77, 20);
+            label9.TabIndex = 70;
+            label9.Text = "Net Salary";
+            // 
+            // textBox17
+            // 
+            textBox17.Location = new System.Drawing.Point(16, 95);
+            textBox17.Name = "textBox17";
+            textBox17.Size = new System.Drawing.Size(212, 27);
+            textBox17.TabIndex = 69;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new System.Drawing.Point(16, 72);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(87, 20);
+            label7.TabIndex = 68;
+            label7.Text = "Basic Salary";
+            // 
+            // textBox16
+            // 
+            textBox16.Location = new System.Drawing.Point(16, 38);
+            textBox16.Name = "textBox16";
+            textBox16.Size = new System.Drawing.Size(212, 27);
+            textBox16.TabIndex = 67;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(16, 15);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(49, 20);
+            label6.TabIndex = 66;
+            label6.Text = "Name";
+            // 
+            // button13
+            // 
+            button13.Location = new System.Drawing.Point(832, 329);
+            button13.Name = "button13";
+            button13.Size = new System.Drawing.Size(94, 29);
+            button13.TabIndex = 65;
+            button13.Text = "Delete";
+            button13.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            button14.Location = new System.Drawing.Point(608, 329);
+            button14.Name = "button14";
+            button14.Size = new System.Drawing.Size(94, 29);
+            button14.TabIndex = 64;
+            button14.Text = "Update";
+            button14.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            button15.Location = new System.Drawing.Point(381, 329);
+            button15.Name = "button15";
+            button15.Size = new System.Drawing.Size(94, 29);
+            button15.TabIndex = 63;
+            button15.Text = "Add";
+            button15.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView5
+            // 
+            dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView5.Location = new System.Drawing.Point(258, 24);
+            dataGridView5.Name = "dataGridView5";
+            dataGridView5.RowHeadersWidth = 51;
+            dataGridView5.RowTemplate.Height = 29;
+            dataGridView5.Size = new System.Drawing.Size(789, 288);
+            dataGridView5.TabIndex = 62;
+            // 
             // tabPage5
             // 
             tabPage5.Controls.Add(button7);
@@ -509,51 +650,6 @@
             tabPage5.TabIndex = 5;
             tabPage5.Text = "Payslip/Payroll";
             tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            tabPage6.Controls.Add(richTextBox1);
-            tabPage6.Controls.Add(dateTimePicker5);
-            tabPage6.Controls.Add(dateTimePicker4);
-            tabPage6.Controls.Add(comboBox1);
-            tabPage6.Controls.Add(lbDescribe);
-            tabPage6.Controls.Add(lbEndDate);
-            tabPage6.Controls.Add(lbStartDate);
-            tabPage6.Controls.Add(lbReportType);
-            tabPage6.Location = new System.Drawing.Point(4, 29);
-            tabPage6.Name = "tabPage6";
-            tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            tabPage6.Size = new System.Drawing.Size(1066, 381);
-            tabPage6.TabIndex = 6;
-            tabPage6.Text = "Reports";
-            tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            button10.Location = new System.Drawing.Point(902, 320);
-            button10.Name = "button10";
-            button10.Size = new System.Drawing.Size(94, 29);
-            button10.TabIndex = 46;
-            button10.Text = "Delete";
-            button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            button11.Location = new System.Drawing.Point(678, 320);
-            button11.Name = "button11";
-            button11.Size = new System.Drawing.Size(94, 29);
-            button11.TabIndex = 45;
-            button11.Text = "Update";
-            button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            button12.Location = new System.Drawing.Point(451, 320);
-            button12.Name = "button12";
-            button12.Size = new System.Drawing.Size(94, 29);
-            button12.TabIndex = 44;
-            button12.Text = "Add";
-            button12.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
@@ -704,6 +800,24 @@
             lbEName.TabIndex = 44;
             lbEName.Text = "Name";
             // 
+            // tabPage6
+            // 
+            tabPage6.Controls.Add(richTextBox1);
+            tabPage6.Controls.Add(dateTimePicker5);
+            tabPage6.Controls.Add(dateTimePicker4);
+            tabPage6.Controls.Add(comboBox1);
+            tabPage6.Controls.Add(lbDescribe);
+            tabPage6.Controls.Add(lbEndDate);
+            tabPage6.Controls.Add(lbStartDate);
+            tabPage6.Controls.Add(lbReportType);
+            tabPage6.Location = new System.Drawing.Point(4, 29);
+            tabPage6.Name = "tabPage6";
+            tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            tabPage6.Size = new System.Drawing.Size(1066, 381);
+            tabPage6.TabIndex = 6;
+            tabPage6.Text = "Reports";
+            tabPage6.UseVisualStyleBackColor = true;
+            // 
             // richTextBox1
             // 
             richTextBox1.Location = new System.Drawing.Point(164, 185);
@@ -770,107 +884,6 @@
             lbReportType.TabIndex = 8;
             lbReportType.Text = "Report Type";
             // 
-            // button13
-            // 
-            button13.Location = new System.Drawing.Point(832, 329);
-            button13.Name = "button13";
-            button13.Size = new System.Drawing.Size(94, 29);
-            button13.TabIndex = 65;
-            button13.Text = "Delete";
-            button13.UseVisualStyleBackColor = true;
-            // 
-            // button14
-            // 
-            button14.Location = new System.Drawing.Point(608, 329);
-            button14.Name = "button14";
-            button14.Size = new System.Drawing.Size(94, 29);
-            button14.TabIndex = 64;
-            button14.Text = "Update";
-            button14.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            button15.Location = new System.Drawing.Point(381, 329);
-            button15.Name = "button15";
-            button15.Size = new System.Drawing.Size(94, 29);
-            button15.TabIndex = 63;
-            button15.Text = "Add";
-            button15.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView5
-            // 
-            dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView5.Location = new System.Drawing.Point(258, 24);
-            dataGridView5.Name = "dataGridView5";
-            dataGridView5.RowHeadersWidth = 51;
-            dataGridView5.RowTemplate.Height = 29;
-            dataGridView5.Size = new System.Drawing.Size(789, 288);
-            dataGridView5.TabIndex = 62;
-            // 
-            // textBox16
-            // 
-            textBox16.Location = new System.Drawing.Point(16, 38);
-            textBox16.Name = "textBox16";
-            textBox16.Size = new System.Drawing.Size(212, 27);
-            textBox16.TabIndex = 67;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(16, 15);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(49, 20);
-            label6.TabIndex = 66;
-            label6.Text = "Name";
-            // 
-            // textBox17
-            // 
-            textBox17.Location = new System.Drawing.Point(16, 95);
-            textBox17.Name = "textBox17";
-            textBox17.Size = new System.Drawing.Size(212, 27);
-            textBox17.TabIndex = 69;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(16, 72);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(87, 20);
-            label7.TabIndex = 68;
-            label7.Text = "Basic Salary";
-            // 
-            // textBox18
-            // 
-            textBox18.Location = new System.Drawing.Point(16, 202);
-            textBox18.Name = "textBox18";
-            textBox18.Size = new System.Drawing.Size(211, 27);
-            textBox18.TabIndex = 73;
-            // 
-            // textBox19
-            // 
-            textBox19.Location = new System.Drawing.Point(16, 149);
-            textBox19.Name = "textBox19";
-            textBox19.Size = new System.Drawing.Size(212, 27);
-            textBox19.TabIndex = 72;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(16, 126);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(34, 20);
-            label8.TabIndex = 71;
-            label8.Text = " Tax";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(16, 179);
-            label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(77, 20);
-            label9.TabIndex = 70;
-            label9.Text = "Net Salary";
-            // 
             // HR_Staff
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -882,7 +895,7 @@
             tabControl1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCandidates).EndInit();
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
@@ -891,12 +904,12 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView5).EndInit();
             tabPage5.ResumeLayout(false);
             tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
             tabPage6.ResumeLayout(false);
             tabPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView5).EndInit();
             ResumeLayout(false);
         }
 
@@ -905,12 +918,10 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnCandidatesDelete;
+        private System.Windows.Forms.Button btnCandidatesAdd;
+        private System.Windows.Forms.TextBox txtCandidatesDescription;
+        private System.Windows.Forms.TextBox txtCandidatesName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage4;
@@ -981,5 +992,8 @@
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.TextBox txtCandidatesID;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridView dgvCandidates;
     }
 }
