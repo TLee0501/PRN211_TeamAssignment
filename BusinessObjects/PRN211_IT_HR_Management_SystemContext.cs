@@ -36,13 +36,14 @@ namespace BusinessObjects
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //if (!optionsBuilder.IsConfigured)
-            //{
-            //    //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-            //    //                optionsBuilder.UseSqlServer("Server=(local);uid=sa;pwd=12345678;database=PRN211_IT_HR_Management_System;TrustServerCertificate=True;");
-               
-            //}
-            optionsBuilder.UseSqlServer(GetConnectionString());
+            // Check if the options builder is already configured
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(GetConnectionString(), options =>
+                {
+                    options.EnableRetryOnFailure(); // Enable transient error resiliency
+                });
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
