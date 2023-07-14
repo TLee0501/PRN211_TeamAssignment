@@ -52,15 +52,16 @@
             lbTimeOut = new System.Windows.Forms.Label();
             lbTimeIn = new System.Windows.Forms.Label();
             tabPage4 = new System.Windows.Forms.TabPage();
-            button10 = new System.Windows.Forms.Button();
-            button11 = new System.Windows.Forms.Button();
+            txtTakeLeaveID = new System.Windows.Forms.TextBox();
+            label4 = new System.Windows.Forms.Label();
+            btnTakeLeaveDelete = new System.Windows.Forms.Button();
             button12 = new System.Windows.Forms.Button();
-            textBox8 = new System.Windows.Forms.TextBox();
+            txtTakeLeaveName = new System.Windows.Forms.TextBox();
             label5 = new System.Windows.Forms.Label();
-            dataGridView3 = new System.Windows.Forms.DataGridView();
-            richTextBox2 = new System.Windows.Forms.RichTextBox();
-            dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            dgvTakeLeave = new System.Windows.Forms.DataGridView();
+            txtTakeLeaveDescription = new System.Windows.Forms.RichTextBox();
+            dtpTakeLeaveTo = new System.Windows.Forms.DateTimePicker();
+            dtpTakeLeaveFrom = new System.Windows.Forms.DateTimePicker();
             lbReason = new System.Windows.Forms.Label();
             lbToDate = new System.Windows.Forms.Label();
             lbFromDate = new System.Windows.Forms.Label();
@@ -105,13 +106,15 @@
             lbEndDate = new System.Windows.Forms.Label();
             lbStartDate = new System.Windows.Forms.Label();
             lbReportType = new System.Windows.Forms.Label();
+            txtTakeLeaveEmployeeID = new System.Windows.Forms.TextBox();
+            label11 = new System.Windows.Forms.Label();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCandidates).BeginInit();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvLogOT).BeginInit();
             tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTakeLeave).BeginInit();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView5).BeginInit();
             tabPage5.SuspendLayout();
@@ -352,15 +355,18 @@
             // 
             // tabPage4
             // 
-            tabPage4.Controls.Add(button10);
-            tabPage4.Controls.Add(button11);
+            tabPage4.Controls.Add(txtTakeLeaveEmployeeID);
+            tabPage4.Controls.Add(label11);
+            tabPage4.Controls.Add(txtTakeLeaveID);
+            tabPage4.Controls.Add(label4);
+            tabPage4.Controls.Add(btnTakeLeaveDelete);
             tabPage4.Controls.Add(button12);
-            tabPage4.Controls.Add(textBox8);
+            tabPage4.Controls.Add(txtTakeLeaveName);
             tabPage4.Controls.Add(label5);
-            tabPage4.Controls.Add(dataGridView3);
-            tabPage4.Controls.Add(richTextBox2);
-            tabPage4.Controls.Add(dateTimePicker3);
-            tabPage4.Controls.Add(dateTimePicker2);
+            tabPage4.Controls.Add(dgvTakeLeave);
+            tabPage4.Controls.Add(txtTakeLeaveDescription);
+            tabPage4.Controls.Add(dtpTakeLeaveTo);
+            tabPage4.Controls.Add(dtpTakeLeaveFrom);
             tabPage4.Controls.Add(lbReason);
             tabPage4.Controls.Add(lbToDate);
             tabPage4.Controls.Add(lbFromDate);
@@ -372,23 +378,31 @@
             tabPage4.Text = "Manage Take Leave";
             tabPage4.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // txtTakeLeaveID
             // 
-            button10.Location = new System.Drawing.Point(902, 320);
-            button10.Name = "button10";
-            button10.Size = new System.Drawing.Size(94, 29);
-            button10.TabIndex = 46;
-            button10.Text = "Delete";
-            button10.UseVisualStyleBackColor = true;
+            txtTakeLeaveID.Location = new System.Drawing.Point(112, 18);
+            txtTakeLeaveID.Name = "txtTakeLeaveID";
+            txtTakeLeaveID.Size = new System.Drawing.Size(250, 27);
+            txtTakeLeaveID.TabIndex = 48;
             // 
-            // button11
+            // label4
             // 
-            button11.Location = new System.Drawing.Point(678, 320);
-            button11.Name = "button11";
-            button11.Size = new System.Drawing.Size(94, 29);
-            button11.TabIndex = 45;
-            button11.Text = "Update";
-            button11.UseVisualStyleBackColor = true;
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(18, 21);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(24, 20);
+            label4.TabIndex = 47;
+            label4.Text = "ID";
+            // 
+            // btnTakeLeaveDelete
+            // 
+            btnTakeLeaveDelete.Location = new System.Drawing.Point(902, 320);
+            btnTakeLeaveDelete.Name = "btnTakeLeaveDelete";
+            btnTakeLeaveDelete.Size = new System.Drawing.Size(94, 29);
+            btnTakeLeaveDelete.TabIndex = 46;
+            btnTakeLeaveDelete.Text = "Delete";
+            btnTakeLeaveDelete.UseVisualStyleBackColor = true;
+            btnTakeLeaveDelete.Click += button10_Click;
             // 
             // button12
             // 
@@ -399,67 +413,67 @@
             button12.Text = "Add";
             button12.UseVisualStyleBackColor = true;
             // 
-            // textBox8
+            // txtTakeLeaveName
             // 
-            textBox8.Location = new System.Drawing.Point(113, 38);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new System.Drawing.Size(250, 27);
-            textBox8.TabIndex = 39;
+            txtTakeLeaveName.Location = new System.Drawing.Point(112, 102);
+            txtTakeLeaveName.Name = "txtTakeLeaveName";
+            txtTakeLeaveName.Size = new System.Drawing.Size(250, 27);
+            txtTakeLeaveName.TabIndex = 39;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(19, 41);
+            label5.Location = new System.Drawing.Point(18, 105);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(49, 20);
             label5.TabIndex = 38;
             label5.Text = "Name";
             // 
-            // dataGridView3
+            // dgvTakeLeave
             // 
-            dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new System.Drawing.Point(395, 27);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.RowHeadersWidth = 51;
-            dataGridView3.RowTemplate.Height = 29;
-            dataGridView3.Size = new System.Drawing.Size(656, 270);
-            dataGridView3.TabIndex = 37;
+            dgvTakeLeave.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTakeLeave.Location = new System.Drawing.Point(395, 27);
+            dgvTakeLeave.Name = "dgvTakeLeave";
+            dgvTakeLeave.RowHeadersWidth = 51;
+            dgvTakeLeave.RowTemplate.Height = 29;
+            dgvTakeLeave.Size = new System.Drawing.Size(656, 270);
+            dgvTakeLeave.TabIndex = 37;
             // 
-            // richTextBox2
+            // txtTakeLeaveDescription
             // 
-            richTextBox2.Location = new System.Drawing.Point(113, 173);
-            richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new System.Drawing.Size(250, 120);
-            richTextBox2.TabIndex = 17;
-            richTextBox2.Text = "";
+            txtTakeLeaveDescription.Location = new System.Drawing.Point(112, 237);
+            txtTakeLeaveDescription.Name = "txtTakeLeaveDescription";
+            txtTakeLeaveDescription.Size = new System.Drawing.Size(250, 84);
+            txtTakeLeaveDescription.TabIndex = 17;
+            txtTakeLeaveDescription.Text = "";
             // 
-            // dateTimePicker3
+            // dtpTakeLeaveTo
             // 
-            dateTimePicker3.Location = new System.Drawing.Point(113, 121);
-            dateTimePicker3.Name = "dateTimePicker3";
-            dateTimePicker3.Size = new System.Drawing.Size(250, 27);
-            dateTimePicker3.TabIndex = 16;
+            dtpTakeLeaveTo.Location = new System.Drawing.Point(112, 185);
+            dtpTakeLeaveTo.Name = "dtpTakeLeaveTo";
+            dtpTakeLeaveTo.Size = new System.Drawing.Size(250, 27);
+            dtpTakeLeaveTo.TabIndex = 16;
             // 
-            // dateTimePicker2
+            // dtpTakeLeaveFrom
             // 
-            dateTimePicker2.Location = new System.Drawing.Point(113, 78);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new System.Drawing.Size(250, 27);
-            dateTimePicker2.TabIndex = 15;
+            dtpTakeLeaveFrom.Location = new System.Drawing.Point(112, 142);
+            dtpTakeLeaveFrom.Name = "dtpTakeLeaveFrom";
+            dtpTakeLeaveFrom.Size = new System.Drawing.Size(250, 27);
+            dtpTakeLeaveFrom.TabIndex = 15;
             // 
             // lbReason
             // 
             lbReason.AutoSize = true;
-            lbReason.Location = new System.Drawing.Point(19, 176);
+            lbReason.Location = new System.Drawing.Point(18, 240);
             lbReason.Name = "lbReason";
-            lbReason.Size = new System.Drawing.Size(57, 20);
+            lbReason.Size = new System.Drawing.Size(85, 20);
             lbReason.TabIndex = 14;
-            lbReason.Text = "Reason";
+            lbReason.Text = "Description";
             // 
             // lbToDate
             // 
             lbToDate.AutoSize = true;
-            lbToDate.Location = new System.Drawing.Point(19, 128);
+            lbToDate.Location = new System.Drawing.Point(18, 192);
             lbToDate.Name = "lbToDate";
             lbToDate.Size = new System.Drawing.Size(57, 20);
             lbToDate.TabIndex = 13;
@@ -468,7 +482,7 @@
             // lbFromDate
             // 
             lbFromDate.AutoSize = true;
-            lbFromDate.Location = new System.Drawing.Point(19, 83);
+            lbFromDate.Location = new System.Drawing.Point(18, 147);
             lbFromDate.Name = "lbFromDate";
             lbFromDate.Size = new System.Drawing.Size(75, 20);
             lbFromDate.TabIndex = 12;
@@ -858,6 +872,22 @@
             lbReportType.TabIndex = 8;
             lbReportType.Text = "Report Type";
             // 
+            // txtTakeLeaveEmployeeID
+            // 
+            txtTakeLeaveEmployeeID.Location = new System.Drawing.Point(112, 60);
+            txtTakeLeaveEmployeeID.Name = "txtTakeLeaveEmployeeID";
+            txtTakeLeaveEmployeeID.Size = new System.Drawing.Size(250, 27);
+            txtTakeLeaveEmployeeID.TabIndex = 50;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new System.Drawing.Point(18, 63);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(94, 20);
+            label11.TabIndex = 49;
+            label11.Text = "Employee ID";
+            // 
             // HR_Staff
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -875,7 +905,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvLogOT).EndInit();
             tabPage4.ResumeLayout(false);
             tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTakeLeave).EndInit();
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView5).EndInit();
@@ -913,17 +943,16 @@
         private System.Windows.Forms.Label lbDescription;
         private System.Windows.Forms.Label lbTimeOut;
         private System.Windows.Forms.Label lbTimeIn;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtTakeLeaveName;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DataGridView dgvTakeLeave;
+        private System.Windows.Forms.RichTextBox txtTakeLeaveDescription;
+        private System.Windows.Forms.DateTimePicker dtpTakeLeaveTo;
+        private System.Windows.Forms.DateTimePicker dtpTakeLeaveFrom;
         private System.Windows.Forms.Label lbReason;
         private System.Windows.Forms.Label lbToDate;
         private System.Windows.Forms.Label lbFromDate;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnTakeLeaveDelete;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
@@ -966,5 +995,9 @@
         private System.Windows.Forms.TextBox txtCandidatesID;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dgvCandidates;
+        private System.Windows.Forms.TextBox txtTakeLeaveID;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtTakeLeaveEmployeeID;
+        private System.Windows.Forms.Label label11;
     }
 }

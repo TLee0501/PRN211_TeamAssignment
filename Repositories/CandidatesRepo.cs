@@ -10,7 +10,6 @@ namespace Repositories
 {
     public class CandidatesRepo : ICandidatesRepo
     {
-
         public void Create(Candidate candidate) => CandidatesDAO.Instance.Create(candidate);
 
         public void Delete(Candidate candidate) => CandidatesDAO.Instance.Delete(candidate);
