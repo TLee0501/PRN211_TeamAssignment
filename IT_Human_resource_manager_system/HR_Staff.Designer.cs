@@ -40,16 +40,13 @@
             label2 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             tabPage3 = new System.Windows.Forms.TabPage();
-            textBox7 = new System.Windows.Forms.TextBox();
-            label4 = new System.Windows.Forms.Label();
-            button4 = new System.Windows.Forms.Button();
-            button5 = new System.Windows.Forms.Button();
-            button6 = new System.Windows.Forms.Button();
-            dataGridView2 = new System.Windows.Forms.DataGridView();
-            textBox6 = new System.Windows.Forms.TextBox();
-            textBox5 = new System.Windows.Forms.TextBox();
-            textBox4 = new System.Windows.Forms.TextBox();
-            textBox3 = new System.Windows.Forms.TextBox();
+            btnOTDelete = new System.Windows.Forms.Button();
+            btnOTAdd = new System.Windows.Forms.Button();
+            dgvLogOT = new System.Windows.Forms.DataGridView();
+            txtOTDate = new System.Windows.Forms.TextBox();
+            txtOT = new System.Windows.Forms.TextBox();
+            txtOTName = new System.Windows.Forms.TextBox();
+            txtOTID = new System.Windows.Forms.TextBox();
             label3 = new System.Windows.Forms.Label();
             lbDescription = new System.Windows.Forms.Label();
             lbTimeOut = new System.Windows.Forms.Label();
@@ -112,7 +109,7 @@
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCandidates).BeginInit();
             tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvLogOT).BeginInit();
             tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             tabPage1.SuspendLayout();
@@ -237,16 +234,13 @@
             // 
             // tabPage3
             // 
-            tabPage3.Controls.Add(textBox7);
-            tabPage3.Controls.Add(label4);
-            tabPage3.Controls.Add(button4);
-            tabPage3.Controls.Add(button5);
-            tabPage3.Controls.Add(button6);
-            tabPage3.Controls.Add(dataGridView2);
-            tabPage3.Controls.Add(textBox6);
-            tabPage3.Controls.Add(textBox5);
-            tabPage3.Controls.Add(textBox4);
-            tabPage3.Controls.Add(textBox3);
+            tabPage3.Controls.Add(btnOTDelete);
+            tabPage3.Controls.Add(btnOTAdd);
+            tabPage3.Controls.Add(dgvLogOT);
+            tabPage3.Controls.Add(txtOTDate);
+            tabPage3.Controls.Add(txtOT);
+            tabPage3.Controls.Add(txtOTName);
+            tabPage3.Controls.Add(txtOTID);
             tabPage3.Controls.Add(label3);
             tabPage3.Controls.Add(lbDescription);
             tabPage3.Controls.Add(lbTimeOut);
@@ -259,95 +253,75 @@
             tabPage3.Text = "Manage Log OT";
             tabPage3.UseVisualStyleBackColor = true;
             // 
-            // textBox7
+            // btnOTDelete
             // 
-            textBox7.Location = new System.Drawing.Point(32, 254);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new System.Drawing.Size(173, 27);
-            textBox7.TabIndex = 41;
+            btnOTDelete.Location = new System.Drawing.Point(820, 333);
+            btnOTDelete.Name = "btnOTDelete";
+            btnOTDelete.Size = new System.Drawing.Size(94, 29);
+            btnOTDelete.TabIndex = 39;
+            btnOTDelete.Text = "Delete";
+            btnOTDelete.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // btnOTAdd
             // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(32, 231);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(85, 20);
-            label4.TabIndex = 40;
-            label4.Text = "Description";
+            btnOTAdd.Location = new System.Drawing.Point(369, 333);
+            btnOTAdd.Name = "btnOTAdd";
+            btnOTAdd.Size = new System.Drawing.Size(94, 29);
+            btnOTAdd.TabIndex = 37;
+            btnOTAdd.Text = "Add";
+            btnOTAdd.UseVisualStyleBackColor = true;
+            btnOTAdd.Click += btnOTAdd_Click;
             // 
-            // button4
+            // dgvLogOT
             // 
-            button4.Location = new System.Drawing.Point(820, 333);
-            button4.Name = "button4";
-            button4.Size = new System.Drawing.Size(94, 29);
-            button4.TabIndex = 39;
-            button4.Text = "Delete";
-            button4.UseVisualStyleBackColor = true;
+            dgvLogOT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvLogOT.Location = new System.Drawing.Point(246, 28);
+            dgvLogOT.Name = "dgvLogOT";
+            dgvLogOT.RowHeadersWidth = 51;
+            dgvLogOT.RowTemplate.Height = 29;
+            dgvLogOT.Size = new System.Drawing.Size(789, 288);
+            dgvLogOT.TabIndex = 36;
             // 
-            // button5
+            // txtOTDate
             // 
-            button5.Location = new System.Drawing.Point(596, 333);
-            button5.Name = "button5";
-            button5.Size = new System.Drawing.Size(94, 29);
-            button5.TabIndex = 38;
-            button5.Text = "Update";
-            button5.UseVisualStyleBackColor = true;
+            txtOTDate.Location = new System.Drawing.Point(32, 201);
+            txtOTDate.Name = "txtOTDate";
+            txtOTDate.ReadOnly = true;
+            txtOTDate.Size = new System.Drawing.Size(173, 27);
+            txtOTDate.TabIndex = 35;
             // 
-            // button6
+            // txtOT
             // 
-            button6.Location = new System.Drawing.Point(369, 333);
-            button6.Name = "button6";
-            button6.Size = new System.Drawing.Size(94, 29);
-            button6.TabIndex = 37;
-            button6.Text = "Add";
-            button6.UseVisualStyleBackColor = true;
+            txtOT.Location = new System.Drawing.Point(32, 148);
+            txtOT.Name = "txtOT";
+            txtOT.ReadOnly = true;
+            txtOT.Size = new System.Drawing.Size(173, 27);
+            txtOT.TabIndex = 34;
             // 
-            // dataGridView2
+            // txtOTName
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new System.Drawing.Point(246, 28);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new System.Drawing.Size(789, 288);
-            dataGridView2.TabIndex = 36;
+            txtOTName.Location = new System.Drawing.Point(32, 95);
+            txtOTName.Name = "txtOTName";
+            txtOTName.ReadOnly = true;
+            txtOTName.Size = new System.Drawing.Size(173, 27);
+            txtOTName.TabIndex = 33;
             // 
-            // textBox6
+            // txtOTID
             // 
-            textBox6.Location = new System.Drawing.Point(32, 201);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new System.Drawing.Size(173, 27);
-            textBox6.TabIndex = 35;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new System.Drawing.Point(32, 148);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new System.Drawing.Size(173, 27);
-            textBox5.TabIndex = 34;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new System.Drawing.Point(32, 95);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new System.Drawing.Size(173, 27);
-            textBox4.TabIndex = 33;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new System.Drawing.Point(32, 42);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new System.Drawing.Size(173, 27);
-            textBox3.TabIndex = 32;
+            txtOTID.Location = new System.Drawing.Point(32, 42);
+            txtOTID.Name = "txtOTID";
+            txtOTID.ReadOnly = true;
+            txtOTID.Size = new System.Drawing.Size(173, 27);
+            txtOTID.TabIndex = 32;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Location = new System.Drawing.Point(32, 19);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(49, 20);
+            label3.Size = new System.Drawing.Size(24, 20);
             label3.TabIndex = 31;
-            label3.Text = "Name";
+            label3.Text = "ID";
             // 
             // lbDescription
             // 
@@ -363,18 +337,18 @@
             lbTimeOut.AutoSize = true;
             lbTimeOut.Location = new System.Drawing.Point(32, 125);
             lbTimeOut.Name = "lbTimeOut";
-            lbTimeOut.Size = new System.Drawing.Size(66, 20);
+            lbTimeOut.Size = new System.Drawing.Size(70, 20);
             lbTimeOut.TabIndex = 29;
-            lbTimeOut.Text = "TimeOut";
+            lbTimeOut.Text = "Overtime";
             // 
             // lbTimeIn
             // 
             lbTimeIn.AutoSize = true;
             lbTimeIn.Location = new System.Drawing.Point(32, 72);
             lbTimeIn.Name = "lbTimeIn";
-            lbTimeIn.Size = new System.Drawing.Size(58, 20);
+            lbTimeIn.Size = new System.Drawing.Size(84, 20);
             lbTimeIn.TabIndex = 28;
-            lbTimeIn.Text = "Time In";
+            lbTimeIn.Text = "Staff Name";
             // 
             // tabPage4
             // 
@@ -395,7 +369,7 @@
             tabPage4.Padding = new System.Windows.Forms.Padding(3);
             tabPage4.Size = new System.Drawing.Size(1066, 381);
             tabPage4.TabIndex = 3;
-            tabPage4.Text = "Take Leave";
+            tabPage4.Text = "Manage Take Leave";
             tabPage4.UseVisualStyleBackColor = true;
             // 
             // button10
@@ -898,7 +872,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvCandidates).EndInit();
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvLogOT).EndInit();
             tabPage4.ResumeLayout(false);
             tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
@@ -928,16 +902,13 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button btnOTDelete;
+        private System.Windows.Forms.Button btnOTAdd;
+        private System.Windows.Forms.DataGridView dgvLogOT;
+        private System.Windows.Forms.TextBox txtOTDate;
+        private System.Windows.Forms.TextBox txtOT;
+        private System.Windows.Forms.TextBox txtOTName;
+        private System.Windows.Forms.TextBox txtOTID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbDescription;
         private System.Windows.Forms.Label lbTimeOut;

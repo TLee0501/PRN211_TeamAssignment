@@ -21,6 +21,8 @@ namespace BusinessObjects
         public string Name { get; set; }
         public string RoleName { get; set; }
         public string Status { get; set; }
+        public int? PhoneNumber { get; set; }
+        public string Email { get; set; }
 
         public virtual ICollection<Overtime> Overtimes { get; set; }
         public virtual ICollection<Payslip> Payslips { get; set; }
