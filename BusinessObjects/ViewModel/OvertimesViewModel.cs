@@ -8,7 +8,7 @@ namespace BusinessObjects.ViewModel
 {
     public class OvertimesViewModel
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public DateTime? Date { get; set; }
         public int? Time { get; set; }
         public string? EmployeeName { get; set; }

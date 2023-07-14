@@ -30,7 +30,7 @@ namespace IT_Human_resource_manager_system
             {
                 var candidate = new Candidate()
                 {
-                    Id = Guid.Parse(txtID.Text),
+                    Id = int.Parse(txtID.Text),
                     Name = txtName.Text,
                     Description = txtDescription.Text
                 };
