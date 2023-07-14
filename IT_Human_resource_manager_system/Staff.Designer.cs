@@ -66,25 +66,21 @@
             Manage_LogOT = new System.Windows.Forms.TabPage();
             btnReset = new System.Windows.Forms.Button();
             btnSubmit = new System.Windows.Forms.Button();
-            txtTimeout = new System.Windows.Forms.TextBox();
-            txtTimein = new System.Windows.Forms.TextBox();
-            txtDescription = new System.Windows.Forms.TextBox();
+            txtTime = new System.Windows.Forms.TextBox();
             dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             lbDescription = new System.Windows.Forms.Label();
-            lbTimeOut = new System.Windows.Forms.Label();
-            lbTimeIn = new System.Windows.Forms.Label();
+            lbTime = new System.Windows.Forms.Label();
             lbDate = new System.Windows.Forms.Label();
             Person_info = new System.Windows.Forms.TabPage();
             btnUpdate = new System.Windows.Forms.Button();
-            txtBanknumber = new System.Windows.Forms.TextBox();
             txtPhonenumber = new System.Windows.Forms.TextBox();
             TxtEmail = new System.Windows.Forms.TextBox();
             txtName = new System.Windows.Forms.TextBox();
-            lbBanknumber = new System.Windows.Forms.Label();
             lbPhonenumber = new System.Windows.Forms.Label();
             lbEmail = new System.Windows.Forms.Label();
             lbName = new System.Windows.Forms.Label();
             tabControl1 = new System.Windows.Forms.TabControl();
+            rtbDescription = new System.Windows.Forms.RichTextBox();
             Reports.SuspendLayout();
             Payslip_Payroll.SuspendLayout();
             Take_Leave.SuspendLayout();
@@ -420,15 +416,13 @@
             // 
             // Manage_LogOT
             // 
+            Manage_LogOT.Controls.Add(rtbDescription);
             Manage_LogOT.Controls.Add(btnReset);
             Manage_LogOT.Controls.Add(btnSubmit);
-            Manage_LogOT.Controls.Add(txtTimeout);
-            Manage_LogOT.Controls.Add(txtTimein);
-            Manage_LogOT.Controls.Add(txtDescription);
+            Manage_LogOT.Controls.Add(txtTime);
             Manage_LogOT.Controls.Add(dateTimePicker1);
             Manage_LogOT.Controls.Add(lbDescription);
-            Manage_LogOT.Controls.Add(lbTimeOut);
-            Manage_LogOT.Controls.Add(lbTimeIn);
+            Manage_LogOT.Controls.Add(lbTime);
             Manage_LogOT.Controls.Add(lbDate);
             Manage_LogOT.Location = new System.Drawing.Point(4, 29);
             Manage_LogOT.Name = "Manage_LogOT";
@@ -440,7 +434,7 @@
             // 
             // btnReset
             // 
-            btnReset.Location = new System.Drawing.Point(471, 268);
+            btnReset.Location = new System.Drawing.Point(466, 298);
             btnReset.Name = "btnReset";
             btnReset.Size = new System.Drawing.Size(94, 29);
             btnReset.TabIndex = 9;
@@ -449,33 +443,19 @@
             // 
             // btnSubmit
             // 
-            btnSubmit.Location = new System.Drawing.Point(346, 268);
+            btnSubmit.Location = new System.Drawing.Point(324, 298);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new System.Drawing.Size(94, 29);
             btnSubmit.TabIndex = 8;
             btnSubmit.Text = "Submit";
             btnSubmit.UseVisualStyleBackColor = true;
             // 
-            // txtTimeout
+            // txtTime
             // 
-            txtTimeout.Location = new System.Drawing.Point(135, 146);
-            txtTimeout.Name = "txtTimeout";
-            txtTimeout.Size = new System.Drawing.Size(254, 27);
-            txtTimeout.TabIndex = 7;
-            // 
-            // txtTimein
-            // 
-            txtTimein.Location = new System.Drawing.Point(134, 94);
-            txtTimein.Name = "txtTimein";
-            txtTimein.Size = new System.Drawing.Size(254, 27);
-            txtTimein.TabIndex = 6;
-            // 
-            // txtDescription
-            // 
-            txtDescription.Location = new System.Drawing.Point(135, 198);
-            txtDescription.Name = "txtDescription";
-            txtDescription.Size = new System.Drawing.Size(254, 27);
-            txtDescription.TabIndex = 5;
+            txtTime.Location = new System.Drawing.Point(134, 94);
+            txtTime.Name = "txtTime";
+            txtTime.Size = new System.Drawing.Size(254, 27);
+            txtTime.TabIndex = 6;
             // 
             // dateTimePicker1
             // 
@@ -487,29 +467,20 @@
             // lbDescription
             // 
             lbDescription.AutoSize = true;
-            lbDescription.Location = new System.Drawing.Point(33, 195);
+            lbDescription.Location = new System.Drawing.Point(33, 152);
             lbDescription.Name = "lbDescription";
             lbDescription.Size = new System.Drawing.Size(85, 20);
             lbDescription.TabIndex = 3;
             lbDescription.Text = "Description";
             // 
-            // lbTimeOut
+            // lbTime
             // 
-            lbTimeOut.AutoSize = true;
-            lbTimeOut.Location = new System.Drawing.Point(33, 146);
-            lbTimeOut.Name = "lbTimeOut";
-            lbTimeOut.Size = new System.Drawing.Size(66, 20);
-            lbTimeOut.TabIndex = 2;
-            lbTimeOut.Text = "TimeOut";
-            // 
-            // lbTimeIn
-            // 
-            lbTimeIn.AutoSize = true;
-            lbTimeIn.Location = new System.Drawing.Point(33, 97);
-            lbTimeIn.Name = "lbTimeIn";
-            lbTimeIn.Size = new System.Drawing.Size(58, 20);
-            lbTimeIn.TabIndex = 1;
-            lbTimeIn.Text = "Time In";
+            lbTime.AutoSize = true;
+            lbTime.Location = new System.Drawing.Point(33, 97);
+            lbTime.Name = "lbTime";
+            lbTime.Size = new System.Drawing.Size(42, 20);
+            lbTime.TabIndex = 1;
+            lbTime.Text = "Time";
             // 
             // lbDate
             // 
@@ -523,11 +494,9 @@
             // Person_info
             // 
             Person_info.Controls.Add(btnUpdate);
-            Person_info.Controls.Add(txtBanknumber);
             Person_info.Controls.Add(txtPhonenumber);
             Person_info.Controls.Add(TxtEmail);
             Person_info.Controls.Add(txtName);
-            Person_info.Controls.Add(lbBanknumber);
             Person_info.Controls.Add(lbPhonenumber);
             Person_info.Controls.Add(lbEmail);
             Person_info.Controls.Add(lbName);
@@ -547,13 +516,6 @@
             btnUpdate.TabIndex = 8;
             btnUpdate.Text = "Update Information";
             btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // txtBanknumber
-            // 
-            txtBanknumber.Location = new System.Drawing.Point(234, 198);
-            txtBanknumber.Name = "txtBanknumber";
-            txtBanknumber.Size = new System.Drawing.Size(566, 27);
-            txtBanknumber.TabIndex = 7;
             // 
             // txtPhonenumber
             // 
@@ -575,15 +537,6 @@
             txtName.Name = "txtName";
             txtName.Size = new System.Drawing.Size(566, 27);
             txtName.TabIndex = 4;
-            // 
-            // lbBanknumber
-            // 
-            lbBanknumber.AutoSize = true;
-            lbBanknumber.Location = new System.Drawing.Point(39, 205);
-            lbBanknumber.Name = "lbBanknumber";
-            lbBanknumber.Size = new System.Drawing.Size(152, 20);
-            lbBanknumber.TabIndex = 3;
-            lbBanknumber.Text = "Bank account number";
             // 
             // lbPhonenumber
             // 
@@ -625,6 +578,14 @@
             tabControl1.Size = new System.Drawing.Size(906, 388);
             tabControl1.TabIndex = 0;
             // 
+            // rtbDescription
+            // 
+            rtbDescription.Location = new System.Drawing.Point(140, 154);
+            rtbDescription.Name = "rtbDescription";
+            rtbDescription.Size = new System.Drawing.Size(248, 120);
+            rtbDescription.TabIndex = 10;
+            rtbDescription.Text = "";
+            // 
             // Staff
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -633,6 +594,7 @@
             Controls.Add(tabControl1);
             Name = "Staff";
             Text = "Staff";
+            Load += Staff_Load;
             Reports.ResumeLayout(false);
             Reports.PerformLayout();
             Payslip_Payroll.ResumeLayout(false);
@@ -655,23 +617,18 @@
         private System.Windows.Forms.TabPage Manage_LogOT;
         private System.Windows.Forms.TabPage Person_info;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label lbBanknumber;
         private System.Windows.Forms.Label lbPhonenumber;
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TextBox txtBanknumber;
         private System.Windows.Forms.TextBox txtPhonenumber;
         private System.Windows.Forms.TextBox TxtEmail;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label lbDescription;
-        private System.Windows.Forms.Label lbTimeOut;
-        private System.Windows.Forms.Label lbTimeIn;
+        private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Label lbDate;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.TextBox txtTimeout;
-        private System.Windows.Forms.TextBox txtTimein;
+        private System.Windows.Forms.TextBox txtTime;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnResetL;
@@ -706,5 +663,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox rtbDescription;
     }
 }
