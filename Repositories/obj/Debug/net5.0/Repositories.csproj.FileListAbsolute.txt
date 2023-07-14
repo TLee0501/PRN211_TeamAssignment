@@ -1,0 +1,17 @@
+C:\Users\PGS\Desktop\PRN311\TeamProject\Repositories\bin\Debug\net5.0\Repositories.deps.json
+C:\Users\PGS\Desktop\PRN311\TeamProject\Repositories\bin\Debug\net5.0\Repositories.dll
+C:\Users\PGS\Desktop\PRN311\TeamProject\Repositories\bin\Debug\net5.0\Repositories.pdb
+C:\Users\PGS\Desktop\PRN311\TeamProject\Repositories\obj\Debug\net5.0\Repositories.csproj.AssemblyReference.cache
+C:\Users\PGS\Desktop\PRN311\TeamProject\Repositories\obj\Debug\net5.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PGS\Desktop\PRN311\TeamProject\Repositories\obj\Debug\net5.0\Repositories.AssemblyInfoInputs.cache
+C:\Users\PGS\Desktop\PRN311\TeamProject\Repositories\obj\Debug\net5.0\Repositories.AssemblyInfo.cs
+C:\Users\PGS\Desktop\PRN311\TeamProject\Repositories\obj\Debug\net5.0\Repositories.csproj.CoreCompileInputs.cache
+C:\Users\PGS\Desktop\PRN311\TeamProject\Repositories\obj\Debug\net5.0\Repositories.dll
+C:\Users\PGS\Desktop\PRN311\TeamProject\Repositories\obj\Debug\net5.0\refint\Repositories.dll
+C:\Users\PGS\Desktop\PRN311\TeamProject\Repositories\obj\Debug\net5.0\Repositories.pdb
+C:\Users\PGS\Desktop\PRN311\TeamProject\Repositories\obj\Debug\net5.0\ref\Repositories.dll
+C:\Users\PGS\Desktop\PRN311\TeamProject\Repositories\bin\Debug\net5.0\BusinessObjects.dll
+C:\Users\PGS\Desktop\PRN311\TeamProject\Repositories\bin\Debug\net5.0\DataAccessObjects.dll
+C:\Users\PGS\Desktop\PRN311\TeamProject\Repositories\bin\Debug\net5.0\DataAccessObjects.pdb
+C:\Users\PGS\Desktop\PRN311\TeamProject\Repositories\bin\Debug\net5.0\BusinessObjects.pdb
+C:\Users\PGS\Desktop\PRN311\TeamProject\Repositories\obj\Debug\net5.0\Repositories.csproj.CopyComplete
