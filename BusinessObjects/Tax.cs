@@ -7,7 +7,7 @@ namespace BusinessObjects
 {
     public partial class Tax
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public double? SocialTax { get; set; }
     }
 }

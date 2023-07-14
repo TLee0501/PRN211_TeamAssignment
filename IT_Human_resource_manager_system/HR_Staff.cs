@@ -70,7 +70,7 @@ namespace IT_Human_resource_manager_system
             {
                 candidate = new Candidate
                 {
-                    Id = Guid.Parse(txtCandidatesID.Text),
+                    Id = int.Parse(txtCandidatesID.Text),
                     Name = txtCandidatesName.Text,
                     Description = txtCandidatesDescription.Text
                 };
@@ -190,15 +190,15 @@ namespace IT_Human_resource_manager_system
             Overtime overtime = null;
             try
             {
-                var temp = new Guid();
+                var temp = new int();
                 using (var context = new PRN211_IT_HR_Management_SystemContext())
                 {
-                    var ot = context.Overtimes.SingleOrDefault(a => a.Id == Guid.Parse(txtOTID.Text));
-                    temp = (Guid)ot.EmployeeId;
+                    var ot = context.Overtimes.SingleOrDefault(a => a.Id.Equals(txtOTID.Text));
+                    temp = (int)ot.EmployeeId;
                 }
                 overtime = new Overtime
                 {
-                    Id = Guid.Parse(txtOTID.Text),
+                    Id = int.Parse(txtOTID.Text),
                     Date = DateTime.Parse(txtOTDate.Text),
                     Time = int.Parse(txtOT.Text),
                     EmployeeId = temp
@@ -300,12 +300,12 @@ namespace IT_Human_resource_manager_system
             {
                 takeLeave = new TakeLeaveViewModel
                 {
-                    Id = Guid.Parse(txtTakeLeaveID.Text),
+                    Id = int.Parse(txtTakeLeaveID.Text),
                     StartDate = DateTime.Parse(dtpTakeLeaveFrom.Text),
                     EndDate = DateTime.Parse(dtpTakeLeaveTo.Text),
                     Description = txtTakeLeaveDescription.Text,
                     EmployeeName = txtTakeLeaveName.Text,
-                    EmployeeId = Guid.Parse(txtTakeLeaveEmployeeID.Text)
+                    EmployeeId = int.Parse(txtTakeLeaveEmployeeID.Text)
                 };
             }
             catch (Exception ex)

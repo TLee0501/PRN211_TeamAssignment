@@ -8,8 +8,8 @@ namespace BusinessObjects.ViewModel
 {
     public class TakeLeaveViewModel
     {
-        public Guid Id { get; set; }
-        public Guid? EmployeeId { get; set; }
+        public int Id { get; set; }
+        public int? EmployeeId { get; set; }
         public string EmployeeName { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
