@@ -1,20 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\IT_Human_resource_manager_system\\IT_Human_resource_manager_system.csproj": {}
+    "D:\\IV\\Github\\PRN211_TeamAssignment\\IT_Human_resource_manager_system\\IT_Human_resource_manager_system.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\BusinessObjects\\BusinessObjects.csproj": {
+    "D:\\IV\\Github\\PRN211_TeamAssignment\\BusinessObjects\\BusinessObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\BusinessObjects\\BusinessObjects.csproj",
+        "projectUniqueName": "D:\\IV\\Github\\PRN211_TeamAssignment\\BusinessObjects\\BusinessObjects.csproj",
         "projectName": "BusinessObjects",
-        "projectPath": "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\BusinessObjects\\BusinessObjects.csproj",
-        "packagesPath": "C:\\Users\\PGS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\BusinessObjects\\obj\\",
+        "projectPath": "D:\\IV\\Github\\PRN211_TeamAssignment\\BusinessObjects\\BusinessObjects.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\IV\\Github\\PRN211_TeamAssignment\\BusinessObjects\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\PGS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +27,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -85,21 +91,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\DataAccessObjects\\DataAccessObjects.csproj": {
+    "D:\\IV\\Github\\PRN211_TeamAssignment\\DataAccessObjects\\DataAccessObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\DataAccessObjects\\DataAccessObjects.csproj",
+        "projectUniqueName": "D:\\IV\\Github\\PRN211_TeamAssignment\\DataAccessObjects\\DataAccessObjects.csproj",
         "projectName": "DataAccessObjects",
-        "projectPath": "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\DataAccessObjects\\DataAccessObjects.csproj",
-        "packagesPath": "C:\\Users\\PGS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\DataAccessObjects\\obj\\",
+        "projectPath": "D:\\IV\\Github\\PRN211_TeamAssignment\\DataAccessObjects\\DataAccessObjects.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\IV\\Github\\PRN211_TeamAssignment\\DataAccessObjects\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\PGS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -107,14 +118,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\BusinessObjects\\BusinessObjects.csproj": {
-                "projectPath": "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\BusinessObjects\\BusinessObjects.csproj"
+              "D:\\IV\\Github\\PRN211_TeamAssignment\\BusinessObjects\\BusinessObjects.csproj": {
+                "projectPath": "D:\\IV\\Github\\PRN211_TeamAssignment\\BusinessObjects\\BusinessObjects.csproj"
               }
             }
           }
@@ -144,21 +156,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\IT_Human_resource_manager_system\\IT_Human_resource_manager_system.csproj": {
+    "D:\\IV\\Github\\PRN211_TeamAssignment\\IT_Human_resource_manager_system\\IT_Human_resource_manager_system.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\IT_Human_resource_manager_system\\IT_Human_resource_manager_system.csproj",
+        "projectUniqueName": "D:\\IV\\Github\\PRN211_TeamAssignment\\IT_Human_resource_manager_system\\IT_Human_resource_manager_system.csproj",
         "projectName": "IT_Human_resource_manager_system",
-        "projectPath": "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\IT_Human_resource_manager_system\\IT_Human_resource_manager_system.csproj",
-        "packagesPath": "C:\\Users\\PGS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\IT_Human_resource_manager_system\\obj\\",
+        "projectPath": "D:\\IV\\Github\\PRN211_TeamAssignment\\IT_Human_resource_manager_system\\IT_Human_resource_manager_system.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\IV\\Github\\PRN211_TeamAssignment\\IT_Human_resource_manager_system\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\PGS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -166,14 +183,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\Repositories\\Repositories.csproj": {
-                "projectPath": "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\Repositories\\Repositories.csproj"
+              "D:\\IV\\Github\\PRN211_TeamAssignment\\Repositories\\Repositories.csproj": {
+                "projectPath": "D:\\IV\\Github\\PRN211_TeamAssignment\\Repositories\\Repositories.csproj"
               }
             }
           }
@@ -206,21 +224,26 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\Repositories\\Repositories.csproj": {
+    "D:\\IV\\Github\\PRN211_TeamAssignment\\Repositories\\Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\Repositories\\Repositories.csproj",
+        "projectUniqueName": "D:\\IV\\Github\\PRN211_TeamAssignment\\Repositories\\Repositories.csproj",
         "projectName": "Repositories",
-        "projectPath": "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\Repositories\\Repositories.csproj",
-        "packagesPath": "C:\\Users\\PGS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\Repositories\\obj\\",
+        "projectPath": "D:\\IV\\Github\\PRN211_TeamAssignment\\Repositories\\Repositories.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\IV\\Github\\PRN211_TeamAssignment\\Repositories\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\PGS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -228,14 +251,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\DataAccessObjects\\DataAccessObjects.csproj": {
-                "projectPath": "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\DataAccessObjects\\DataAccessObjects.csproj"
+              "D:\\IV\\Github\\PRN211_TeamAssignment\\DataAccessObjects\\DataAccessObjects.csproj": {
+                "projectPath": "D:\\IV\\Github\\PRN211_TeamAssignment\\DataAccessObjects\\DataAccessObjects.csproj"
               }
             }
           }
@@ -265,7 +289,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

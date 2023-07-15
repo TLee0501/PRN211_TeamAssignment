@@ -2544,19 +2544,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PGS\\.nuget\\packages\\": {}
+    "C:\\Users\\ASUS\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\DataAccessObjects\\DataAccessObjects.csproj",
+      "projectUniqueName": "D:\\IV\\Github\\PRN211_TeamAssignment\\DataAccessObjects\\DataAccessObjects.csproj",
       "projectName": "DataAccessObjects",
-      "projectPath": "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\DataAccessObjects\\DataAccessObjects.csproj",
-      "packagesPath": "C:\\Users\\PGS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\DataAccessObjects\\obj\\",
+      "projectPath": "D:\\IV\\Github\\PRN211_TeamAssignment\\DataAccessObjects\\DataAccessObjects.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "D:\\IV\\Github\\PRN211_TeamAssignment\\DataAccessObjects\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\PGS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2564,14 +2571,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\BusinessObjects\\BusinessObjects.csproj": {
-              "projectPath": "C:\\Users\\PGS\\Desktop\\PRN311\\TeamProject\\BusinessObjects\\BusinessObjects.csproj"
+            "D:\\IV\\Github\\PRN211_TeamAssignment\\BusinessObjects\\BusinessObjects.csproj": {
+              "projectPath": "D:\\IV\\Github\\PRN211_TeamAssignment\\BusinessObjects\\BusinessObjects.csproj"
             }
           }
         }
@@ -2601,7 +2609,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

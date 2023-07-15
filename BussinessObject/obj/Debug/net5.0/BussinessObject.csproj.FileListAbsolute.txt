@@ -1,0 +1,15 @@
+D:\IV\Github\PRN211_TeamAssignment\BussinessObject\bin\Debug\net5.0\BussinessObject.deps.json
+D:\IV\Github\PRN211_TeamAssignment\BussinessObject\bin\Debug\net5.0\BussinessObject.runtimeconfig.json
+D:\IV\Github\PRN211_TeamAssignment\BussinessObject\bin\Debug\net5.0\BussinessObject.runtimeconfig.dev.json
+D:\IV\Github\PRN211_TeamAssignment\BussinessObject\bin\Debug\net5.0\BussinessObject.dll
+D:\IV\Github\PRN211_TeamAssignment\BussinessObject\bin\Debug\net5.0\ref\BussinessObject.dll
+D:\IV\Github\PRN211_TeamAssignment\BussinessObject\bin\Debug\net5.0\BussinessObject.pdb
+D:\IV\Github\PRN211_TeamAssignment\BussinessObject\obj\Debug\net5.0\BussinessObject.csproj.AssemblyReference.cache
+D:\IV\Github\PRN211_TeamAssignment\BussinessObject\obj\Debug\net5.0\BussinessObject.GeneratedMSBuildEditorConfig.editorconfig
+D:\IV\Github\PRN211_TeamAssignment\BussinessObject\obj\Debug\net5.0\BussinessObject.AssemblyInfoInputs.cache
+D:\IV\Github\PRN211_TeamAssignment\BussinessObject\obj\Debug\net5.0\BussinessObject.AssemblyInfo.cs
+D:\IV\Github\PRN211_TeamAssignment\BussinessObject\obj\Debug\net5.0\BussinessObject.csproj.CoreCompileInputs.cache
+D:\IV\Github\PRN211_TeamAssignment\BussinessObject\obj\Debug\net5.0\BussinessObject.dll
+D:\IV\Github\PRN211_TeamAssignment\BussinessObject\obj\Debug\net5.0\ref\BussinessObject.dll
+D:\IV\Github\PRN211_TeamAssignment\BussinessObject\obj\Debug\net5.0\BussinessObject.pdb
+D:\IV\Github\PRN211_TeamAssignment\BussinessObject\obj\Debug\net5.0\BussinessObject.genruntimeconfig.cache
