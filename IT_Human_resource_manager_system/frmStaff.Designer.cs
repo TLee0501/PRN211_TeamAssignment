@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            CheckAttendance = new System.Windows.Forms.TabPage();
+            btnCheckAttendance = new System.Windows.Forms.Button();
             Reports = new System.Windows.Forms.TabPage();
             btnCreateR = new System.Windows.Forms.Button();
             richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -55,36 +57,34 @@
             lbPayPeriod = new System.Windows.Forms.Label();
             lbEName = new System.Windows.Forms.Label();
             Take_Leave = new System.Windows.Forms.TabPage();
-            richTextBox2 = new System.Windows.Forms.RichTextBox();
+            rtbReasonTL = new System.Windows.Forms.RichTextBox();
             btnResetL = new System.Windows.Forms.Button();
-            btnSubmitL = new System.Windows.Forms.Button();
-            dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            btnSubmitTakeLeave = new System.Windows.Forms.Button();
+            dtpTLToDate = new System.Windows.Forms.DateTimePicker();
+            dtpTLFromDate = new System.Windows.Forms.DateTimePicker();
             lbReason = new System.Windows.Forms.Label();
             lbToDate = new System.Windows.Forms.Label();
             lbFromDate = new System.Windows.Forms.Label();
             Manage_LogOT = new System.Windows.Forms.TabPage();
+            txtTimeOT = new System.Windows.Forms.TextBox();
             btnReset = new System.Windows.Forms.Button();
             btnSubmit = new System.Windows.Forms.Button();
-            txtTimeout = new System.Windows.Forms.TextBox();
-            txtTimein = new System.Windows.Forms.TextBox();
-            txtDescription = new System.Windows.Forms.TextBox();
-            dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            lbDescription = new System.Windows.Forms.Label();
-            lbTimeOut = new System.Windows.Forms.Label();
+            dtpOT = new System.Windows.Forms.DateTimePicker();
             lbTimeIn = new System.Windows.Forms.Label();
             lbDate = new System.Windows.Forms.Label();
             Person_info = new System.Windows.Forms.TabPage();
+            btnChangePass = new System.Windows.Forms.Button();
             btnUpdate = new System.Windows.Forms.Button();
-            txtBanknumber = new System.Windows.Forms.TextBox();
             txtPhonenumber = new System.Windows.Forms.TextBox();
             TxtEmail = new System.Windows.Forms.TextBox();
             txtName = new System.Windows.Forms.TextBox();
-            lbBanknumber = new System.Windows.Forms.Label();
             lbPhonenumber = new System.Windows.Forms.Label();
             lbEmail = new System.Windows.Forms.Label();
             lbName = new System.Windows.Forms.Label();
             tabControl1 = new System.Windows.Forms.TabControl();
+            label1 = new System.Windows.Forms.Label();
+            btnLogout = new System.Windows.Forms.Button();
+            CheckAttendance.SuspendLayout();
             Reports.SuspendLayout();
             Payslip_Payroll.SuspendLayout();
             Take_Leave.SuspendLayout();
@@ -92,6 +92,28 @@
             Person_info.SuspendLayout();
             tabControl1.SuspendLayout();
             SuspendLayout();
+            // 
+            // CheckAttendance
+            // 
+            CheckAttendance.Controls.Add(btnCheckAttendance);
+            CheckAttendance.Location = new System.Drawing.Point(4, 29);
+            CheckAttendance.Name = "CheckAttendance";
+            CheckAttendance.Padding = new System.Windows.Forms.Padding(3);
+            CheckAttendance.Size = new System.Drawing.Size(898, 355);
+            CheckAttendance.TabIndex = 5;
+            CheckAttendance.Text = "CheckAttendance";
+            CheckAttendance.UseVisualStyleBackColor = true;
+            // 
+            // btnCheckAttendance
+            // 
+            btnCheckAttendance.BackColor = System.Drawing.Color.Cyan;
+            btnCheckAttendance.Location = new System.Drawing.Point(284, 91);
+            btnCheckAttendance.Name = "btnCheckAttendance";
+            btnCheckAttendance.Size = new System.Drawing.Size(296, 118);
+            btnCheckAttendance.TabIndex = 0;
+            btnCheckAttendance.Text = "Check Attendance";
+            btnCheckAttendance.UseVisualStyleBackColor = false;
+            btnCheckAttendance.Click += btnCheckAttendance_Click;
             // 
             // Reports
             // 
@@ -335,11 +357,11 @@
             // 
             // Take_Leave
             // 
-            Take_Leave.Controls.Add(richTextBox2);
+            Take_Leave.Controls.Add(rtbReasonTL);
             Take_Leave.Controls.Add(btnResetL);
-            Take_Leave.Controls.Add(btnSubmitL);
-            Take_Leave.Controls.Add(dateTimePicker3);
-            Take_Leave.Controls.Add(dateTimePicker2);
+            Take_Leave.Controls.Add(btnSubmitTakeLeave);
+            Take_Leave.Controls.Add(dtpTLToDate);
+            Take_Leave.Controls.Add(dtpTLFromDate);
             Take_Leave.Controls.Add(lbReason);
             Take_Leave.Controls.Add(lbToDate);
             Take_Leave.Controls.Add(lbFromDate);
@@ -351,13 +373,13 @@
             Take_Leave.Text = "Take Leave";
             Take_Leave.UseVisualStyleBackColor = true;
             // 
-            // richTextBox2
+            // rtbReasonTL
             // 
-            richTextBox2.Location = new System.Drawing.Point(125, 149);
-            richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new System.Drawing.Size(250, 120);
-            richTextBox2.TabIndex = 11;
-            richTextBox2.Text = "";
+            rtbReasonTL.Location = new System.Drawing.Point(125, 149);
+            rtbReasonTL.Name = "rtbReasonTL";
+            rtbReasonTL.Size = new System.Drawing.Size(250, 120);
+            rtbReasonTL.TabIndex = 11;
+            rtbReasonTL.Text = "";
             // 
             // btnResetL
             // 
@@ -367,29 +389,31 @@
             btnResetL.TabIndex = 10;
             btnResetL.Text = "Reset";
             btnResetL.UseVisualStyleBackColor = true;
+            btnResetL.Click += btnResetL_Click;
             // 
-            // btnSubmitL
+            // btnSubmitTakeLeave
             // 
-            btnSubmitL.Location = new System.Drawing.Point(380, 299);
-            btnSubmitL.Name = "btnSubmitL";
-            btnSubmitL.Size = new System.Drawing.Size(94, 29);
-            btnSubmitL.TabIndex = 9;
-            btnSubmitL.Text = "Submit";
-            btnSubmitL.UseVisualStyleBackColor = true;
+            btnSubmitTakeLeave.Location = new System.Drawing.Point(380, 299);
+            btnSubmitTakeLeave.Name = "btnSubmitTakeLeave";
+            btnSubmitTakeLeave.Size = new System.Drawing.Size(94, 29);
+            btnSubmitTakeLeave.TabIndex = 9;
+            btnSubmitTakeLeave.Text = "Submit";
+            btnSubmitTakeLeave.UseVisualStyleBackColor = true;
+            btnSubmitTakeLeave.Click += btnSubmitTakeLeave_Click;
             // 
-            // dateTimePicker3
+            // dtpTLToDate
             // 
-            dateTimePicker3.Location = new System.Drawing.Point(125, 97);
-            dateTimePicker3.Name = "dateTimePicker3";
-            dateTimePicker3.Size = new System.Drawing.Size(250, 27);
-            dateTimePicker3.TabIndex = 5;
+            dtpTLToDate.Location = new System.Drawing.Point(125, 97);
+            dtpTLToDate.Name = "dtpTLToDate";
+            dtpTLToDate.Size = new System.Drawing.Size(250, 27);
+            dtpTLToDate.TabIndex = 5;
             // 
-            // dateTimePicker2
+            // dtpTLFromDate
             // 
-            dateTimePicker2.Location = new System.Drawing.Point(125, 54);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new System.Drawing.Size(250, 27);
-            dateTimePicker2.TabIndex = 4;
+            dtpTLFromDate.Location = new System.Drawing.Point(125, 54);
+            dtpTLFromDate.Name = "dtpTLFromDate";
+            dtpTLFromDate.Size = new System.Drawing.Size(250, 27);
+            dtpTLFromDate.TabIndex = 4;
             // 
             // lbReason
             // 
@@ -420,14 +444,10 @@
             // 
             // Manage_LogOT
             // 
+            Manage_LogOT.Controls.Add(txtTimeOT);
             Manage_LogOT.Controls.Add(btnReset);
             Manage_LogOT.Controls.Add(btnSubmit);
-            Manage_LogOT.Controls.Add(txtTimeout);
-            Manage_LogOT.Controls.Add(txtTimein);
-            Manage_LogOT.Controls.Add(txtDescription);
-            Manage_LogOT.Controls.Add(dateTimePicker1);
-            Manage_LogOT.Controls.Add(lbDescription);
-            Manage_LogOT.Controls.Add(lbTimeOut);
+            Manage_LogOT.Controls.Add(dtpOT);
             Manage_LogOT.Controls.Add(lbTimeIn);
             Manage_LogOT.Controls.Add(lbDate);
             Manage_LogOT.Location = new System.Drawing.Point(4, 29);
@@ -438,78 +458,48 @@
             Manage_LogOT.Text = "Manage Log OT";
             Manage_LogOT.UseVisualStyleBackColor = true;
             // 
+            // txtTimeOT
+            // 
+            txtTimeOT.Location = new System.Drawing.Point(134, 94);
+            txtTimeOT.Name = "txtTimeOT";
+            txtTimeOT.Size = new System.Drawing.Size(254, 27);
+            txtTimeOT.TabIndex = 6;
+            // 
             // btnReset
             // 
-            btnReset.Location = new System.Drawing.Point(471, 268);
+            btnReset.Location = new System.Drawing.Point(508, 177);
             btnReset.Name = "btnReset";
             btnReset.Size = new System.Drawing.Size(94, 29);
             btnReset.TabIndex = 9;
             btnReset.Text = "Reset";
             btnReset.UseVisualStyleBackColor = true;
+            btnReset.Click += btnReset_Click;
             // 
             // btnSubmit
             // 
-            btnSubmit.Location = new System.Drawing.Point(346, 268);
+            btnSubmit.Location = new System.Drawing.Point(374, 177);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new System.Drawing.Size(94, 29);
             btnSubmit.TabIndex = 8;
             btnSubmit.Text = "Submit";
             btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.Click += btnSubmit_Click;
             // 
-            // txtTimeout
+            // dtpOT
             // 
-            txtTimeout.Location = new System.Drawing.Point(135, 146);
-            txtTimeout.Name = "txtTimeout";
-            txtTimeout.Size = new System.Drawing.Size(254, 27);
-            txtTimeout.TabIndex = 7;
-            // 
-            // txtTimein
-            // 
-            txtTimein.Location = new System.Drawing.Point(134, 94);
-            txtTimein.Name = "txtTimein";
-            txtTimein.Size = new System.Drawing.Size(254, 27);
-            txtTimein.TabIndex = 6;
-            // 
-            // txtDescription
-            // 
-            txtDescription.Location = new System.Drawing.Point(135, 198);
-            txtDescription.Name = "txtDescription";
-            txtDescription.Size = new System.Drawing.Size(254, 27);
-            txtDescription.TabIndex = 5;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new System.Drawing.Point(134, 43);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new System.Drawing.Size(250, 27);
-            dateTimePicker1.TabIndex = 4;
-            // 
-            // lbDescription
-            // 
-            lbDescription.AutoSize = true;
-            lbDescription.Location = new System.Drawing.Point(33, 195);
-            lbDescription.Name = "lbDescription";
-            lbDescription.Size = new System.Drawing.Size(85, 20);
-            lbDescription.TabIndex = 3;
-            lbDescription.Text = "Description";
-            // 
-            // lbTimeOut
-            // 
-            lbTimeOut.AutoSize = true;
-            lbTimeOut.Location = new System.Drawing.Point(33, 146);
-            lbTimeOut.Name = "lbTimeOut";
-            lbTimeOut.Size = new System.Drawing.Size(66, 20);
-            lbTimeOut.TabIndex = 2;
-            lbTimeOut.Text = "TimeOut";
+            dtpOT.Location = new System.Drawing.Point(134, 43);
+            dtpOT.Name = "dtpOT";
+            dtpOT.Size = new System.Drawing.Size(254, 27);
+            dtpOT.TabIndex = 4;
             // 
             // lbTimeIn
             // 
             lbTimeIn.AutoSize = true;
             lbTimeIn.Location = new System.Drawing.Point(33, 97);
             lbTimeIn.Name = "lbTimeIn";
-            lbTimeIn.Size = new System.Drawing.Size(58, 20);
+            lbTimeIn.Size = new System.Drawing.Size(42, 20);
             lbTimeIn.TabIndex = 1;
-            lbTimeIn.Text = "Time In";
+            lbTimeIn.Text = "Time";
             // 
             // lbDate
             // 
@@ -522,12 +512,11 @@
             // 
             // Person_info
             // 
+            Person_info.Controls.Add(btnChangePass);
             Person_info.Controls.Add(btnUpdate);
-            Person_info.Controls.Add(txtBanknumber);
             Person_info.Controls.Add(txtPhonenumber);
             Person_info.Controls.Add(TxtEmail);
             Person_info.Controls.Add(txtName);
-            Person_info.Controls.Add(lbBanknumber);
             Person_info.Controls.Add(lbPhonenumber);
             Person_info.Controls.Add(lbEmail);
             Person_info.Controls.Add(lbName);
@@ -539,6 +528,16 @@
             Person_info.Text = "Information";
             Person_info.UseVisualStyleBackColor = true;
             // 
+            // btnChangePass
+            // 
+            btnChangePass.Location = new System.Drawing.Point(600, 261);
+            btnChangePass.Name = "btnChangePass";
+            btnChangePass.Size = new System.Drawing.Size(128, 51);
+            btnChangePass.TabIndex = 9;
+            btnChangePass.Text = "Change PassWord";
+            btnChangePass.UseVisualStyleBackColor = true;
+            btnChangePass.Click += btnChangePass_Click;
+            // 
             // btnUpdate
             // 
             btnUpdate.Location = new System.Drawing.Point(734, 261);
@@ -547,13 +546,7 @@
             btnUpdate.TabIndex = 8;
             btnUpdate.Text = "Update Information";
             btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // txtBanknumber
-            // 
-            txtBanknumber.Location = new System.Drawing.Point(234, 198);
-            txtBanknumber.Name = "txtBanknumber";
-            txtBanknumber.Size = new System.Drawing.Size(566, 27);
-            txtBanknumber.TabIndex = 7;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // txtPhonenumber
             // 
@@ -575,15 +568,6 @@
             txtName.Name = "txtName";
             txtName.Size = new System.Drawing.Size(566, 27);
             txtName.TabIndex = 4;
-            // 
-            // lbBanknumber
-            // 
-            lbBanknumber.AutoSize = true;
-            lbBanknumber.Location = new System.Drawing.Point(39, 205);
-            lbBanknumber.Name = "lbBanknumber";
-            lbBanknumber.Size = new System.Drawing.Size(152, 20);
-            lbBanknumber.TabIndex = 3;
-            lbBanknumber.Text = "Bank account number";
             // 
             // lbPhonenumber
             // 
@@ -614,25 +598,50 @@
             // 
             // tabControl1
             // 
+            tabControl1.Controls.Add(CheckAttendance);
             tabControl1.Controls.Add(Person_info);
             tabControl1.Controls.Add(Manage_LogOT);
             tabControl1.Controls.Add(Take_Leave);
             tabControl1.Controls.Add(Payslip_Payroll);
             tabControl1.Controls.Add(Reports);
-            tabControl1.Location = new System.Drawing.Point(12, 128);
+            tabControl1.Location = new System.Drawing.Point(8, 128);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new System.Drawing.Size(906, 388);
             tabControl1.TabIndex = 0;
             // 
-            // Staff
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            label1.Location = new System.Drawing.Point(341, 23);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(172, 81);
+            label1.TabIndex = 10;
+            label1.Text = "Staff";
+            // 
+            // btnLogout
+            // 
+            btnLogout.Location = new System.Drawing.Point(781, 68);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new System.Drawing.Size(94, 29);
+            btnLogout.TabIndex = 11;
+            btnLogout.Text = "Logout";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
+            // 
+            // frmStaff
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(916, 528);
+            ClientSize = new System.Drawing.Size(924, 528);
+            Controls.Add(btnLogout);
+            Controls.Add(label1);
             Controls.Add(tabControl1);
-            Name = "Staff";
+            Name = "frmStaff";
             Text = "Staff";
+            Load += frmStaff_Load;
+            CheckAttendance.ResumeLayout(false);
             Reports.ResumeLayout(false);
             Reports.PerformLayout();
             Payslip_Payroll.ResumeLayout(false);
@@ -645,59 +654,23 @@
             Person_info.PerformLayout();
             tabControl1.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
+        private System.Windows.Forms.TabPage CheckAttendance;
         private System.Windows.Forms.TabPage Reports;
-        private System.Windows.Forms.TabPage Payslip_Payroll;
-        private System.Windows.Forms.TabPage Take_Leave;
-        private System.Windows.Forms.TabPage Manage_LogOT;
-        private System.Windows.Forms.TabPage Person_info;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label lbBanknumber;
-        private System.Windows.Forms.Label lbPhonenumber;
-        private System.Windows.Forms.Label lbEmail;
-        private System.Windows.Forms.Label lbName;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TextBox txtBanknumber;
-        private System.Windows.Forms.TextBox txtPhonenumber;
-        private System.Windows.Forms.TextBox TxtEmail;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Label lbDescription;
-        private System.Windows.Forms.Label lbTimeOut;
-        private System.Windows.Forms.Label lbTimeIn;
-        private System.Windows.Forms.Label lbDate;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.TextBox txtTimeout;
-        private System.Windows.Forms.TextBox txtTimein;
-        private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.Button btnResetL;
-        private System.Windows.Forms.Button btnSubmitL;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label lbReason;
-        private System.Windows.Forms.Label lbToDate;
-        private System.Windows.Forms.Label lbFromDate;
-        private System.Windows.Forms.Label lbEName;
-        private System.Windows.Forms.Label lbPayPeriod;
-        private System.Windows.Forms.Label lbTax;
-        private System.Windows.Forms.Label lbNetSalary;
-        private System.Windows.Forms.Label lbBasicSalary;
-        private System.Windows.Forms.Label lbAllowances;
-        private System.Windows.Forms.Label lxDeductions;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lbReportType;
-        private System.Windows.Forms.Label lbEndDate;
-        private System.Windows.Forms.Label lbStartDate;
-        private System.Windows.Forms.Label lbDescribe;
+        private System.Windows.Forms.Button btnCreateR;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker5;
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button btnCreateR;
+        private System.Windows.Forms.Label lbDescribe;
+        private System.Windows.Forms.Label lbEndDate;
+        private System.Windows.Forms.Label lbStartDate;
+        private System.Windows.Forms.Label lbReportType;
+        private System.Windows.Forms.TabPage Payslip_Payroll;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
@@ -705,6 +678,42 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbTax;
+        private System.Windows.Forms.Label lbNetSalary;
+        private System.Windows.Forms.Label lbBasicSalary;
+        private System.Windows.Forms.Label lbAllowances;
+        private System.Windows.Forms.Label lxDeductions;
+        private System.Windows.Forms.Label lbPayPeriod;
+        private System.Windows.Forms.Label lbEName;
+        private System.Windows.Forms.TabPage Take_Leave;
+        private System.Windows.Forms.RichTextBox rtbReasonTL;
+        private System.Windows.Forms.Button btnResetL;
+        private System.Windows.Forms.Button btnSubmitTakeLeave;
+        private System.Windows.Forms.DateTimePicker dtpTLToDate;
+        private System.Windows.Forms.DateTimePicker dtpTLFromDate;
+        private System.Windows.Forms.Label lbReason;
+        private System.Windows.Forms.Label lbToDate;
+        private System.Windows.Forms.Label lbFromDate;
+        private System.Windows.Forms.TabPage Manage_LogOT;
+        private System.Windows.Forms.TextBox txtTimeOT;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.DateTimePicker dtpOT;
+        private System.Windows.Forms.Label lbTimeIn;
+        private System.Windows.Forms.Label lbDate;
+        private System.Windows.Forms.TabPage Person_info;
+        private System.Windows.Forms.Button btnChangePass;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.TextBox txtPhonenumber;
+        private System.Windows.Forms.TextBox TxtEmail;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label lbPhonenumber;
+        private System.Windows.Forms.Label lbEmail;
+        private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.Button btnCheckAttendance;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

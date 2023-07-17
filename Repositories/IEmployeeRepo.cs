@@ -15,5 +15,6 @@ namespace Repositories
         void DeleteEmployee(Employee employee);
         void UpdateEmployee(Employee employee);
         Employee Login(string username, string password);
+        void UpdatePass(int  id, string pass);
     }
 }

@@ -57,7 +57,7 @@ namespace DataAccessObjects
                     employee = context.Employees.SingleOrDefault(m => m.Username.Equals(username) && m.Password.Equals(password));
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
@@ -122,6 +122,30 @@ namespace DataAccessObjects
                 {
                     context.Entry<Employee>(employee).State = EntityState.Modified;
                     context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public void UpdatePassword(int employeeID, string newPassword)
+        {
+            try
+            {
+                using (var context = new PRN211_IT_HR_Management_SystemContext())
+                {
+                    var employee = context.Employees.FirstOrDefault(e => e.Id == employeeID);
+
+                    if (employee != null)
+                    {
+                        employee.Password = newPassword;
+                        context.SaveChanges();
+                    }
+                    else
+                    {
+                        throw new Exception("Employee not found.");
+                    }
                 }
             }
             catch (Exception ex)
