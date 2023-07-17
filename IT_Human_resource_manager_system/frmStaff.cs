@@ -18,6 +18,7 @@ namespace IT_Human_resource_manager_system
         IEmployeeRepo employeeRepo = new EmployeeRepo();
         IOvertimeRepo overtime = new OvertimeRepo();
         ITakeLeaveRepo takeLeaveRepo = new TakeLeaveRepo();
+        IAttendanceRepo attendanceRepo = new AttendanceRepo();
         public frmStaff()
         {
             InitializeComponent();
@@ -63,14 +64,27 @@ namespace IT_Human_resource_manager_system
 
                 if (int.TryParse(txtTimeOT.Text, out int time))
                 {
-                    var o = new Overtime
+                    using (var context = new PRN211_IT_HR_Management_SystemContext())
                     {
-                        EmployeeId = user.Id,
-                        Date = DateOT,
-                        Time = time,
-                    };
-                    overtime.addOverTime(o);
-                    MessageBox.Show("Submit OT success");
+
+                        bool overtimeExists = context.Overtimes.Any(o => o.EmployeeId == user.Id && o.Date == DateOT);
+
+                        if (overtimeExists)
+                        {
+                            MessageBox.Show("You already submit your Overtime");
+                        }
+                        else
+                        {
+                            var o = new Overtime
+                            {
+                                Date = DateOT,
+                                Time = time,
+                                EmployeeId = user.Id
+                            };
+                            overtime.addOverTime(o);
+                            MessageBox.Show("Submit OT success");
+                        }
+                    }
                 }
                 else
                 {
@@ -91,7 +105,7 @@ namespace IT_Human_resource_manager_system
                 var info = new Employee
                 {
                     Id = user.Id,
-                    Username = user.Name,
+                    Username = user.Username,
                     Password = user.Password,
                     Name = txtName.Text,
                     RoleName = user.RoleName,
@@ -119,6 +133,61 @@ namespace IT_Human_resource_manager_system
             };
             takeLeaveRepo.AddTakeLeave(tl);
             MessageBox.Show("Submit takeleave form success");
+        }
+
+        private void btnCheckAttendance_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime dateTime = DateTime.Now;
+                int currentHour = dateTime.Hour;
+                Boolean isMorning = currentHour >= 7 && currentHour <= 8;
+                Boolean checkAtten = attendanceRepo.CheckAttendanceToDay(user.Id);
+                if (checkAtten)
+                {
+                    MessageBox.Show("Already Check Attendance for today");
+                }
+                else
+                {
+
+
+                    var Atten = new Attendance
+                    {
+                        EmployeeId = user.Id,
+                        IsAttend = isMorning,
+                        Date = DateTime.Now,
+                    };
+                    attendanceRepo.addAttendance(Atten);
+                    MessageBox.Show("Check Attendance success");
+
+                    if (!isMorning)
+                    {
+                        MessageBox.Show("You are late attendance change to false");
+                    }
+                    else
+                    {
+                        MessageBox.Show("You go to work on time");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+                if (ex.InnerException != null)
+                {
+                    MessageBox.Show("Inner Exception: " + ex.InnerException.Message);
+                }
+            }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnResetL_Click(object sender, EventArgs e)
+        {
+            rtbReasonTL.Clear();
         }
     }
 }

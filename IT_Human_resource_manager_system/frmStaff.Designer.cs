@@ -82,6 +82,8 @@
             lbEmail = new System.Windows.Forms.Label();
             lbName = new System.Windows.Forms.Label();
             tabControl1 = new System.Windows.Forms.TabControl();
+            label1 = new System.Windows.Forms.Label();
+            btnLogout = new System.Windows.Forms.Button();
             CheckAttendance.SuspendLayout();
             Reports.SuspendLayout();
             Payslip_Payroll.SuspendLayout();
@@ -111,6 +113,7 @@
             btnCheckAttendance.TabIndex = 0;
             btnCheckAttendance.Text = "Check Attendance";
             btnCheckAttendance.UseVisualStyleBackColor = false;
+            btnCheckAttendance.Click += btnCheckAttendance_Click;
             // 
             // Reports
             // 
@@ -386,6 +389,7 @@
             btnResetL.TabIndex = 10;
             btnResetL.Text = "Reset";
             btnResetL.UseVisualStyleBackColor = true;
+            btnResetL.Click += btnResetL_Click;
             // 
             // btnSubmitTakeLeave
             // 
@@ -606,11 +610,33 @@
             tabControl1.Size = new System.Drawing.Size(906, 388);
             tabControl1.TabIndex = 0;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            label1.Location = new System.Drawing.Point(341, 23);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(172, 81);
+            label1.TabIndex = 10;
+            label1.Text = "Staff";
+            // 
+            // btnLogout
+            // 
+            btnLogout.Location = new System.Drawing.Point(781, 68);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new System.Drawing.Size(94, 29);
+            btnLogout.TabIndex = 11;
+            btnLogout.Text = "Logout";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
+            // 
             // frmStaff
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(924, 528);
+            Controls.Add(btnLogout);
+            Controls.Add(label1);
             Controls.Add(tabControl1);
             Name = "frmStaff";
             Text = "Staff";
@@ -628,6 +654,7 @@
             Person_info.PerformLayout();
             tabControl1.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -686,5 +713,7 @@
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Button btnCheckAttendance;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

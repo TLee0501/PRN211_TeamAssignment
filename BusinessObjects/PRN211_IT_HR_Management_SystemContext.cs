@@ -26,6 +26,7 @@ namespace BusinessObjects
         public virtual DbSet<Payslip> Payslips { get; set; }
         public virtual DbSet<TakeLeave> TakeLeaves { get; set; }
         public virtual DbSet<TakeLeaveCount> TakeLeaveCounts { get; set; }
+
         private string GetConnectionString()
         {
             IConfiguration configuration = new ConfigurationBuilder()
@@ -43,6 +44,7 @@ namespace BusinessObjects
             optionsBuilder.UseSqlServer(GetConnectionString());
         }
 
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
@@ -51,9 +53,7 @@ namespace BusinessObjects
             {
                 entity.ToTable("Attendance");
 
-                entity.Property(e => e.AttendanceId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("AttendanceID");
+                entity.Property(e => e.AttendanceId).HasColumnName("AttendanceID");
 
                 entity.Property(e => e.Date).HasColumnType("datetime");
 
@@ -71,9 +71,7 @@ namespace BusinessObjects
             {
                 entity.ToTable("Candidate");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Description)
                     .HasMaxLength(500)
@@ -88,9 +86,7 @@ namespace BusinessObjects
             {
                 entity.ToTable("Employee");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Email).IsUnicode(false);
 
@@ -119,9 +115,7 @@ namespace BusinessObjects
             {
                 entity.ToTable("Overtime");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Date).HasColumnType("date");
 
@@ -137,9 +131,7 @@ namespace BusinessObjects
             {
                 entity.ToTable("Payslip");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.BonusOt).HasColumnName("BonusOT");
 
@@ -155,9 +147,7 @@ namespace BusinessObjects
             {
                 entity.ToTable("TakeLeave");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Description)
                     .HasMaxLength(500)
@@ -181,9 +171,7 @@ namespace BusinessObjects
             {
                 entity.ToTable("TakeLeaveCount");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.EmployeeId).HasColumnName("EmployeeID");
 
