@@ -13,7 +13,7 @@ namespace Repositories
     {
         void AddTakeLeave(TakeLeave takeLeave);
 
-        void Delete(TakeLeave takeLeave);
+        
         int CountTakeLeaveInMonth(int id);
 
         IEnumerable<TakeLeaveViewModel> GetTakeLeaves();

@@ -37,7 +37,7 @@ namespace BusinessObjects
             }
         }
 
-        private string GetConnectionString()
+         string GetConnectionString()
         {
             IConfiguration configuration = new ConfigurationBuilder()
                     .SetBasePath(Directory.GetCurrentDirectory())
