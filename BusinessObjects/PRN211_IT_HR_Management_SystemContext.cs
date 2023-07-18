@@ -32,8 +32,8 @@ namespace BusinessObjects
         {
             if (!optionsBuilder.IsConfigured)
             {
-                //optionsBuilder.UseSqlServer(GetConnectionString());
-                optionsBuilder.UseSqlServer("Server=(local);uid=sa;pwd=12345678;database=PRN211_IT_HR_Management_System;TrustServerCertificate=True");
+                optionsBuilder.UseSqlServer(GetConnectionString());
+                //optionsBuilder.UseSqlServer("Server=(local);uid=sa;pwd=12345678;database=PRN211_IT_HR_Management_System;TrustServerCertificate=True");
             }
         }
 
