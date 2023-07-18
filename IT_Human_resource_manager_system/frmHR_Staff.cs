@@ -157,7 +157,7 @@ namespace IT_Human_resource_manager_system
                 using (var context = new PRN211_IT_HR_Management_SystemContext())
                 {
                     var ot = context.Employees.Find(item.EmployeeId);
-                    temp.Employee.na = ot.Name;
+                    temp.Employee.Name = ot.Name;
                 }
                 logOTsViewModel.Add(temp);
             }
