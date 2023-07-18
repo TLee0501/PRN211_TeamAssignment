@@ -1,5 +1,6 @@
-﻿using BusinessObjects;
+
 using BusinessObjects;
+using BusinessObjects.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,14 @@ namespace Repositories
 {
     public interface ITakeleaveRepo
     {
-        IEnumerable<TakeLeave> GetTakeLeaves();
-        //void Create(Overtime overtime);
-        //void Update(Overtime overtime);
         void AddTakeLeave(TakeLeave takeLeave);
+
         void Delete(TakeLeave takeLeave);
         int CountTakeLeaveInMonth(int id);
+
+        IEnumerable<TakeLeaveViewModel> GetTakeLeaves();
+        void Reject(int id);
+        void Accept(int id);
+
     }
 }

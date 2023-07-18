@@ -1,4 +1,6 @@
 ﻿using BusinessObjects;
+using BusinessObjects.ViewModel;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +11,6 @@ namespace DataAccessObjects
 {
     public class TakeLeaveDAO
     {
-        // Singleton
         private static TakeLeaveDAO instance = null;
         private static readonly object instanceLock = new object();
         private TakeLeaveDAO() { }
@@ -28,34 +29,7 @@ namespace DataAccessObjects
             }
         }
 
-        //--------------------------------------------------------------------
-        public List<TakeLeave> GetTakeLeaves()
-
-        {
-            List<TakeLeave> result = new List<TakeLeave>();
-            using (var context = new PRN211_IT_HR_Management_SystemContext())
-            {
-                var takeLeaves = context.TakeLeaves.ToList();
-                foreach (var item in takeLeaves)
-                {
-                    var temp = new TakeLeave();
-                    temp.Id = item.Id;
-                    temp.EmployeeId = item.EmployeeId;
-                    temp.StartDate = item.StartDate;
-                    temp.EndDate = item.EndDate;
-                    temp.Description = item.Description;
-
-                    var empName = context.Employees.SingleOrDefault(a => a.Id == item.EmployeeId).Name;
-                    temp.Employee.Name = empName;
-
-                    result.Add(temp);
-                }
-            }
-            return result;
-
-        }
-
-        public void addTakeLeave(TakeLeave takeLeave)
+        public static void addTakeLeave(TakeLeave takeLeave)
         {
             try
             {
@@ -71,17 +45,48 @@ namespace DataAccessObjects
                 throw new Exception(ex.Message);
             }
         }
-        public void Delete(TakeLeave takeLeave)
+        public List<TakeLeaveViewModel> GetTakeLeaves()
         {
-            var objectDelete = new TakeLeave();
-            objectDelete.Id = takeLeave.Id;
-            objectDelete.EmployeeId = takeLeave.EmployeeId;
-            objectDelete.StartDate = takeLeave.StartDate;
-            objectDelete.EndDate = takeLeave.EndDate;
-            objectDelete.Description = takeLeave.Description;
+            List<TakeLeaveViewModel> result = new List<TakeLeaveViewModel>();
             using (var context = new PRN211_IT_HR_Management_SystemContext())
             {
-                context.TakeLeaves.Remove(objectDelete);
+                var takeLeaves = context.TakeLeaves.ToList();
+                foreach (var item in takeLeaves)
+                {
+                    var temp = new TakeLeaveViewModel();
+                    temp.Id = item.Id;
+                    temp.EmployeeId = item.EmployeeId;
+                    temp.StartDate = item.StartDate;
+                    temp.EndDate = item.EndDate;
+                    temp.Description = item.Description;
+                    temp.IsAccept = item.IsAccept;
+
+                    var empName = context.Employees.SingleOrDefault(a => a.Id == item.EmployeeId).Name;
+                    temp.EmployeeName = empName;
+
+                    result.Add(temp);
+                }
+            }
+            return result;
+
+        }
+        public void Reject(int id)
+        {
+            using (var context = new PRN211_IT_HR_Management_SystemContext())
+            {
+                var result = context.TakeLeaves.Find(id);
+                result.IsAccept = false;
+                context.Entry<TakeLeave>(result).State = EntityState.Modified;
+                context.SaveChanges();
+            }
+        }
+        public void Accept(int id)
+        {
+            using (var context = new PRN211_IT_HR_Management_SystemContext())
+            {
+                var result = context.TakeLeaves.Find(id);
+                result.IsAccept = true;
+                context.Entry<TakeLeave>(result).State = EntityState.Modified;
                 context.SaveChanges();
             }
         }

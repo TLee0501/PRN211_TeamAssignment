@@ -16,7 +16,6 @@ namespace IT_Human_resource_manager_system
 {
     public partial class frmCandidateDetail : Form
     {
-        public Employee user;
         public ICandidatesRepo candidatesRepo { get; set; }
         public bool InsertOrUpdate { get; set; } //False : Create, True : Update
         public Candidate Candidate { get; set; }
@@ -29,26 +28,32 @@ namespace IT_Human_resource_manager_system
         {
             try
             {
-                var candidate = new Candidate()
-                {
-                    Id = int.Parse(txtID.Text),
-                    Name = txtName.Text,
-                    Description = txtDescription.Text
-                };
+
                 if (InsertOrUpdate == false)
                 {  // tạo mới
+                    var candidate = new Candidate()
+                    {
+                        Name = txtName.Text,
+                        Description = txtDescription.Text
+                    };
                     candidatesRepo.Create(candidate);
                     Close();
                 }
                 else
                 {
+                    var candidate = new Candidate()
+                    {
+                        Id = int.Parse(txtID.Text),
+                        Name = txtName.Text,
+                        Description = txtDescription.Text
+                    };
                     candidatesRepo.Update(candidate);
                     Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, InsertOrUpdate == false ? "Add a new project" : "Update a project");
+                MessageBox.Show(ex.Message, InsertOrUpdate == false ? "Add a new Candidate" : "Update Candidate");
             }
         }
 
@@ -61,17 +66,11 @@ namespace IT_Human_resource_manager_system
         {
             if (InsertOrUpdate == true) //Update mode
             {
-                txtID.Enabled = false;
                 txtID.Text = Candidate.Id.ToString();
                 txtName.Text = Candidate.Name;
                 txtDescription.Text = Candidate.Description;
             }
-            else
-            {
-                txtID.Enabled = false;
-                Guid id = Guid.NewGuid();
-                txtID.Text = id.ToString();
-            }
+            txtID.Enabled = false;
         }
     }
 }

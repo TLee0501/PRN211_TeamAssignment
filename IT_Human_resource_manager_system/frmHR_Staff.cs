@@ -1,4 +1,5 @@
 ﻿using BusinessObjects;
+using BusinessObjects.ViewModel;
 using Repositories;
 using System;
 using System.Collections.Generic;
@@ -17,8 +18,10 @@ namespace IT_Human_resource_manager_system
     {
         public Employee user;
         ICandidatesRepo candidatesRepo = new CandidatesRepo();
-        ILogOTRepo logOTRepo = new LogOTRepo();
+        IOvertimeRepo logOTRepo = new OvertimeRepo();
         ITakeleaveRepo takeleaveRepo = new TakeLeaveRepo();
+        ISalarysRepo salarysRepo = new SalarysRepo();
+        IEmployeeRepo employeeRepo = new EmployeeRepo();
         Overtime Overtime;
         BindingSource source;
         Candidate Candidate;
@@ -29,6 +32,7 @@ namespace IT_Human_resource_manager_system
             loadCandidates();
             loadLogOTs();
             loadTakeLeaves();
+            loadEmployeeName();
         }
 
         private void ClearTextCandidate()
@@ -82,6 +86,7 @@ namespace IT_Human_resource_manager_system
             return candidate;
         }
 
+
         /*======================================================================================================================*/
 
         private void btnCandidatesAdd_Click(object sender, EventArgs e)
@@ -90,7 +95,7 @@ namespace IT_Human_resource_manager_system
             frmCandidateDetail frmCandidateDetail = new frmCandidateDetail()
             {
                 Text = "Add Candidtae",
-                //InsertOrUpdate = false,
+                InsertOrUpdate = false,
                 candidatesRepo = candidatesRepo
             };
             if (frmCandidateDetail.ShowDialog() == DialogResult.OK)
@@ -106,7 +111,7 @@ namespace IT_Human_resource_manager_system
         {
             frmCandidateDetail frmCandidateDetail = new frmCandidateDetail()
             {
-                Text = "Update project",
+                Text = "Update Candidtae",
                 InsertOrUpdate = true, // Update
                 Candidate = GetCandidateObject(),
                 candidatesRepo = candidatesRepo
@@ -142,22 +147,22 @@ namespace IT_Human_resource_manager_system
 
         /*======================================================================================================================*/
         /*======================================================================================================================*/
-
-
         public void loadLogOTs()
         {
             var logOTs = logOTRepo.GetOvertimes();
-            var logOTsViewModel = new List<Overtime>();
+            var logOTsViewModel = new List<OvertimesViewModel>();
             foreach (var item in logOTs)
             {
-                var temp = new Overtime();
+                var temp = new OvertimesViewModel();
                 temp.Id = item.Id;
                 temp.Time = item.Time;
                 temp.Date = item.Date;
                 using (var context = new PRN211_IT_HR_Management_SystemContext())
                 {
                     var ot = context.Employees.Find(item.EmployeeId);
-                    temp.Employee.Name = ot.Name;
+
+                    temp.EmployeeName = ot.Name;
+
                 }
                 logOTsViewModel.Add(temp);
             }
@@ -193,7 +198,7 @@ namespace IT_Human_resource_manager_system
                 var temp = new int();
                 using (var context = new PRN211_IT_HR_Management_SystemContext())
                 {
-                    var ot = context.Overtimes.SingleOrDefault(a => a.Id.Equals(txtOTID.Text));
+                    var ot = context.Overtimes.Find(int.Parse(txtOTID.Text));
                     temp = (int)ot.EmployeeId;
                 }
                 overtime = new Overtime
@@ -220,24 +225,6 @@ namespace IT_Human_resource_manager_system
         }
 
         /*======================================================================================================================*/
-
-        private void btnOTAdd_Click(object sender, EventArgs e)
-        {
-            /*ClearTextLogOT();
-            frmCandidateDetail frmCandidateDetail = new frmCandidateDetail()
-            {
-                Text = "Add Candidtae",
-                //InsertOrUpdate = false,
-                candidatesRepo = candidatesRepo
-            };
-            if (frmCandidateDetail.ShowDialog() == DialogResult.OK)
-            {
-                loadLogOTs();
-                //Set focus car inserted 
-                source.Position = source.Count - 1;
-            }
-            loadLogOTs();*/
-        }
 
         private void btnOTDelete_Click(object sender, EventArgs e)
         {
@@ -276,6 +263,7 @@ namespace IT_Human_resource_manager_system
                 txtTakeLeaveDescription.DataBindings.Clear();
                 dtpTakeLeaveFrom.DataBindings.Clear();
                 dtpTakeLeaveTo.DataBindings.Clear();
+                txtTakeLeaveAccept.DataBindings.Clear();
 
                 txtTakeLeaveID.DataBindings.Add("Text", source, "Id");
                 txtTakeLeaveEmployeeID.DataBindings.Add("Text", source, "EmployeeID");
@@ -283,6 +271,7 @@ namespace IT_Human_resource_manager_system
                 txtTakeLeaveDescription.DataBindings.Add("Text", source, "Description");
                 dtpTakeLeaveFrom.DataBindings.Add("Text", source, "StartDate");
                 dtpTakeLeaveTo.DataBindings.Add("Text", source, "EndDate");
+                txtTakeLeaveAccept.DataBindings.Add("Text", source, "IsAccept");
 
                 dgvTakeLeave.DataSource = null;
                 dgvTakeLeave.DataSource = source;
@@ -293,27 +282,29 @@ namespace IT_Human_resource_manager_system
             }
         }
 
-        //private TakeLeave GetTakeLeaveObject()
-        //{
-        //    TakeLeave takeLeave = null;
-        //    try
-        //    {
-        //        takeLeave = new TakeLeave
-        //        {
-        //            Id = int.Parse(txtTakeLeaveID.Text),
-        //            StartDate = DateTime.Parse(dtpTakeLeaveFrom.Text),
-        //            EndDate = DateTime.Parse(dtpTakeLeaveTo.Text),
-        //            Description = txtTakeLeaveDescription.Text,
-        //            EmployeeName = txtTakeLeaveName.Text,
-        //            EmployeeId = int.Parse(txtTakeLeaveEmployeeID.Text)
-        //        };
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message, "Get Take Leaves");
-        //    }
-        //    return takeLeave;
-        //}
+
+        private TakeLeaveViewModel GetTakeLeaveObject()
+        {
+            TakeLeaveViewModel takeLeave = null;
+            try
+            {
+                takeLeave = new TakeLeaveViewModel
+                {
+                    Id = int.Parse(txtTakeLeaveID.Text),
+                    StartDate = DateTime.Parse(dtpTakeLeaveFrom.Text),
+                    EndDate = DateTime.Parse(dtpTakeLeaveTo.Text),
+                    Description = txtTakeLeaveDescription.Text,
+                    EmployeeName = txtTakeLeaveName.Text,
+                    EmployeeId = int.Parse(txtTakeLeaveEmployeeID.Text)
+                };
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Get Take Leaves");
+            }
+            return takeLeave;
+        }
+
 
         private void ClearTextTakeLeave()
         {
@@ -325,24 +316,207 @@ namespace IT_Human_resource_manager_system
         }
 
         /*======================================================================================================================*/
-        private void button10_Click(object sender, EventArgs e)
+        /*======================================================================================================================*/
+        public void loadEmployeeName()
         {
-            //var confirmResult = MessageBox.Show("Are you sure to delete this item ??",
-            //                         "Confirm Delete!!",
-            //                         MessageBoxButtons.YesNo);
-            //if (confirmResult == DialogResult.Yes)
-            //{
-            //    try
-            //    {
-            //        var takeLeave = GetTakeLeaveObject();
-            //        takeleaveRepo.Delete(takeLeave);
-            //        loadTakeLeaves();
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show(ex.Message, "Delete an TakeLeave");
-            //    }
-            //}
+
+            var employees = employeeRepo.GetEmployees();
+            var listName = new List<ListNameViewModel>();
+            foreach (var employee in employees)
+            {
+                var temp = new ListNameViewModel();
+                temp.Name = employee.Name;
+                temp.Id = employee.Id;
+                listName.Add(temp);
+            }
+            try
+            {
+                source = new BindingSource();
+                source.DataSource = listName;
+
+                txtCSEmployeeID.DataBindings.Clear();
+
+                txtCSEmployeeID.DataBindings.Add("Text", source, "ID");
+                cbCSEmployeeName.DataBindings.Add("Text", source, "Name");
+
+                dgvCalculate.DataSource = null;
+                dgvCalculate.DataSource = source;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Load Calculate list");
+            }
+
+        }
+        private void ClearTextSalary()
+        {
+            txtCSBasicSalary.Text = string.Empty;
+            txtCSSalaryID.Text = string.Empty;
+            txtCSBonus.Text = string.Empty;
+            txtCSAllowance.Text = string.Empty;
+            txtCSOvertimes.Text = string.Empty;
+            txtCSTakeLeave.Text = string.Empty;
+            txtCSNetSalary.Text = string.Empty;
+        }
+
+        /*======================================================================================================================*/
+        private void btnCSConfirmTime_Click(object sender, EventArgs e)
+        {
+            if (cbCSMonth == null && mtxtCSYear == null)
+            {
+                MessageBox.Show("Please input time!");
+            }
+            ClearTextSalary();
+            try
+            {
+                var month = int.Parse(cbCSMonth.Text);
+                var year = int.Parse(mtxtCSYear.Text);
+                var eID = int.Parse(txtCSEmployeeID.Text);
+                //CalculateSalaryViewModel calculateSalary = null;
+                var calculateSalary = salarysRepo.ConfirmTime(month, year, eID);
+                txtCSAllowance.Text = "0";
+                txtCSSalaryID.Text = "0";
+                if (calculateSalary != null)
+                {
+                    txtCSSalaryID.Text = calculateSalary.Id.ToString();
+                    txtCSBasicSalary.Text = calculateSalary.BasicSalary.ToString();
+                    txtCSOvertimes.Text = calculateSalary.OT.ToString();
+                    txtCSTakeLeave.Text = calculateSalary.LayDays.ToString();
+                    txtCSBonus.Text = calculateSalary.Bonus.ToString();
+                    txtCSNetSalary.Text = calculateSalary.NetSalary.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Calculate");
+            }
+        }
+
+        private void btnCSCalculate_Click(object sender, EventArgs e)
+        {
+            if (txtCSBasicSalary.Text.Length == 0)
+            {
+                MessageBox.Show("Please check data again");
+            }
+            else
+            {
+                var basicS = int.Parse(txtCSBasicSalary.Text);
+                var bonus = int.Parse(txtCSBonus.Text);
+                var allowance = int.Parse(txtCSAllowance.Text);
+
+                var netS = basicS + bonus - allowance;
+                txtCSNetSalary.Text = netS.ToString();
+            }
+
+        }
+
+        private void btnCSSave_Click(object sender, EventArgs e)
+        {
+            if (txtCSNetSalary.Text.Length == 0)
+            {
+                MessageBox.Show("Please Calculate before save");
+            }
+            else
+            {
+                var basicS = int.Parse(txtCSBasicSalary.Text);
+                var bonus = int.Parse(txtCSBonus.Text);
+                var allowance = int.Parse(txtCSAllowance.Text);
+
+                var netS = basicS + bonus - allowance;
+
+                if (txtCSSalaryID.Text.Equals("0"))
+                {
+                    var request = new Payslip()
+                    {
+                        BasicSalary = int.Parse(txtCSBasicSalary.Text),
+                        Allowance = int.Parse(txtCSAllowance.Text),
+                        BonusOt = int.Parse(txtCSBonus.Text),
+                        NetSalary = int.Parse(netS.ToString()),
+                        EmployeeId = int.Parse(txtCSEmployeeID.Text),
+                        Month = int.Parse(cbCSMonth.Text),
+                        Year = int.Parse(mtxtCSYear.Text)
+                    };
+                    salarysRepo.SaveSalary(request);
+                    MessageBox.Show("Success!");
+                }
+                else
+                {
+                    var request = new Payslip()
+                    {
+                        Id = int.Parse(txtCSSalaryID.Text),
+                        BasicSalary = int.Parse(txtCSBasicSalary.Text),
+                        Allowance = int.Parse(txtCSAllowance.Text),
+                        BonusOt = int.Parse(txtCSBonus.Text),
+                        NetSalary = int.Parse(netS.ToString()),
+                        EmployeeId = int.Parse(txtCSEmployeeID.Text),
+                        Month = int.Parse(cbCSMonth.Text),
+                        Year = int.Parse(mtxtCSYear.Text)
+                    };
+                    salarysRepo.UpdateSalary(request);
+                    MessageBox.Show("Success!");
+                }
+            }
+
+        }
+        /*======================================================================================================================*/
+        /*======================================================================================================================*/
+
+        private void btnPayrollLoad_Click(object sender, EventArgs e)
+        {
+            var payrolls = salarysRepo.GetPayslips();
+            try
+            {
+                source = new BindingSource();
+                source.DataSource = payrolls;
+
+                txtPayslipEmployeeID.DataBindings.Clear();
+                txtPayslipEmployeeName.DataBindings.Clear();
+                txtPayslipBasicSalary.DataBindings.Clear();
+                txtPayslipNetSalary.DataBindings.Clear();
+                txtPayslipMonth.DataBindings.Clear();
+                txtPayslipYear.DataBindings.Clear();
+
+                txtPayslipEmployeeID.DataBindings.Add("Text", source, "Id");
+                txtPayslipEmployeeName.DataBindings.Add("Text", source, "Name");
+                txtPayslipBasicSalary.DataBindings.Add("Text", source, "BasicSalary");
+                txtPayslipNetSalary.DataBindings.Add("Text", source, "NetSalary");
+                txtPayslipMonth.DataBindings.Add("Text", source, "Month");
+                txtPayslipYear.DataBindings.Add("Text", source, "Year");
+
+                dgvPayrolls.DataSource = null;
+                dgvPayrolls.DataSource = source;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Load Calculate list");
+            }
+        }
+
+        private void btnTakeLeaveAccept_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToBoolean(txtTakeLeaveAccept.Text) == true)
+            {
+                MessageBox.Show("Already Accepted");
+            }
+            else
+            {
+                takeleaveRepo.Accept(int.Parse(txtTakeLeaveID.Text));
+            }
+            loadTakeLeaves();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToBoolean(txtTakeLeaveAccept.Text) == false)
+            {
+                MessageBox.Show("Already Rejected");
+            }
+            else
+            {
+                takeleaveRepo.Reject(int.Parse(txtTakeLeaveID.Text));
+            }
+            loadTakeLeaves();
+
         }
     }
 }
