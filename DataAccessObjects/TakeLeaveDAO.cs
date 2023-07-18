@@ -1,5 +1,4 @@
 ﻿using BusinessObjects;
-using BusinessObjects.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,16 +29,16 @@ namespace DataAccessObjects
         }
 
         //--------------------------------------------------------------------
-        public List<TakeLeaveViewModel> GetTakeLeaves()
+        public List<TakeLeave> GetTakeLeaves()
 
         {
-            List<TakeLeaveViewModel> result = new List<TakeLeaveViewModel>();
+            List<TakeLeave> result = new List<TakeLeave>();
             using (var context = new PRN211_IT_HR_Management_SystemContext())
             {
                 var takeLeaves = context.TakeLeaves.ToList();
                 foreach (var item in takeLeaves)
                 {
-                    var temp = new TakeLeaveViewModel();
+                    var temp = new TakeLeave();
                     temp.Id = item.Id;
                     temp.EmployeeId = item.EmployeeId;
                     temp.StartDate = item.StartDate;
@@ -47,7 +46,7 @@ namespace DataAccessObjects
                     temp.Description = item.Description;
 
                     var empName = context.Employees.SingleOrDefault(a => a.Id == item.EmployeeId).Name;
-                    temp.EmployeeName = empName;
+                    temp.Employee.Name = empName;
 
                     result.Add(temp);
                 }
@@ -55,7 +54,24 @@ namespace DataAccessObjects
             return result;
 
         }
-        public void Delete(TakeLeaveViewModel takeLeave)
+
+        public void addTakeLeave(TakeLeave takeLeave)
+        {
+            try
+            {
+                using (var context = new PRN211_IT_HR_Management_SystemContext())
+                {
+                    context.TakeLeaves.Add(takeLeave);
+                    context.SaveChanges();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public void Delete(TakeLeave takeLeave)
         {
             var objectDelete = new TakeLeave();
             objectDelete.Id = takeLeave.Id;

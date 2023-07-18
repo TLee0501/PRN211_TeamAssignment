@@ -1,6 +1,6 @@
 ﻿namespace IT_Human_resource_manager_system
 {
-    partial class HR_Manager
+    partial class frmHR_Manager
     {
         /// <summary>
         /// Required designer variable.

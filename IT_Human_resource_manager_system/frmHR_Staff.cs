@@ -1,5 +1,4 @@
 ﻿using BusinessObjects;
-using BusinessObjects.ViewModel;
 using Repositories;
 using System;
 using System.Collections.Generic;
@@ -14,8 +13,9 @@ using System.Xml.Linq;
 
 namespace IT_Human_resource_manager_system
 {
-    public partial class HR_Staff : Form
+    public partial class frmHR_Staff : Form
     {
+        public Employee user;
         ICandidatesRepo candidatesRepo = new CandidatesRepo();
         ILogOTRepo logOTRepo = new LogOTRepo();
         ITakeleaveRepo takeleaveRepo = new TakeLeaveRepo();
@@ -23,7 +23,7 @@ namespace IT_Human_resource_manager_system
         BindingSource source;
         Candidate Candidate;
         TakeLeave TakeLeave;
-        public HR_Staff()
+        public frmHR_Staff()
         {
             InitializeComponent();
             loadCandidates();
@@ -147,17 +147,17 @@ namespace IT_Human_resource_manager_system
         public void loadLogOTs()
         {
             var logOTs = logOTRepo.GetOvertimes();
-            var logOTsViewModel = new List<OvertimesViewModel>();
+            var logOTsViewModel = new List<Overtime>();
             foreach (var item in logOTs)
             {
-                var temp = new OvertimesViewModel();
+                var temp = new Overtime();
                 temp.Id = item.Id;
                 temp.Time = item.Time;
                 temp.Date = item.Date;
                 using (var context = new PRN211_IT_HR_Management_SystemContext())
                 {
                     var ot = context.Employees.Find(item.EmployeeId);
-                    temp.EmployeeName = ot.Name;
+                    temp.Employee.na = ot.Name;
                 }
                 logOTsViewModel.Add(temp);
             }
@@ -293,12 +293,12 @@ namespace IT_Human_resource_manager_system
             }
         }
 
-        private TakeLeaveViewModel GetTakeLeaveObject()
+        private TakeLeave GetTakeLeaveObject()
         {
-            TakeLeaveViewModel takeLeave = null;
+            TakeLeave takeLeave = null;
             try
             {
-                takeLeave = new TakeLeaveViewModel
+                takeLeave = new TakeLeave
                 {
                     Id = int.Parse(txtTakeLeaveID.Text),
                     StartDate = DateTime.Parse(dtpTakeLeaveFrom.Text),

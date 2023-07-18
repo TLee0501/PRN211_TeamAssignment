@@ -16,6 +16,7 @@ namespace IT_Human_resource_manager_system
 {
     public partial class frmCandidateDetail : Form
     {
+        public Employee user;
         public ICandidatesRepo candidatesRepo { get; set; }
         public bool InsertOrUpdate { get; set; } //False : Create, True : Update
         public Candidate Candidate { get; set; }
