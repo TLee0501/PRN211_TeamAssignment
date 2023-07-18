@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\IV\\Github\\PRN211_TeamAssignment\\DataAccessObjects\\DataAccessObjects.csproj": {}
+    "D:\\Visual Studio Repos\\PRN211_TeamAssignment\\DataAccessObjects\\DataAccessObjects.csproj": {}
   },
   "projects": {
-    "D:\\IV\\Github\\PRN211_TeamAssignment\\BusinessObjects\\BusinessObjects.csproj": {
+    "D:\\Visual Studio Repos\\PRN211_TeamAssignment\\BusinessObjects\\BusinessObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\IV\\Github\\PRN211_TeamAssignment\\BusinessObjects\\BusinessObjects.csproj",
+        "projectUniqueName": "D:\\Visual Studio Repos\\PRN211_TeamAssignment\\BusinessObjects\\BusinessObjects.csproj",
         "projectName": "BusinessObjects",
-        "projectPath": "D:\\IV\\Github\\PRN211_TeamAssignment\\BusinessObjects\\BusinessObjects.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\IV\\Github\\PRN211_TeamAssignment\\BusinessObjects\\obj\\",
+        "projectPath": "D:\\Visual Studio Repos\\PRN211_TeamAssignment\\BusinessObjects\\BusinessObjects.csproj",
+        "packagesPath": "C:\\Users\\Ming\\.nuget\\packages\\",
+        "outputPath": "D:\\Visual Studio Repos\\PRN211_TeamAssignment\\BusinessObjects\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ming\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -91,25 +90,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\IV\\Github\\PRN211_TeamAssignment\\DataAccessObjects\\DataAccessObjects.csproj": {
+    "D:\\Visual Studio Repos\\PRN211_TeamAssignment\\DataAccessObjects\\DataAccessObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\IV\\Github\\PRN211_TeamAssignment\\DataAccessObjects\\DataAccessObjects.csproj",
+        "projectUniqueName": "D:\\Visual Studio Repos\\PRN211_TeamAssignment\\DataAccessObjects\\DataAccessObjects.csproj",
         "projectName": "DataAccessObjects",
-        "projectPath": "D:\\IV\\Github\\PRN211_TeamAssignment\\DataAccessObjects\\DataAccessObjects.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\IV\\Github\\PRN211_TeamAssignment\\DataAccessObjects\\obj\\",
+        "projectPath": "D:\\Visual Studio Repos\\PRN211_TeamAssignment\\DataAccessObjects\\DataAccessObjects.csproj",
+        "packagesPath": "C:\\Users\\Ming\\.nuget\\packages\\",
+        "outputPath": "D:\\Visual Studio Repos\\PRN211_TeamAssignment\\DataAccessObjects\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ming\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -125,8 +123,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\IV\\Github\\PRN211_TeamAssignment\\BusinessObjects\\BusinessObjects.csproj": {
-                "projectPath": "D:\\IV\\Github\\PRN211_TeamAssignment\\BusinessObjects\\BusinessObjects.csproj"
+              "D:\\Visual Studio Repos\\PRN211_TeamAssignment\\BusinessObjects\\BusinessObjects.csproj": {
+                "projectPath": "D:\\Visual Studio Repos\\PRN211_TeamAssignment\\BusinessObjects\\BusinessObjects.csproj"
               }
             }
           }
@@ -156,7 +154,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }

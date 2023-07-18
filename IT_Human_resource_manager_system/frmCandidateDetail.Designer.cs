@@ -28,29 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
-            txtID = new System.Windows.Forms.TextBox();
             txtName = new System.Windows.Forms.TextBox();
             txtDescription = new System.Windows.Forms.TextBox();
             btnSave = new System.Windows.Forms.Button();
             btnCancel = new System.Windows.Forms.Button();
+            txtID = new System.Windows.Forms.TextBox();
+            label1 = new System.Windows.Forms.Label();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(93, 47);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(24, 20);
-            label1.TabIndex = 0;
-            label1.Text = "ID";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(93, 100);
+            label2.Location = new System.Drawing.Point(93, 89);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(49, 20);
             label2.TabIndex = 1;
@@ -59,29 +50,22 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(93, 153);
+            label3.Location = new System.Drawing.Point(93, 142);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(85, 20);
             label3.TabIndex = 2;
             label3.Text = "Description";
             // 
-            // txtID
-            // 
-            txtID.Location = new System.Drawing.Point(93, 70);
-            txtID.Name = "txtID";
-            txtID.Size = new System.Drawing.Size(224, 27);
-            txtID.TabIndex = 3;
-            // 
             // txtName
             // 
-            txtName.Location = new System.Drawing.Point(93, 123);
+            txtName.Location = new System.Drawing.Point(93, 112);
             txtName.Name = "txtName";
             txtName.Size = new System.Drawing.Size(224, 27);
             txtName.TabIndex = 4;
             // 
             // txtDescription
             // 
-            txtDescription.Location = new System.Drawing.Point(93, 176);
+            txtDescription.Location = new System.Drawing.Point(93, 165);
             txtDescription.Name = "txtDescription";
             txtDescription.Size = new System.Drawing.Size(224, 27);
             txtDescription.TabIndex = 5;
@@ -106,19 +90,35 @@
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
             // 
+            // txtID
+            // 
+            txtID.Location = new System.Drawing.Point(93, 59);
+            txtID.Name = "txtID";
+            txtID.Size = new System.Drawing.Size(224, 27);
+            txtID.TabIndex = 9;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(93, 36);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(24, 20);
+            label1.TabIndex = 8;
+            label1.Text = "ID";
+            // 
             // frmCandidateDetail
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(403, 299);
+            Controls.Add(txtID);
+            Controls.Add(label1);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Controls.Add(txtDescription);
             Controls.Add(txtName);
-            Controls.Add(txtID);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(label1);
             Name = "frmCandidateDetail";
             Text = "frmCandidateDetail";
             Load += frmCandidateDetail_Load;
@@ -127,14 +127,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Label label1;
     }
 }

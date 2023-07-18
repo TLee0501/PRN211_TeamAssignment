@@ -1,4 +1,5 @@
 ﻿using BusinessObjects;
+using BusinessObjects.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,7 @@ namespace Repositories
     public interface ITakeLeaveRepo
     {
         void AddTakeLeave(TakeLeave takeLeave);
+        IEnumerable<TakeLeaveViewModel> GetTakeLeaves();
+        void Delete(TakeLeaveViewModel takeLeave);
     }
 }

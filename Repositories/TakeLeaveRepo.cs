@@ -1,4 +1,5 @@
 ﻿using BusinessObjects;
+using BusinessObjects.ViewModel;
 using DataAccessObjects;
 using System;
 using System.Collections.Generic;
@@ -11,5 +12,7 @@ namespace Repositories
     public class TakeLeaveRepo : ITakeLeaveRepo
     {
         public void AddTakeLeave(TakeLeave takeLeave) => TakeLeaveDAO.addTakeLeave(takeLeave);
+        public void Delete(TakeLeaveViewModel takeLeave) => TakeLeaveDAO.Instance.Delete(takeLeave);
+        public IEnumerable<TakeLeaveViewModel> GetTakeLeaves() => TakeLeaveDAO.Instance.GetTakeLeaves();
     }
 }

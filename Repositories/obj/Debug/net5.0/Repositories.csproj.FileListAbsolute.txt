@@ -32,3 +32,20 @@ D:\IV\Github\PRN211_TeamAssignment\Repositories\obj\Debug\net5.0\Repositories.dl
 D:\IV\Github\PRN211_TeamAssignment\Repositories\obj\Debug\net5.0\refint\Repositories.dll
 D:\IV\Github\PRN211_TeamAssignment\Repositories\obj\Debug\net5.0\Repositories.pdb
 D:\IV\Github\PRN211_TeamAssignment\Repositories\obj\Debug\net5.0\ref\Repositories.dll
+D:\Visual Studio Repos\PRN211_TeamAssignment\Repositories\bin\Debug\net5.0\Repositories.deps.json
+D:\Visual Studio Repos\PRN211_TeamAssignment\Repositories\bin\Debug\net5.0\Repositories.dll
+D:\Visual Studio Repos\PRN211_TeamAssignment\Repositories\bin\Debug\net5.0\Repositories.pdb
+D:\Visual Studio Repos\PRN211_TeamAssignment\Repositories\bin\Debug\net5.0\BusinessObjects.dll
+D:\Visual Studio Repos\PRN211_TeamAssignment\Repositories\bin\Debug\net5.0\DataAccessObjects.dll
+D:\Visual Studio Repos\PRN211_TeamAssignment\Repositories\bin\Debug\net5.0\DataAccessObjects.pdb
+D:\Visual Studio Repos\PRN211_TeamAssignment\Repositories\bin\Debug\net5.0\BusinessObjects.pdb
+D:\Visual Studio Repos\PRN211_TeamAssignment\Repositories\obj\Debug\net5.0\Repositories.csproj.AssemblyReference.cache
+D:\Visual Studio Repos\PRN211_TeamAssignment\Repositories\obj\Debug\net5.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\Visual Studio Repos\PRN211_TeamAssignment\Repositories\obj\Debug\net5.0\Repositories.AssemblyInfoInputs.cache
+D:\Visual Studio Repos\PRN211_TeamAssignment\Repositories\obj\Debug\net5.0\Repositories.AssemblyInfo.cs
+D:\Visual Studio Repos\PRN211_TeamAssignment\Repositories\obj\Debug\net5.0\Repositories.csproj.CoreCompileInputs.cache
+D:\Visual Studio Repos\PRN211_TeamAssignment\Repositories\obj\Debug\net5.0\Repositories.csproj.CopyComplete
+D:\Visual Studio Repos\PRN211_TeamAssignment\Repositories\obj\Debug\net5.0\Repositories.dll
+D:\Visual Studio Repos\PRN211_TeamAssignment\Repositories\obj\Debug\net5.0\refint\Repositories.dll
+D:\Visual Studio Repos\PRN211_TeamAssignment\Repositories\obj\Debug\net5.0\Repositories.pdb
+D:\Visual Studio Repos\PRN211_TeamAssignment\Repositories\obj\Debug\net5.0\ref\Repositories.dll

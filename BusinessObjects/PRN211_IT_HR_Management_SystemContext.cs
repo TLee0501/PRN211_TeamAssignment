@@ -1,8 +1,6 @@
 ﻿using System;
-using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.Extensions.Configuration;
 
 #nullable disable
 
@@ -24,26 +22,18 @@ namespace BusinessObjects
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Overtime> Overtimes { get; set; }
         public virtual DbSet<Payslip> Payslips { get; set; }
+        public virtual DbSet<Salary> Salaries { get; set; }
         public virtual DbSet<TakeLeave> TakeLeaves { get; set; }
         public virtual DbSet<TakeLeaveCount> TakeLeaveCounts { get; set; }
 
-        private string GetConnectionString()
-        {
-            IConfiguration configuration = new ConfigurationBuilder()
-                    .SetBasePath(Directory.GetCurrentDirectory())
-                    .AddJsonFile("appsettings.json", true, true).Build();
-            return configuration["ConnectionStrings:DefaultConnectionString"];
-        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //            if (!optionsBuilder.IsConfigured)
-            //            {
-            //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-            //                optionsBuilder.UseSqlServer("server=LAPTOP-0URV4SIH\\HUYTRAN; Database=PRN211_IT_HR_Management_System; Uid=sa; Pwd=12345");
-            //            }
-            optionsBuilder.UseSqlServer(GetConnectionString());
+            if (!optionsBuilder.IsConfigured)
+            {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("Server=DESKTOP-638NJES; Database=PRN211_IT_HR_Management_System; Uid=sa; Pwd=12345678");
+            }
         }
-
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -141,6 +131,22 @@ namespace BusinessObjects
                     .WithMany(p => p.Payslips)
                     .HasForeignKey(d => d.EmployeeId)
                     .HasConstraintName("FK_Payslip_Employee");
+            });
+
+            modelBuilder.Entity<Salary>(entity =>
+            {
+                entity.ToTable("Salary");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("ID");
+
+                entity.Property(e => e.EmployeeId).HasColumnName("EmployeeID");
+
+                entity.HasOne(d => d.Employee)
+                    .WithMany(p => p.Salaries)
+                    .HasForeignKey(d => d.EmployeeId)
+                    .HasConstraintName("FK_Salary_Employee");
             });
 
             modelBuilder.Entity<TakeLeave>(entity =>

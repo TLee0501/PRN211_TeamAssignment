@@ -28,3 +28,18 @@ D:\IV\Github\PRN211_TeamAssignment\DataAccessObjects\obj\Debug\net5.0\DataAccess
 D:\IV\Github\PRN211_TeamAssignment\DataAccessObjects\obj\Debug\net5.0\refint\DataAccessObjects.dll
 D:\IV\Github\PRN211_TeamAssignment\DataAccessObjects\obj\Debug\net5.0\DataAccessObjects.pdb
 D:\IV\Github\PRN211_TeamAssignment\DataAccessObjects\obj\Debug\net5.0\ref\DataAccessObjects.dll
+D:\Visual Studio Repos\PRN211_TeamAssignment\DataAccessObjects\bin\Debug\net5.0\DataAccessObjects.deps.json
+D:\Visual Studio Repos\PRN211_TeamAssignment\DataAccessObjects\bin\Debug\net5.0\DataAccessObjects.dll
+D:\Visual Studio Repos\PRN211_TeamAssignment\DataAccessObjects\bin\Debug\net5.0\DataAccessObjects.pdb
+D:\Visual Studio Repos\PRN211_TeamAssignment\DataAccessObjects\bin\Debug\net5.0\BusinessObjects.dll
+D:\Visual Studio Repos\PRN211_TeamAssignment\DataAccessObjects\bin\Debug\net5.0\BusinessObjects.pdb
+D:\Visual Studio Repos\PRN211_TeamAssignment\DataAccessObjects\obj\Debug\net5.0\DataAccessObjects.csproj.AssemblyReference.cache
+D:\Visual Studio Repos\PRN211_TeamAssignment\DataAccessObjects\obj\Debug\net5.0\DataAccessObjects.GeneratedMSBuildEditorConfig.editorconfig
+D:\Visual Studio Repos\PRN211_TeamAssignment\DataAccessObjects\obj\Debug\net5.0\DataAccessObjects.AssemblyInfoInputs.cache
+D:\Visual Studio Repos\PRN211_TeamAssignment\DataAccessObjects\obj\Debug\net5.0\DataAccessObjects.AssemblyInfo.cs
+D:\Visual Studio Repos\PRN211_TeamAssignment\DataAccessObjects\obj\Debug\net5.0\DataAccessObjects.csproj.CoreCompileInputs.cache
+D:\Visual Studio Repos\PRN211_TeamAssignment\DataAccessObjects\obj\Debug\net5.0\DataAccessObjects.csproj.CopyComplete
+D:\Visual Studio Repos\PRN211_TeamAssignment\DataAccessObjects\obj\Debug\net5.0\DataAccessObjects.dll
+D:\Visual Studio Repos\PRN211_TeamAssignment\DataAccessObjects\obj\Debug\net5.0\refint\DataAccessObjects.dll
+D:\Visual Studio Repos\PRN211_TeamAssignment\DataAccessObjects\obj\Debug\net5.0\DataAccessObjects.pdb
+D:\Visual Studio Repos\PRN211_TeamAssignment\DataAccessObjects\obj\Debug\net5.0\ref\DataAccessObjects.dll

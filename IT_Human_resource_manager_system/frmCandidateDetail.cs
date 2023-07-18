@@ -16,6 +16,9 @@ namespace IT_Human_resource_manager_system
 {
     public partial class frmCandidateDetail : Form
     {
+        public ICandidatesRepo candidatesRepo { get; set; }
+        public bool InsertOrUpdate { get; set; } //False : Create, True : Update
+        public Candidate Candidate { get; set; }
         public frmCandidateDetail()
         {
             InitializeComponent();
@@ -23,7 +26,34 @@ namespace IT_Human_resource_manager_system
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-         
+            try
+            {
+                var candidate = new Candidate()
+                {
+                    Name = txtName.Text,
+                    Description = txtDescription.Text
+                };
+
+                if (txtID.Text != null)
+                {
+                    candidate.Id = int.Parse(txtID.Text);
+                }
+
+                if (InsertOrUpdate == false)
+                {  // tạo mới
+                    candidatesRepo.Create(candidate);
+                    Close();
+                }
+                else
+                {
+                    candidatesRepo.Update(candidate);
+                    Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, InsertOrUpdate == false ? "Add a new project" : "Update a project");
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -33,7 +63,13 @@ namespace IT_Human_resource_manager_system
 
         private void frmCandidateDetail_Load(object sender, EventArgs e)
         {
-
+            if (InsertOrUpdate == true) //Update mode
+            {
+                txtID.Text = Candidate.Id.ToString();
+                txtName.Text = Candidate.Name;
+                txtDescription.Text = Candidate.Description;
+            }
+            txtID.Enabled = false;
         }
     }
 }

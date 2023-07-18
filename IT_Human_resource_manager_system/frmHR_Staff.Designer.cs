@@ -41,7 +41,6 @@
             label1 = new System.Windows.Forms.Label();
             tabPage3 = new System.Windows.Forms.TabPage();
             btnOTDelete = new System.Windows.Forms.Button();
-            btnOTAdd = new System.Windows.Forms.Button();
             dgvLogOT = new System.Windows.Forms.DataGridView();
             txtOTDate = new System.Windows.Forms.TextBox();
             txtOT = new System.Windows.Forms.TextBox();
@@ -52,10 +51,13 @@
             lbTimeOut = new System.Windows.Forms.Label();
             lbTimeIn = new System.Windows.Forms.Label();
             tabPage4 = new System.Windows.Forms.TabPage();
+            txtTakeLeaveAccept = new System.Windows.Forms.TextBox();
+            label17 = new System.Windows.Forms.Label();
+            txtTakeLeaveEmployeeID = new System.Windows.Forms.TextBox();
+            label11 = new System.Windows.Forms.Label();
             txtTakeLeaveID = new System.Windows.Forms.TextBox();
             label4 = new System.Windows.Forms.Label();
             btnTakeLeaveDelete = new System.Windows.Forms.Button();
-            button12 = new System.Windows.Forms.Button();
             txtTakeLeaveName = new System.Windows.Forms.TextBox();
             label5 = new System.Windows.Forms.Label();
             dgvTakeLeave = new System.Windows.Forms.DataGridView();
@@ -66,31 +68,41 @@
             lbToDate = new System.Windows.Forms.Label();
             lbFromDate = new System.Windows.Forms.Label();
             tabPage1 = new System.Windows.Forms.TabPage();
-            textBox18 = new System.Windows.Forms.TextBox();
-            textBox19 = new System.Windows.Forms.TextBox();
+            txtCSSalaryID = new System.Windows.Forms.TextBox();
+            label16 = new System.Windows.Forms.Label();
+            dgvCalculate = new System.Windows.Forms.DataGridView();
+            txtCSEmployeeID = new System.Windows.Forms.TextBox();
+            lbep = new System.Windows.Forms.Label();
+            mtxtCSYear = new System.Windows.Forms.MaskedTextBox();
+            txtCSAllowance = new System.Windows.Forms.TextBox();
+            label15 = new System.Windows.Forms.Label();
+            txtCSTakeLeave = new System.Windows.Forms.TextBox();
+            label14 = new System.Windows.Forms.Label();
+            cbCSEmployeeName = new System.Windows.Forms.ComboBox();
+            txtCSBonus = new System.Windows.Forms.TextBox();
+            textbox = new System.Windows.Forms.Label();
+            btnCSConfirmTime = new System.Windows.Forms.Button();
+            cbCSMonth = new System.Windows.Forms.ComboBox();
+            label13 = new System.Windows.Forms.Label();
+            label12 = new System.Windows.Forms.Label();
+            txtCSNetSalary = new System.Windows.Forms.TextBox();
+            txtCSOvertimes = new System.Windows.Forms.TextBox();
             label8 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
-            textBox17 = new System.Windows.Forms.TextBox();
+            txtCSBasicSalary = new System.Windows.Forms.TextBox();
             label7 = new System.Windows.Forms.Label();
-            textBox16 = new System.Windows.Forms.TextBox();
             label6 = new System.Windows.Forms.Label();
-            button13 = new System.Windows.Forms.Button();
-            button14 = new System.Windows.Forms.Button();
-            button15 = new System.Windows.Forms.Button();
-            dataGridView5 = new System.Windows.Forms.DataGridView();
+            btnCSSave = new System.Windows.Forms.Button();
+            btnCSCalculate = new System.Windows.Forms.Button();
             tabPage5 = new System.Windows.Forms.TabPage();
-            button7 = new System.Windows.Forms.Button();
-            button8 = new System.Windows.Forms.Button();
-            button9 = new System.Windows.Forms.Button();
-            dataGridView4 = new System.Windows.Forms.DataGridView();
-            textBox9 = new System.Windows.Forms.TextBox();
-            textBox10 = new System.Windows.Forms.TextBox();
-            textBox11 = new System.Windows.Forms.TextBox();
-            textBox12 = new System.Windows.Forms.TextBox();
-            textBox13 = new System.Windows.Forms.TextBox();
-            textBox14 = new System.Windows.Forms.TextBox();
-            textBox15 = new System.Windows.Forms.TextBox();
-            lbTax = new System.Windows.Forms.Label();
+            btnPayrollLoad = new System.Windows.Forms.Button();
+            dgvPayrolls = new System.Windows.Forms.DataGridView();
+            txtPayslipYear = new System.Windows.Forms.TextBox();
+            txtPayslipNetSalary = new System.Windows.Forms.TextBox();
+            txtPayslipMonth = new System.Windows.Forms.TextBox();
+            txtPayslipBasicSalary = new System.Windows.Forms.TextBox();
+            txtPayslipEmployeeName = new System.Windows.Forms.TextBox();
+            txtPayslipEmployeeID = new System.Windows.Forms.TextBox();
             lbNetSalary = new System.Windows.Forms.Label();
             lbBasicSalary = new System.Windows.Forms.Label();
             lbAllowances = new System.Windows.Forms.Label();
@@ -106,8 +118,8 @@
             lbEndDate = new System.Windows.Forms.Label();
             lbStartDate = new System.Windows.Forms.Label();
             lbReportType = new System.Windows.Forms.Label();
-            txtTakeLeaveEmployeeID = new System.Windows.Forms.TextBox();
-            label11 = new System.Windows.Forms.Label();
+            button1 = new System.Windows.Forms.Button();
+            button2 = new System.Windows.Forms.Button();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCandidates).BeginInit();
@@ -116,9 +128,9 @@
             tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvTakeLeave).BeginInit();
             tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCalculate).BeginInit();
             tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPayrolls).BeginInit();
             tabPage6.SuspendLayout();
             SuspendLayout();
             // 
@@ -238,7 +250,6 @@
             // tabPage3
             // 
             tabPage3.Controls.Add(btnOTDelete);
-            tabPage3.Controls.Add(btnOTAdd);
             tabPage3.Controls.Add(dgvLogOT);
             tabPage3.Controls.Add(txtOTDate);
             tabPage3.Controls.Add(txtOT);
@@ -264,16 +275,6 @@
             btnOTDelete.TabIndex = 39;
             btnOTDelete.Text = "Delete";
             btnOTDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnOTAdd
-            // 
-            btnOTAdd.Location = new System.Drawing.Point(369, 333);
-            btnOTAdd.Name = "btnOTAdd";
-            btnOTAdd.Size = new System.Drawing.Size(94, 29);
-            btnOTAdd.TabIndex = 37;
-            btnOTAdd.Text = "Add";
-            btnOTAdd.UseVisualStyleBackColor = true;
-            btnOTAdd.Click += btnOTAdd_Click;
             // 
             // dgvLogOT
             // 
@@ -355,12 +356,15 @@
             // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(button2);
+            tabPage4.Controls.Add(button1);
+            tabPage4.Controls.Add(txtTakeLeaveAccept);
+            tabPage4.Controls.Add(label17);
             tabPage4.Controls.Add(txtTakeLeaveEmployeeID);
             tabPage4.Controls.Add(label11);
             tabPage4.Controls.Add(txtTakeLeaveID);
             tabPage4.Controls.Add(label4);
             tabPage4.Controls.Add(btnTakeLeaveDelete);
-            tabPage4.Controls.Add(button12);
             tabPage4.Controls.Add(txtTakeLeaveName);
             tabPage4.Controls.Add(label5);
             tabPage4.Controls.Add(dgvTakeLeave);
@@ -377,6 +381,39 @@
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Manage Take Leave";
             tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // txtTakeLeaveAccept
+            // 
+            txtTakeLeaveAccept.Location = new System.Drawing.Point(112, 231);
+            txtTakeLeaveAccept.Name = "txtTakeLeaveAccept";
+            txtTakeLeaveAccept.ReadOnly = true;
+            txtTakeLeaveAccept.Size = new System.Drawing.Size(125, 27);
+            txtTakeLeaveAccept.TabIndex = 52;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new System.Drawing.Point(20, 234);
+            label17.Name = "label17";
+            label17.Size = new System.Drawing.Size(55, 20);
+            label17.TabIndex = 51;
+            label17.Text = "Accept";
+            // 
+            // txtTakeLeaveEmployeeID
+            // 
+            txtTakeLeaveEmployeeID.Location = new System.Drawing.Point(112, 60);
+            txtTakeLeaveEmployeeID.Name = "txtTakeLeaveEmployeeID";
+            txtTakeLeaveEmployeeID.Size = new System.Drawing.Size(250, 27);
+            txtTakeLeaveEmployeeID.TabIndex = 50;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new System.Drawing.Point(18, 63);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(94, 20);
+            label11.TabIndex = 49;
+            label11.Text = "Employee ID";
             // 
             // txtTakeLeaveID
             // 
@@ -403,15 +440,6 @@
             btnTakeLeaveDelete.Text = "Delete";
             btnTakeLeaveDelete.UseVisualStyleBackColor = true;
             btnTakeLeaveDelete.Click += button10_Click;
-            // 
-            // button12
-            // 
-            button12.Location = new System.Drawing.Point(451, 320);
-            button12.Name = "button12";
-            button12.Size = new System.Drawing.Size(94, 29);
-            button12.TabIndex = 44;
-            button12.Text = "Add";
-            button12.UseVisualStyleBackColor = true;
             // 
             // txtTakeLeaveName
             // 
@@ -441,7 +469,7 @@
             // 
             // txtTakeLeaveDescription
             // 
-            txtTakeLeaveDescription.Location = new System.Drawing.Point(112, 237);
+            txtTakeLeaveDescription.Location = new System.Drawing.Point(112, 280);
             txtTakeLeaveDescription.Name = "txtTakeLeaveDescription";
             txtTakeLeaveDescription.Size = new System.Drawing.Size(250, 84);
             txtTakeLeaveDescription.TabIndex = 17;
@@ -464,7 +492,7 @@
             // lbReason
             // 
             lbReason.AutoSize = true;
-            lbReason.Location = new System.Drawing.Point(18, 240);
+            lbReason.Location = new System.Drawing.Point(18, 283);
             lbReason.Name = "lbReason";
             lbReason.Size = new System.Drawing.Size(85, 20);
             lbReason.TabIndex = 14;
@@ -490,141 +518,272 @@
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(textBox18);
-            tabPage1.Controls.Add(textBox19);
+            tabPage1.Controls.Add(txtCSSalaryID);
+            tabPage1.Controls.Add(label16);
+            tabPage1.Controls.Add(dgvCalculate);
+            tabPage1.Controls.Add(txtCSEmployeeID);
+            tabPage1.Controls.Add(lbep);
+            tabPage1.Controls.Add(mtxtCSYear);
+            tabPage1.Controls.Add(txtCSAllowance);
+            tabPage1.Controls.Add(label15);
+            tabPage1.Controls.Add(txtCSTakeLeave);
+            tabPage1.Controls.Add(label14);
+            tabPage1.Controls.Add(cbCSEmployeeName);
+            tabPage1.Controls.Add(txtCSBonus);
+            tabPage1.Controls.Add(textbox);
+            tabPage1.Controls.Add(btnCSConfirmTime);
+            tabPage1.Controls.Add(cbCSMonth);
+            tabPage1.Controls.Add(label13);
+            tabPage1.Controls.Add(label12);
+            tabPage1.Controls.Add(txtCSNetSalary);
+            tabPage1.Controls.Add(txtCSOvertimes);
             tabPage1.Controls.Add(label8);
             tabPage1.Controls.Add(label9);
-            tabPage1.Controls.Add(textBox17);
+            tabPage1.Controls.Add(txtCSBasicSalary);
             tabPage1.Controls.Add(label7);
-            tabPage1.Controls.Add(textBox16);
             tabPage1.Controls.Add(label6);
-            tabPage1.Controls.Add(button13);
-            tabPage1.Controls.Add(button14);
-            tabPage1.Controls.Add(button15);
-            tabPage1.Controls.Add(dataGridView5);
+            tabPage1.Controls.Add(btnCSSave);
+            tabPage1.Controls.Add(btnCSCalculate);
             tabPage1.Location = new System.Drawing.Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new System.Windows.Forms.Padding(3);
             tabPage1.Size = new System.Drawing.Size(1066, 381);
             tabPage1.TabIndex = 4;
-            tabPage1.Text = "Calculate Taxes";
+            tabPage1.Text = "Calculate Salary";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // textBox18
+            // txtCSSalaryID
             // 
-            textBox18.Location = new System.Drawing.Point(16, 202);
-            textBox18.Name = "textBox18";
-            textBox18.Size = new System.Drawing.Size(211, 27);
-            textBox18.TabIndex = 73;
+            txtCSSalaryID.Location = new System.Drawing.Point(385, 38);
+            txtCSSalaryID.Name = "txtCSSalaryID";
+            txtCSSalaryID.ReadOnly = true;
+            txtCSSalaryID.Size = new System.Drawing.Size(212, 27);
+            txtCSSalaryID.TabIndex = 93;
             // 
-            // textBox19
+            // label16
             // 
-            textBox19.Location = new System.Drawing.Point(16, 149);
-            textBox19.Name = "textBox19";
-            textBox19.Size = new System.Drawing.Size(212, 27);
-            textBox19.TabIndex = 72;
+            label16.AutoSize = true;
+            label16.Location = new System.Drawing.Point(385, 15);
+            label16.Name = "label16";
+            label16.Size = new System.Drawing.Size(24, 20);
+            label16.TabIndex = 92;
+            label16.Text = "ID";
+            // 
+            // dgvCalculate
+            // 
+            dgvCalculate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCalculate.Location = new System.Drawing.Point(39, 128);
+            dgvCalculate.Name = "dgvCalculate";
+            dgvCalculate.RowHeadersWidth = 51;
+            dgvCalculate.RowTemplate.Height = 29;
+            dgvCalculate.Size = new System.Drawing.Size(300, 188);
+            dgvCalculate.TabIndex = 91;
+            // 
+            // txtCSEmployeeID
+            // 
+            txtCSEmployeeID.Location = new System.Drawing.Point(40, 208);
+            txtCSEmployeeID.Name = "txtCSEmployeeID";
+            txtCSEmployeeID.Size = new System.Drawing.Size(211, 27);
+            txtCSEmployeeID.TabIndex = 90;
+            // 
+            // lbep
+            // 
+            lbep.AutoSize = true;
+            lbep.Location = new System.Drawing.Point(39, 185);
+            lbep.Name = "lbep";
+            lbep.Size = new System.Drawing.Size(94, 20);
+            lbep.TabIndex = 87;
+            lbep.Text = "Employee ID";
+            // 
+            // mtxtCSYear
+            // 
+            mtxtCSYear.Location = new System.Drawing.Point(39, 93);
+            mtxtCSYear.Mask = "0000";
+            mtxtCSYear.Name = "mtxtCSYear";
+            mtxtCSYear.Size = new System.Drawing.Size(151, 27);
+            mtxtCSYear.TabIndex = 86;
+            mtxtCSYear.ValidatingType = typeof(int);
+            // 
+            // txtCSAllowance
+            // 
+            txtCSAllowance.Location = new System.Drawing.Point(750, 104);
+            txtCSAllowance.Name = "txtCSAllowance";
+            txtCSAllowance.Size = new System.Drawing.Size(211, 27);
+            txtCSAllowance.TabIndex = 85;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new System.Drawing.Point(750, 81);
+            label15.Name = "label15";
+            label15.Size = new System.Drawing.Size(78, 20);
+            label15.TabIndex = 84;
+            label15.Text = "Allowance";
+            // 
+            // txtCSTakeLeave
+            // 
+            txtCSTakeLeave.Location = new System.Drawing.Point(386, 250);
+            txtCSTakeLeave.Name = "txtCSTakeLeave";
+            txtCSTakeLeave.Size = new System.Drawing.Size(211, 27);
+            txtCSTakeLeave.TabIndex = 83;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new System.Drawing.Point(386, 227);
+            label14.Name = "label14";
+            label14.Size = new System.Drawing.Size(67, 20);
+            label14.TabIndex = 82;
+            label14.Text = "Lay-days";
+            // 
+            // cbCSEmployeeName
+            // 
+            cbCSEmployeeName.FormattingEnabled = true;
+            cbCSEmployeeName.Location = new System.Drawing.Point(39, 151);
+            cbCSEmployeeName.Name = "cbCSEmployeeName";
+            cbCSEmployeeName.Size = new System.Drawing.Size(212, 28);
+            cbCSEmployeeName.TabIndex = 81;
+            // 
+            // txtCSBonus
+            // 
+            txtCSBonus.Location = new System.Drawing.Point(750, 38);
+            txtCSBonus.Name = "txtCSBonus";
+            txtCSBonus.Size = new System.Drawing.Size(211, 27);
+            txtCSBonus.TabIndex = 80;
+            // 
+            // textbox
+            // 
+            textbox.AutoSize = true;
+            textbox.Location = new System.Drawing.Point(750, 15);
+            textbox.Name = "textbox";
+            textbox.Size = new System.Drawing.Size(49, 20);
+            textbox.TabIndex = 79;
+            textbox.Text = "Bonus";
+            // 
+            // btnCSConfirmTime
+            // 
+            btnCSConfirmTime.Location = new System.Drawing.Point(87, 329);
+            btnCSConfirmTime.Name = "btnCSConfirmTime";
+            btnCSConfirmTime.Size = new System.Drawing.Size(151, 29);
+            btnCSConfirmTime.TabIndex = 78;
+            btnCSConfirmTime.Text = "Confirm Time";
+            btnCSConfirmTime.UseVisualStyleBackColor = true;
+            btnCSConfirmTime.Click += btnCSConfirmTime_Click;
+            // 
+            // cbCSMonth
+            // 
+            cbCSMonth.FormattingEnabled = true;
+            cbCSMonth.Items.AddRange(new object[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" });
+            cbCSMonth.Location = new System.Drawing.Point(39, 38);
+            cbCSMonth.Name = "cbCSMonth";
+            cbCSMonth.Size = new System.Drawing.Size(151, 28);
+            cbCSMonth.TabIndex = 76;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new System.Drawing.Point(39, 70);
+            label13.Name = "label13";
+            label13.Size = new System.Drawing.Size(37, 20);
+            label13.TabIndex = 75;
+            label13.Text = "Year";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new System.Drawing.Point(39, 15);
+            label12.Name = "label12";
+            label12.Size = new System.Drawing.Size(52, 20);
+            label12.TabIndex = 74;
+            label12.Text = "Month";
+            // 
+            // txtCSNetSalary
+            // 
+            txtCSNetSalary.Location = new System.Drawing.Point(750, 174);
+            txtCSNetSalary.Name = "txtCSNetSalary";
+            txtCSNetSalary.Size = new System.Drawing.Size(211, 27);
+            txtCSNetSalary.TabIndex = 73;
+            // 
+            // txtCSOvertimes
+            // 
+            txtCSOvertimes.Location = new System.Drawing.Point(386, 177);
+            txtCSOvertimes.Name = "txtCSOvertimes";
+            txtCSOvertimes.Size = new System.Drawing.Size(212, 27);
+            txtCSOvertimes.TabIndex = 72;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(16, 126);
+            label8.Location = new System.Drawing.Point(386, 154);
             label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(34, 20);
+            label8.Size = new System.Drawing.Size(116, 20);
             label8.TabIndex = 71;
-            label8.Text = " Tax";
+            label8.Text = "Overtime(hours)";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(16, 179);
+            label9.Location = new System.Drawing.Point(750, 151);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(77, 20);
             label9.TabIndex = 70;
             label9.Text = "Net Salary";
             // 
-            // textBox17
+            // txtCSBasicSalary
             // 
-            textBox17.Location = new System.Drawing.Point(16, 95);
-            textBox17.Name = "textBox17";
-            textBox17.Size = new System.Drawing.Size(212, 27);
-            textBox17.TabIndex = 69;
+            txtCSBasicSalary.Location = new System.Drawing.Point(386, 107);
+            txtCSBasicSalary.Name = "txtCSBasicSalary";
+            txtCSBasicSalary.Size = new System.Drawing.Size(212, 27);
+            txtCSBasicSalary.TabIndex = 69;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(16, 72);
+            label7.Location = new System.Drawing.Point(386, 84);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(87, 20);
             label7.TabIndex = 68;
             label7.Text = "Basic Salary";
             // 
-            // textBox16
-            // 
-            textBox16.Location = new System.Drawing.Point(16, 38);
-            textBox16.Name = "textBox16";
-            textBox16.Size = new System.Drawing.Size(212, 27);
-            textBox16.TabIndex = 67;
-            // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(16, 15);
+            label6.Location = new System.Drawing.Point(39, 128);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(49, 20);
+            label6.Size = new System.Drawing.Size(119, 20);
             label6.TabIndex = 66;
-            label6.Text = "Name";
+            label6.Text = "Employee Name";
             // 
-            // button13
+            // btnCSSave
             // 
-            button13.Location = new System.Drawing.Point(832, 329);
-            button13.Name = "button13";
-            button13.Size = new System.Drawing.Size(94, 29);
-            button13.TabIndex = 65;
-            button13.Text = "Delete";
-            button13.UseVisualStyleBackColor = true;
+            btnCSSave.Location = new System.Drawing.Point(639, 329);
+            btnCSSave.Name = "btnCSSave";
+            btnCSSave.Size = new System.Drawing.Size(94, 29);
+            btnCSSave.TabIndex = 64;
+            btnCSSave.Text = "Save";
+            btnCSSave.UseVisualStyleBackColor = true;
+            btnCSSave.Click += btnCSSave_Click;
             // 
-            // button14
+            // btnCSCalculate
             // 
-            button14.Location = new System.Drawing.Point(608, 329);
-            button14.Name = "button14";
-            button14.Size = new System.Drawing.Size(94, 29);
-            button14.TabIndex = 64;
-            button14.Text = "Update";
-            button14.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            button15.Location = new System.Drawing.Point(381, 329);
-            button15.Name = "button15";
-            button15.Size = new System.Drawing.Size(94, 29);
-            button15.TabIndex = 63;
-            button15.Text = "Add";
-            button15.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView5
-            // 
-            dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView5.Location = new System.Drawing.Point(258, 24);
-            dataGridView5.Name = "dataGridView5";
-            dataGridView5.RowHeadersWidth = 51;
-            dataGridView5.RowTemplate.Height = 29;
-            dataGridView5.Size = new System.Drawing.Size(789, 288);
-            dataGridView5.TabIndex = 62;
+            btnCSCalculate.Location = new System.Drawing.Point(811, 224);
+            btnCSCalculate.Name = "btnCSCalculate";
+            btnCSCalculate.Size = new System.Drawing.Size(94, 29);
+            btnCSCalculate.TabIndex = 63;
+            btnCSCalculate.Text = "Calculate";
+            btnCSCalculate.UseVisualStyleBackColor = true;
+            btnCSCalculate.Click += btnCSCalculate_Click;
             // 
             // tabPage5
             // 
-            tabPage5.Controls.Add(button7);
-            tabPage5.Controls.Add(button8);
-            tabPage5.Controls.Add(button9);
-            tabPage5.Controls.Add(dataGridView4);
-            tabPage5.Controls.Add(textBox9);
-            tabPage5.Controls.Add(textBox10);
-            tabPage5.Controls.Add(textBox11);
-            tabPage5.Controls.Add(textBox12);
-            tabPage5.Controls.Add(textBox13);
-            tabPage5.Controls.Add(textBox14);
-            tabPage5.Controls.Add(textBox15);
-            tabPage5.Controls.Add(lbTax);
+            tabPage5.Controls.Add(btnPayrollLoad);
+            tabPage5.Controls.Add(dgvPayrolls);
+            tabPage5.Controls.Add(txtPayslipYear);
+            tabPage5.Controls.Add(txtPayslipNetSalary);
+            tabPage5.Controls.Add(txtPayslipMonth);
+            tabPage5.Controls.Add(txtPayslipBasicSalary);
+            tabPage5.Controls.Add(txtPayslipEmployeeName);
+            tabPage5.Controls.Add(txtPayslipEmployeeID);
             tabPage5.Controls.Add(lbNetSalary);
             tabPage5.Controls.Add(lbBasicSalary);
             tabPage5.Controls.Add(lbAllowances);
@@ -639,109 +798,76 @@
             tabPage5.Text = "Payslip/Payroll";
             tabPage5.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnPayrollLoad
             // 
-            button7.Location = new System.Drawing.Point(831, 325);
-            button7.Name = "button7";
-            button7.Size = new System.Drawing.Size(94, 29);
-            button7.TabIndex = 61;
-            button7.Text = "Delete";
-            button7.UseVisualStyleBackColor = true;
+            btnPayrollLoad.Location = new System.Drawing.Point(504, 333);
+            btnPayrollLoad.Name = "btnPayrollLoad";
+            btnPayrollLoad.Size = new System.Drawing.Size(94, 29);
+            btnPayrollLoad.TabIndex = 59;
+            btnPayrollLoad.Text = "Load";
+            btnPayrollLoad.UseVisualStyleBackColor = true;
+            btnPayrollLoad.Click += btnPayrollLoad_Click;
             // 
-            // button8
+            // dgvPayrolls
             // 
-            button8.Location = new System.Drawing.Point(607, 325);
-            button8.Name = "button8";
-            button8.Size = new System.Drawing.Size(94, 29);
-            button8.TabIndex = 60;
-            button8.Text = "Update";
-            button8.UseVisualStyleBackColor = true;
+            dgvPayrolls.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPayrolls.Location = new System.Drawing.Point(257, 20);
+            dgvPayrolls.Name = "dgvPayrolls";
+            dgvPayrolls.RowHeadersWidth = 51;
+            dgvPayrolls.RowTemplate.Height = 29;
+            dgvPayrolls.Size = new System.Drawing.Size(789, 288);
+            dgvPayrolls.TabIndex = 58;
             // 
-            // button9
+            // txtPayslipYear
             // 
-            button9.Location = new System.Drawing.Point(380, 325);
-            button9.Name = "button9";
-            button9.Size = new System.Drawing.Size(94, 29);
-            button9.TabIndex = 59;
-            button9.Text = "Add";
-            button9.UseVisualStyleBackColor = true;
+            txtPayslipYear.Location = new System.Drawing.Point(22, 306);
+            txtPayslipYear.Name = "txtPayslipYear";
+            txtPayslipYear.Size = new System.Drawing.Size(211, 27);
+            txtPayslipYear.TabIndex = 57;
             // 
-            // dataGridView4
+            // txtPayslipNetSalary
             // 
-            dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView4.Location = new System.Drawing.Point(257, 20);
-            dataGridView4.Name = "dataGridView4";
-            dataGridView4.RowHeadersWidth = 51;
-            dataGridView4.RowTemplate.Height = 29;
-            dataGridView4.Size = new System.Drawing.Size(789, 288);
-            dataGridView4.TabIndex = 58;
+            txtPayslipNetSalary.Location = new System.Drawing.Point(22, 192);
+            txtPayslipNetSalary.Name = "txtPayslipNetSalary";
+            txtPayslipNetSalary.Size = new System.Drawing.Size(211, 27);
+            txtPayslipNetSalary.TabIndex = 55;
             // 
-            // textBox9
+            // txtPayslipMonth
             // 
-            textBox9.Location = new System.Drawing.Point(21, 347);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new System.Drawing.Size(211, 27);
-            textBox9.TabIndex = 57;
+            txtPayslipMonth.Location = new System.Drawing.Point(22, 250);
+            txtPayslipMonth.Name = "txtPayslipMonth";
+            txtPayslipMonth.Size = new System.Drawing.Size(212, 27);
+            txtPayslipMonth.TabIndex = 54;
             // 
-            // textBox10
+            // txtPayslipBasicSalary
             // 
-            textBox10.Location = new System.Drawing.Point(21, 294);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new System.Drawing.Size(212, 27);
-            textBox10.TabIndex = 56;
+            txtPayslipBasicSalary.Location = new System.Drawing.Point(21, 135);
+            txtPayslipBasicSalary.Name = "txtPayslipBasicSalary";
+            txtPayslipBasicSalary.Size = new System.Drawing.Size(212, 27);
+            txtPayslipBasicSalary.TabIndex = 53;
             // 
-            // textBox11
+            // txtPayslipEmployeeName
             // 
-            textBox11.Location = new System.Drawing.Point(21, 241);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new System.Drawing.Size(211, 27);
-            textBox11.TabIndex = 55;
+            txtPayslipEmployeeName.Location = new System.Drawing.Point(21, 82);
+            txtPayslipEmployeeName.Name = "txtPayslipEmployeeName";
+            txtPayslipEmployeeName.Size = new System.Drawing.Size(212, 27);
+            txtPayslipEmployeeName.TabIndex = 52;
             // 
-            // textBox12
+            // txtPayslipEmployeeID
             // 
-            textBox12.Location = new System.Drawing.Point(21, 188);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new System.Drawing.Size(212, 27);
-            textBox12.TabIndex = 54;
-            // 
-            // textBox13
-            // 
-            textBox13.Location = new System.Drawing.Point(21, 135);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new System.Drawing.Size(212, 27);
-            textBox13.TabIndex = 53;
-            // 
-            // textBox14
-            // 
-            textBox14.Location = new System.Drawing.Point(21, 82);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new System.Drawing.Size(212, 27);
-            textBox14.TabIndex = 52;
-            // 
-            // textBox15
-            // 
-            textBox15.Location = new System.Drawing.Point(21, 29);
-            textBox15.Name = "textBox15";
-            textBox15.Size = new System.Drawing.Size(211, 27);
-            textBox15.TabIndex = 51;
-            // 
-            // lbTax
-            // 
-            lbTax.AutoSize = true;
-            lbTax.Location = new System.Drawing.Point(21, 271);
-            lbTax.Name = "lbTax";
-            lbTax.Size = new System.Drawing.Size(34, 20);
-            lbTax.TabIndex = 50;
-            lbTax.Text = " Tax";
+            txtPayslipEmployeeID.Location = new System.Drawing.Point(21, 29);
+            txtPayslipEmployeeID.Name = "txtPayslipEmployeeID";
+            txtPayslipEmployeeID.Size = new System.Drawing.Size(211, 27);
+            txtPayslipEmployeeID.TabIndex = 51;
             // 
             // lbNetSalary
             // 
             lbNetSalary.AutoSize = true;
-            lbNetSalary.Location = new System.Drawing.Point(21, 324);
+            lbNetSalary.Location = new System.Drawing.Point(22, 283);
             lbNetSalary.Name = "lbNetSalary";
-            lbNetSalary.Size = new System.Drawing.Size(77, 20);
+            lbNetSalary.Size = new System.Drawing.Size(37, 20);
             lbNetSalary.TabIndex = 49;
-            lbNetSalary.Text = "Net Salary";
+            lbNetSalary.Text = "Year";
             // 
             // lbBasicSalary
             // 
@@ -755,38 +881,38 @@
             // lbAllowances
             // 
             lbAllowances.AutoSize = true;
-            lbAllowances.Location = new System.Drawing.Point(21, 165);
+            lbAllowances.Location = new System.Drawing.Point(22, 227);
             lbAllowances.Name = "lbAllowances";
-            lbAllowances.Size = new System.Drawing.Size(84, 20);
+            lbAllowances.Size = new System.Drawing.Size(52, 20);
             lbAllowances.TabIndex = 47;
-            lbAllowances.Text = "Allowances";
+            lbAllowances.Text = "Month";
             // 
             // lxDeductions
             // 
             lxDeductions.AutoSize = true;
-            lxDeductions.Location = new System.Drawing.Point(21, 218);
+            lxDeductions.Location = new System.Drawing.Point(22, 169);
             lxDeductions.Name = "lxDeductions";
-            lxDeductions.Size = new System.Drawing.Size(84, 20);
+            lxDeductions.Size = new System.Drawing.Size(77, 20);
             lxDeductions.TabIndex = 46;
-            lxDeductions.Text = "Deductions";
+            lxDeductions.Text = "Net Salary";
             // 
             // lbPayPeriod
             // 
             lbPayPeriod.AutoSize = true;
             lbPayPeriod.Location = new System.Drawing.Point(21, 59);
             lbPayPeriod.Name = "lbPayPeriod";
-            lbPayPeriod.Size = new System.Drawing.Size(77, 20);
+            lbPayPeriod.Size = new System.Drawing.Size(119, 20);
             lbPayPeriod.TabIndex = 45;
-            lbPayPeriod.Text = "Pay Period";
+            lbPayPeriod.Text = "Employee Name";
             // 
             // lbEName
             // 
             lbEName.AutoSize = true;
             lbEName.Location = new System.Drawing.Point(21, 6);
             lbEName.Name = "lbEName";
-            lbEName.Size = new System.Drawing.Size(49, 20);
+            lbEName.Size = new System.Drawing.Size(94, 20);
             lbEName.TabIndex = 44;
-            lbEName.Text = "Name";
+            lbEName.Text = "Employee ID";
             // 
             // tabPage6
             // 
@@ -872,29 +998,31 @@
             lbReportType.TabIndex = 8;
             lbReportType.Text = "Report Type";
             // 
-            // txtTakeLeaveEmployeeID
+            // button1
             // 
-            txtTakeLeaveEmployeeID.Location = new System.Drawing.Point(112, 60);
-            txtTakeLeaveEmployeeID.Name = "txtTakeLeaveEmployeeID";
-            txtTakeLeaveEmployeeID.Size = new System.Drawing.Size(250, 27);
-            txtTakeLeaveEmployeeID.TabIndex = 50;
+            button1.Location = new System.Drawing.Point(582, 332);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(94, 29);
+            button1.TabIndex = 53;
+            button1.Text = "Accept";
+            button1.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // button2
             // 
-            label11.AutoSize = true;
-            label11.Location = new System.Drawing.Point(18, 63);
-            label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(94, 20);
-            label11.TabIndex = 49;
-            label11.Text = "Employee ID";
+            button2.Location = new System.Drawing.Point(716, 320);
+            button2.Name = "button2";
+            button2.Size = new System.Drawing.Size(94, 29);
+            button2.TabIndex = 54;
+            button2.Text = "Accept";
+            button2.UseVisualStyleBackColor = true;
             // 
-            // HR_Staff
+            // frmHR_Staff
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1098, 502);
             Controls.Add(tabControl1);
-            Name = "HR_Staff";
+            Name = "frmHR_Staff";
             Text = "HR_Staff";
             tabControl1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
@@ -908,10 +1036,10 @@
             ((System.ComponentModel.ISupportInitialize)dgvTakeLeave).EndInit();
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCalculate).EndInit();
             tabPage5.ResumeLayout(false);
             tabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPayrolls).EndInit();
             tabPage6.ResumeLayout(false);
             tabPage6.PerformLayout();
             ResumeLayout(false);
@@ -933,7 +1061,6 @@
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.Button btnOTDelete;
-        private System.Windows.Forms.Button btnOTAdd;
         private System.Windows.Forms.DataGridView dgvLogOT;
         private System.Windows.Forms.TextBox txtOTDate;
         private System.Windows.Forms.TextBox txtOT;
@@ -953,22 +1080,14 @@
         private System.Windows.Forms.Label lbToDate;
         private System.Windows.Forms.Label lbFromDate;
         private System.Windows.Forms.Button btnTakeLeaveDelete;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.Label lbTax;
+        private System.Windows.Forms.DataGridView dgvPayrolls;
+        private System.Windows.Forms.TextBox txtPayslipYear;
+        private System.Windows.Forms.TextBox txtPayslipNetSalary;
+        private System.Windows.Forms.TextBox txtPayslipBasicSalary;
+        private System.Windows.Forms.TextBox txtPayslipEmployeeName;
+        private System.Windows.Forms.TextBox txtPayslipEmployeeID;
         private System.Windows.Forms.Label lbNetSalary;
         private System.Windows.Forms.Label lbBasicSalary;
-        private System.Windows.Forms.Label lbAllowances;
         private System.Windows.Forms.Label lxDeductions;
         private System.Windows.Forms.Label lbPayPeriod;
         private System.Windows.Forms.Label lbEName;
@@ -980,18 +1099,16 @@
         private System.Windows.Forms.Label lbEndDate;
         private System.Windows.Forms.Label lbStartDate;
         private System.Windows.Forms.Label lbReportType;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox txtCSNetSalary;
+        private System.Windows.Forms.TextBox txtCSOvertimes;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox txtCSBasicSalary;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox txtCSEmployeeName;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.Button btnCSSave;
+        private System.Windows.Forms.Button btnCSCalculate;
         private System.Windows.Forms.TextBox txtCandidatesID;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dgvCandidates;
@@ -999,5 +1116,29 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTakeLeaveEmployeeID;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnCSConfirmTime;
+        private System.Windows.Forms.ComboBox cbCSMonth;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cbCSEmployeeName;
+        private System.Windows.Forms.TextBox txtCSBonus;
+        private System.Windows.Forms.Label textbox;
+        private System.Windows.Forms.TextBox txtCSTakeLeave;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtCSAllowance;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.MaskedTextBox mtxtCSYear;
+        private System.Windows.Forms.Label lbep;
+        private System.Windows.Forms.TextBox txtCSEmployeeID;
+        private System.Windows.Forms.DataGridView dgvCalculate;
+        private System.Windows.Forms.TextBox txtCSSalaryID;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtPayslipMonth;
+        private System.Windows.Forms.Label lbAllowances;
+        private System.Windows.Forms.Button btnPayrollLoad;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtTakeLeaveAccept;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
