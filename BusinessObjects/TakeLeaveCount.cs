@@ -5,14 +5,13 @@ using System.Collections.Generic;
 
 namespace BusinessObjects
 {
-    public partial class TakeLeave
+    public partial class TakeLeaveCount
     {
         public int Id { get; set; }
+        public int? Month { get; set; }
+        public int? Year { get; set; }
+        public int? Count { get; set; }
         public int? EmployeeId { get; set; }
-        public DateTime? StartDate { get; set; }
-        public DateTime? EndDate { get; set; }
-        public bool? IsAccept { get; set; }
-        public string Description { get; set; }
 
         public virtual Employee Employee { get; set; }
     }

@@ -19,13 +19,24 @@ namespace BusinessObjects
         {
         }
 
+        public virtual DbSet<Attendance> Attendances { get; set; }
         public virtual DbSet<Candidate> Candidates { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Overtime> Overtimes { get; set; }
         public virtual DbSet<Payslip> Payslips { get; set; }
-        public virtual DbSet<PersonalContract> PersonalContracts { get; set; }
+        public virtual DbSet<Salary> Salaries { get; set; }
         public virtual DbSet<TakeLeave> TakeLeaves { get; set; }
-        public virtual DbSet<Tax> Taxes { get; set; }
+        public virtual DbSet<TakeLeaveCount> TakeLeaveCounts { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(GetConnectionString());
+                //optionsBuilder.UseSqlServer("Server=(local);uid=sa;pwd=1234567890;database=PRN211_IT_HR_Management_System;TrustServerCertificate=True");
+            }
+        }
+
         private string GetConnectionString()
         {
             IConfiguration configuration = new ConfigurationBuilder()
@@ -34,29 +45,34 @@ namespace BusinessObjects
             return configuration["ConnectionStrings:DefaultConnectionString"];
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            // Check if the options builder is already configured
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer(GetConnectionString(), options =>
-                {
-                    options.EnableRetryOnFailure(); // Enable transient error resiliency
-                });
-            }
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
+            modelBuilder.Entity<Attendance>(entity =>
+            {
+                entity.ToTable("Attendance");
+
+                entity.Property(e => e.AttendanceId).HasColumnName("AttendanceID");
+
+                entity.Property(e => e.Date).HasColumnType("datetime");
+
+                entity.Property(e => e.EmployeeId).HasColumnName("EmployeeID");
+
+                entity.Property(e => e.IsAttend).HasColumnName("isAttend");
+
+                entity.HasOne(d => d.Employee)
+                    .WithMany(p => p.Attendances)
+                    .HasForeignKey(d => d.EmployeeId)
+                    .HasConstraintName("FK_Attendance_Employee");
+            });
+
             modelBuilder.Entity<Candidate>(entity =>
             {
                 entity.ToTable("Candidate");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Description)
                     .HasMaxLength(500)
@@ -71,9 +87,7 @@ namespace BusinessObjects
             {
                 entity.ToTable("Employee");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Email).IsUnicode(false);
 
@@ -102,9 +116,7 @@ namespace BusinessObjects
             {
                 entity.ToTable("Overtime");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Date).HasColumnType("date");
 
@@ -120,9 +132,7 @@ namespace BusinessObjects
             {
                 entity.ToTable("Payslip");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.BonusOt).HasColumnName("BonusOT");
 
@@ -134,9 +144,9 @@ namespace BusinessObjects
                     .HasConstraintName("FK_Payslip_Employee");
             });
 
-            modelBuilder.Entity<PersonalContract>(entity =>
+            modelBuilder.Entity<Salary>(entity =>
             {
-                entity.ToTable("PersonalContract");
+                entity.ToTable("Salary");
 
                 entity.Property(e => e.Id)
                     .ValueGeneratedNever()
@@ -144,23 +154,17 @@ namespace BusinessObjects
 
                 entity.Property(e => e.EmployeeId).HasColumnName("EmployeeID");
 
-                entity.Property(e => e.EndDate).HasColumnType("date");
-
-                entity.Property(e => e.StartDate).HasColumnType("date");
-
                 entity.HasOne(d => d.Employee)
-                    .WithMany(p => p.PersonalContracts)
+                    .WithMany(p => p.Salaries)
                     .HasForeignKey(d => d.EmployeeId)
-                    .HasConstraintName("FK_PersonalContract_Employee");
+                    .HasConstraintName("FK_Salary_Employee");
             });
 
             modelBuilder.Entity<TakeLeave>(entity =>
             {
                 entity.ToTable("TakeLeave");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Description)
                     .HasMaxLength(500)
@@ -170,6 +174,8 @@ namespace BusinessObjects
 
                 entity.Property(e => e.EndDate).HasColumnType("date");
 
+                entity.Property(e => e.IsAccept).HasColumnName("isAccept");
+
                 entity.Property(e => e.StartDate).HasColumnType("date");
 
                 entity.HasOne(d => d.Employee)
@@ -178,13 +184,18 @@ namespace BusinessObjects
                     .HasConstraintName("FK_TakeLeave_Employee");
             });
 
-            modelBuilder.Entity<Tax>(entity =>
+            modelBuilder.Entity<TakeLeaveCount>(entity =>
             {
-                entity.ToTable("Tax");
+                entity.ToTable("TakeLeaveCount");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.EmployeeId).HasColumnName("EmployeeID");
+
+                entity.HasOne(d => d.Employee)
+                    .WithMany(p => p.TakeLeaveCounts)
+                    .HasForeignKey(d => d.EmployeeId)
+                    .HasConstraintName("FK_TakeLeaveCount_Employee");
             });
 
             OnModelCreatingPartial(modelBuilder);
