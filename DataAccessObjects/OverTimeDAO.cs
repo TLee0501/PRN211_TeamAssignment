@@ -35,10 +35,30 @@ namespace DataAccessObjects
                     context.Overtimes.Add(overtime);
                     context.SaveChanges();
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw new Exception(ex.InnerException.Message);
             }
         }
+
+        public List<Overtime> GetOvertimes()
+
+        {
+            List<Overtime> overtimes = new List<Overtime>();
+            using (var context = new PRN211_IT_HR_Management_SystemContext())
+            {
+                overtimes = context.Overtimes.ToList();
+            }
+            return overtimes;
+        }
+        public void Delete(Overtime overtime)
+        {
+            using (var context = new PRN211_IT_HR_Management_SystemContext())
+            {
+                context.Overtimes.Remove(overtime);
+                context.SaveChanges();
+            }
+        }
     }
-} 
+}
