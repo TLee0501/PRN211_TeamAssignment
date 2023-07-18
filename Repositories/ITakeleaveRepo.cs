@@ -1,4 +1,4 @@
-﻿using BusinessObjects;
+
 using BusinessObjects;
 using BusinessObjects.ViewModel;
 using System;
@@ -12,8 +12,13 @@ namespace Repositories
     public interface ITakeleaveRepo
     {
         void AddTakeLeave(TakeLeave takeLeave);
+
+        void Delete(TakeLeave takeLeave);
+        int CountTakeLeaveInMonth(int id);
+
         IEnumerable<TakeLeaveViewModel> GetTakeLeaves();
         void Reject(int id);
         void Accept(int id);
+
     }
 }

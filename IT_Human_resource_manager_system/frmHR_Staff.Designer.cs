@@ -1,4 +1,4 @@
-﻿namespace IT_Human_resource_manager_system
+namespace IT_Human_resource_manager_system
 {
     partial class frmHR_Staff
     {

@@ -282,6 +282,7 @@ namespace IT_Human_resource_manager_system
             }
         }
 
+
         private TakeLeaveViewModel GetTakeLeaveObject()
         {
             TakeLeaveViewModel takeLeave = null;
@@ -304,6 +305,7 @@ namespace IT_Human_resource_manager_system
             return takeLeave;
         }
 
+
         private void ClearTextTakeLeave()
         {
             txtTakeLeaveID.Text = string.Empty;
@@ -317,6 +319,7 @@ namespace IT_Human_resource_manager_system
         /*======================================================================================================================*/
         public void loadEmployeeName()
         {
+
             var employees = employeeRepo.GetEmployees();
             var listName = new List<ListNameViewModel>();
             foreach (var employee in employees)
@@ -513,6 +516,7 @@ namespace IT_Human_resource_manager_system
                 takeleaveRepo.Reject(int.Parse(txtTakeLeaveID.Text));
             }
             loadTakeLeaves();
+
         }
     }
 }
