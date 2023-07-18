@@ -293,27 +293,27 @@ namespace IT_Human_resource_manager_system
             }
         }
 
-        private TakeLeave GetTakeLeaveObject()
-        {
-            TakeLeave takeLeave = null;
-            try
-            {
-                takeLeave = new TakeLeave
-                {
-                    Id = int.Parse(txtTakeLeaveID.Text),
-                    StartDate = DateTime.Parse(dtpTakeLeaveFrom.Text),
-                    EndDate = DateTime.Parse(dtpTakeLeaveTo.Text),
-                    Description = txtTakeLeaveDescription.Text,
-                    EmployeeName = txtTakeLeaveName.Text,
-                    EmployeeId = int.Parse(txtTakeLeaveEmployeeID.Text)
-                };
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Get Take Leaves");
-            }
-            return takeLeave;
-        }
+        //private TakeLeave GetTakeLeaveObject()
+        //{
+        //    TakeLeave takeLeave = null;
+        //    try
+        //    {
+        //        takeLeave = new TakeLeave
+        //        {
+        //            Id = int.Parse(txtTakeLeaveID.Text),
+        //            StartDate = DateTime.Parse(dtpTakeLeaveFrom.Text),
+        //            EndDate = DateTime.Parse(dtpTakeLeaveTo.Text),
+        //            Description = txtTakeLeaveDescription.Text,
+        //            EmployeeName = txtTakeLeaveName.Text,
+        //            EmployeeId = int.Parse(txtTakeLeaveEmployeeID.Text)
+        //        };
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message, "Get Take Leaves");
+        //    }
+        //    return takeLeave;
+        //}
 
         private void ClearTextTakeLeave()
         {
@@ -327,22 +327,22 @@ namespace IT_Human_resource_manager_system
         /*======================================================================================================================*/
         private void button10_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Are you sure to delete this item ??",
-                                     "Confirm Delete!!",
-                                     MessageBoxButtons.YesNo);
-            if (confirmResult == DialogResult.Yes)
-            {
-                try
-                {
-                    var takeLeave = GetTakeLeaveObject();
-                    takeleaveRepo.Delete(takeLeave);
-                    loadTakeLeaves();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Delete an TakeLeave");
-                }
-            }
+            //var confirmResult = MessageBox.Show("Are you sure to delete this item ??",
+            //                         "Confirm Delete!!",
+            //                         MessageBoxButtons.YesNo);
+            //if (confirmResult == DialogResult.Yes)
+            //{
+            //    try
+            //    {
+            //        var takeLeave = GetTakeLeaveObject();
+            //        takeleaveRepo.Delete(takeLeave);
+            //        loadTakeLeaves();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message, "Delete an TakeLeave");
+            //    }
+            //}
         }
     }
 }

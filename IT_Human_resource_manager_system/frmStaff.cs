@@ -19,6 +19,7 @@ namespace IT_Human_resource_manager_system
         IOvertimeRepo overtime = new OvertimeRepo();
         ITakeleaveRepo takeLeaveRepo = new TakeLeaveRepo();
         IAttendanceRepo attendanceRepo = new AttendanceRepo();
+        IPayslipRepo PayslipRepo = new PayslipRepo();
         public frmStaff()
         {
             InitializeComponent();
@@ -27,6 +28,7 @@ namespace IT_Human_resource_manager_system
         private void frmStaff_Load(object sender, EventArgs e)
         {
             LoadPerInfo();
+            LoadPayslip();
         }
 
         public void LoadPerInfo()
@@ -38,6 +40,23 @@ namespace IT_Human_resource_manager_system
                 txtPhonenumber.Text = Employee.PhoneNumber.ToString();
                 TxtEmail.Text = Employee.Email;
 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public void LoadPayslip()
+        {
+            try
+            {
+                var Employee = employeeRepo.GetEmployeeById(user.Id);
+                var Paysip = PayslipRepo.GetPayslipByEmID(user.Id);
+                txtEName.Text = Employee.Name;
+                txtAllowances.Text = Paysip.Allowance.ToString();
+                txtBasicSalary.Text = Paysip.BasicSalary.ToString();
+                txtBonusOT.Text = Paysip.BonusOt.ToString();
+                txtNetSalary.Text = Paysip.NetSalary.ToString();
             }
             catch (Exception ex)
             {
@@ -131,8 +150,18 @@ namespace IT_Human_resource_manager_system
                 IsAccept = false,
                 Description = rtbReasonTL.Text,
             };
-            takeLeaveRepo.AddTakeLeave(tl);
-            MessageBox.Show("Submit takeleave form success");
+            int NumberOfTakeLeave = takeLeaveRepo.CountTakeLeaveInMonth(user.Id);
+            bool isAccepted = tl.IsAccept ?? false;
+            if (NumberOfTakeLeave >= 5 && !isAccepted)
+            {
+                MessageBox.Show("You have applied for leave 12 times this month. You are not allowed to apply for further leave.");
+            }
+            else
+            {
+                takeLeaveRepo.AddTakeLeave(tl);
+                MessageBox.Show("Submit takeleave form success");
+            }
+
         }
 
         private void btnCheckAttendance_Click(object sender, EventArgs e)
@@ -143,30 +172,31 @@ namespace IT_Human_resource_manager_system
                 int currentHour = dateTime.Hour;
                 Boolean isMorning = currentHour >= 7 && currentHour <= 8;
                 Boolean checkAtten = attendanceRepo.CheckAttendanceToDay(user.Id);
+                Boolean soon = currentHour <7;
                 if (checkAtten)
                 {
                     MessageBox.Show("Already Check Attendance for today");
                 }
+                else if (soon)
+                {
+                    MessageBox.Show("Your work start at 7am");
+                }
                 else
                 {
-
-
-                    var Atten = new Attendance
-                    {
-                        EmployeeId = user.Id,
-                        IsAttend = isMorning,
-                        Date = DateTime.Now,
-                    };
-                    attendanceRepo.addAttendance(Atten);
-                    MessageBox.Show("Check Attendance success");
-
                     if (!isMorning)
                     {
-                        MessageBox.Show("You are late attendance change to false");
+                        MessageBox.Show("You can only take attendance at 7am to 8am! You are absent");
                     }
                     else
                     {
-                        MessageBox.Show("You go to work on time");
+                        var Atten = new Attendance
+                        {
+                            EmployeeId = user.Id,
+                            IsAttend = isMorning,
+                            Date = DateTime.Now,
+                        };
+                        attendanceRepo.addAttendance(Atten);
+                        MessageBox.Show("Check Attendance success");
                     }
                 }
             }
@@ -188,6 +218,11 @@ namespace IT_Human_resource_manager_system
         private void btnResetL_Click(object sender, EventArgs e)
         {
             rtbReasonTL.Clear();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Print success");
         }
     }
 }

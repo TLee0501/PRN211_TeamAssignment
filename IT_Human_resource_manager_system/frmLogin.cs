@@ -23,7 +23,7 @@ namespace IT_Human_resource_manager_system
         private void btnLogin_Click(object sender, EventArgs e)
         {
             Employee employee = employeeRepo.Login(txtUsername.Text, txtPassword.Text);
-            if(employee == null)
+            if (employee == null)
             {
                 MessageBox.Show("Wrong Account!");
             }
@@ -34,7 +34,8 @@ namespace IT_Human_resource_manager_system
                     frmStaff frmStaff = new frmStaff();
                     frmStaff.user = employee;
                     frmStaff.ShowDialog();
-                }else if (employee.RoleName.Equals("HRStaff"))
+                }
+                else if (employee.RoleName.Equals("HRStaff"))
                 {
                     frmHR_Staff frmHR_Staff = new frmHR_Staff();
                     frmHR_Staff.user = employee;

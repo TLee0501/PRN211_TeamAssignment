@@ -52,6 +52,8 @@
             lbTimeOut = new System.Windows.Forms.Label();
             lbTimeIn = new System.Windows.Forms.Label();
             tabPage4 = new System.Windows.Forms.TabPage();
+            txtTakeLeaveEmployeeID = new System.Windows.Forms.TextBox();
+            label11 = new System.Windows.Forms.Label();
             txtTakeLeaveID = new System.Windows.Forms.TextBox();
             label4 = new System.Windows.Forms.Label();
             btnTakeLeaveDelete = new System.Windows.Forms.Button();
@@ -106,8 +108,6 @@
             lbEndDate = new System.Windows.Forms.Label();
             lbStartDate = new System.Windows.Forms.Label();
             lbReportType = new System.Windows.Forms.Label();
-            txtTakeLeaveEmployeeID = new System.Windows.Forms.TextBox();
-            label11 = new System.Windows.Forms.Label();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCandidates).BeginInit();
@@ -377,6 +377,22 @@
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Manage Take Leave";
             tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // txtTakeLeaveEmployeeID
+            // 
+            txtTakeLeaveEmployeeID.Location = new System.Drawing.Point(112, 60);
+            txtTakeLeaveEmployeeID.Name = "txtTakeLeaveEmployeeID";
+            txtTakeLeaveEmployeeID.Size = new System.Drawing.Size(250, 27);
+            txtTakeLeaveEmployeeID.TabIndex = 50;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new System.Drawing.Point(18, 63);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(94, 20);
+            label11.TabIndex = 49;
+            label11.Text = "Employee ID";
             // 
             // txtTakeLeaveID
             // 
@@ -872,29 +888,13 @@
             lbReportType.TabIndex = 8;
             lbReportType.Text = "Report Type";
             // 
-            // txtTakeLeaveEmployeeID
-            // 
-            txtTakeLeaveEmployeeID.Location = new System.Drawing.Point(112, 60);
-            txtTakeLeaveEmployeeID.Name = "txtTakeLeaveEmployeeID";
-            txtTakeLeaveEmployeeID.Size = new System.Drawing.Size(250, 27);
-            txtTakeLeaveEmployeeID.TabIndex = 50;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new System.Drawing.Point(18, 63);
-            label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(94, 20);
-            label11.TabIndex = 49;
-            label11.Text = "Employee ID";
-            // 
-            // HR_Staff
+            // frmHR_Staff
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1098, 502);
             Controls.Add(tabControl1);
-            Name = "HR_Staff";
+            Name = "frmHR_Staff";
             Text = "HR_Staff";
             tabControl1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);

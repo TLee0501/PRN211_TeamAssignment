@@ -85,5 +85,28 @@ namespace DataAccessObjects
                 context.SaveChanges();
             }
         }
+
+        public int CountTakeLeaveInMonth(int employeeId)
+        {
+            try
+            {
+                using (var context = new PRN211_IT_HR_Management_SystemContext())
+                {
+                    DateTime today = DateTime.Today;
+                    DateTime firstDayOfMonth = new DateTime(today.Year, today.Month, 1);
+                    DateTime lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
+
+                    int numberOfTakeLeaves = context.TakeLeaves
+                        .Where(tl => tl.EmployeeId == employeeId && tl.StartDate >= firstDayOfMonth && tl.EndDate <= lastDayOfMonth)
+                        .Count();
+
+                    return numberOfTakeLeaves;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

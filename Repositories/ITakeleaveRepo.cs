@@ -15,5 +15,6 @@ namespace Repositories
         //void Update(Overtime overtime);
         void AddTakeLeave(TakeLeave takeLeave);
         void Delete(TakeLeave takeLeave);
+        int CountTakeLeaveInMonth(int id);
     }
 }
