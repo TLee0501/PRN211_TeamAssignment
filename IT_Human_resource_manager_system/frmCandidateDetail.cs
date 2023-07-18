@@ -28,31 +28,32 @@ namespace IT_Human_resource_manager_system
         {
             try
             {
-                var candidate = new Candidate()
-                {
-                    Name = txtName.Text,
-                    Description = txtDescription.Text
-                };
-
-                if (txtID.Text != null)
-                {
-                    candidate.Id = int.Parse(txtID.Text);
-                }
 
                 if (InsertOrUpdate == false)
                 {  // tạo mới
+                    var candidate = new Candidate()
+                    {
+                        Name = txtName.Text,
+                        Description = txtDescription.Text
+                    };
                     candidatesRepo.Create(candidate);
                     Close();
                 }
                 else
                 {
+                    var candidate = new Candidate()
+                    {
+                        Id = int.Parse(txtID.Text),
+                        Name = txtName.Text,
+                        Description = txtDescription.Text
+                    };
                     candidatesRepo.Update(candidate);
                     Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, InsertOrUpdate == false ? "Add a new project" : "Update a project");
+                MessageBox.Show(ex.Message, InsertOrUpdate == false ? "Add a new Candidate" : "Update Candidate");
             }
         }
 

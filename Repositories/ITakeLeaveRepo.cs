@@ -12,6 +12,7 @@ namespace Repositories
     {
         void AddTakeLeave(TakeLeave takeLeave);
         IEnumerable<TakeLeaveViewModel> GetTakeLeaves();
-        void Delete(TakeLeaveViewModel takeLeave);
+        void Reject(int id);
+        void Accept(int id);
     }
 }

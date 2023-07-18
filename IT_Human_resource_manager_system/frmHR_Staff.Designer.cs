@@ -51,6 +51,7 @@
             lbTimeOut = new System.Windows.Forms.Label();
             lbTimeIn = new System.Windows.Forms.Label();
             tabPage4 = new System.Windows.Forms.TabPage();
+            button1 = new System.Windows.Forms.Button();
             txtTakeLeaveAccept = new System.Windows.Forms.TextBox();
             label17 = new System.Windows.Forms.Label();
             txtTakeLeaveEmployeeID = new System.Windows.Forms.TextBox();
@@ -109,17 +110,6 @@
             lxDeductions = new System.Windows.Forms.Label();
             lbPayPeriod = new System.Windows.Forms.Label();
             lbEName = new System.Windows.Forms.Label();
-            tabPage6 = new System.Windows.Forms.TabPage();
-            richTextBox1 = new System.Windows.Forms.RichTextBox();
-            dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            comboBox1 = new System.Windows.Forms.ComboBox();
-            lbDescribe = new System.Windows.Forms.Label();
-            lbEndDate = new System.Windows.Forms.Label();
-            lbStartDate = new System.Windows.Forms.Label();
-            lbReportType = new System.Windows.Forms.Label();
-            button1 = new System.Windows.Forms.Button();
-            button2 = new System.Windows.Forms.Button();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCandidates).BeginInit();
@@ -131,7 +121,6 @@
             ((System.ComponentModel.ISupportInitialize)dgvCalculate).BeginInit();
             tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPayrolls).BeginInit();
-            tabPage6.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -141,7 +130,6 @@
             tabControl1.Controls.Add(tabPage4);
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage5);
-            tabControl1.Controls.Add(tabPage6);
             tabControl1.Location = new System.Drawing.Point(12, 76);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -275,6 +263,7 @@
             btnOTDelete.TabIndex = 39;
             btnOTDelete.Text = "Delete";
             btnOTDelete.UseVisualStyleBackColor = true;
+            btnOTDelete.Click += btnOTDelete_Click;
             // 
             // dgvLogOT
             // 
@@ -356,7 +345,6 @@
             // 
             // tabPage4
             // 
-            tabPage4.Controls.Add(button2);
             tabPage4.Controls.Add(button1);
             tabPage4.Controls.Add(txtTakeLeaveAccept);
             tabPage4.Controls.Add(label17);
@@ -381,6 +369,16 @@
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Manage Take Leave";
             tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Location = new System.Drawing.Point(588, 320);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(94, 29);
+            button1.TabIndex = 53;
+            button1.Text = "Accept";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += btnTakeLeaveAccept_Click;
             // 
             // txtTakeLeaveAccept
             // 
@@ -433,13 +431,13 @@
             // 
             // btnTakeLeaveDelete
             // 
-            btnTakeLeaveDelete.Location = new System.Drawing.Point(902, 320);
+            btnTakeLeaveDelete.Location = new System.Drawing.Point(815, 320);
             btnTakeLeaveDelete.Name = "btnTakeLeaveDelete";
             btnTakeLeaveDelete.Size = new System.Drawing.Size(94, 29);
             btnTakeLeaveDelete.TabIndex = 46;
-            btnTakeLeaveDelete.Text = "Delete";
+            btnTakeLeaveDelete.Text = "Reject";
             btnTakeLeaveDelete.UseVisualStyleBackColor = true;
-            btnTakeLeaveDelete.Click += button10_Click;
+            btnTakeLeaveDelete.Click += button1_Click;
             // 
             // txtTakeLeaveName
             // 
@@ -914,108 +912,6 @@
             lbEName.TabIndex = 44;
             lbEName.Text = "Employee ID";
             // 
-            // tabPage6
-            // 
-            tabPage6.Controls.Add(richTextBox1);
-            tabPage6.Controls.Add(dateTimePicker5);
-            tabPage6.Controls.Add(dateTimePicker4);
-            tabPage6.Controls.Add(comboBox1);
-            tabPage6.Controls.Add(lbDescribe);
-            tabPage6.Controls.Add(lbEndDate);
-            tabPage6.Controls.Add(lbStartDate);
-            tabPage6.Controls.Add(lbReportType);
-            tabPage6.Location = new System.Drawing.Point(4, 29);
-            tabPage6.Name = "tabPage6";
-            tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            tabPage6.Size = new System.Drawing.Size(1066, 381);
-            tabPage6.TabIndex = 6;
-            tabPage6.Text = "Reports";
-            tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox1
-            // 
-            richTextBox1.Location = new System.Drawing.Point(164, 185);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new System.Drawing.Size(250, 120);
-            richTextBox1.TabIndex = 15;
-            richTextBox1.Text = "";
-            // 
-            // dateTimePicker5
-            // 
-            dateTimePicker5.Location = new System.Drawing.Point(164, 137);
-            dateTimePicker5.Name = "dateTimePicker5";
-            dateTimePicker5.Size = new System.Drawing.Size(250, 27);
-            dateTimePicker5.TabIndex = 14;
-            // 
-            // dateTimePicker4
-            // 
-            dateTimePicker4.Location = new System.Drawing.Point(164, 86);
-            dateTimePicker4.Name = "dateTimePicker4";
-            dateTimePicker4.Size = new System.Drawing.Size(250, 27);
-            dateTimePicker4.TabIndex = 13;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new System.Drawing.Point(164, 26);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new System.Drawing.Size(250, 28);
-            comboBox1.TabIndex = 12;
-            // 
-            // lbDescribe
-            // 
-            lbDescribe.AutoSize = true;
-            lbDescribe.Location = new System.Drawing.Point(24, 185);
-            lbDescribe.Name = "lbDescribe";
-            lbDescribe.Size = new System.Drawing.Size(67, 20);
-            lbDescribe.TabIndex = 11;
-            lbDescribe.Text = "Describe";
-            // 
-            // lbEndDate
-            // 
-            lbEndDate.AutoSize = true;
-            lbEndDate.Location = new System.Drawing.Point(24, 137);
-            lbEndDate.Name = "lbEndDate";
-            lbEndDate.Size = new System.Drawing.Size(66, 20);
-            lbEndDate.TabIndex = 10;
-            lbEndDate.Text = "EndDate";
-            // 
-            // lbStartDate
-            // 
-            lbStartDate.AutoSize = true;
-            lbStartDate.Location = new System.Drawing.Point(24, 86);
-            lbStartDate.Name = "lbStartDate";
-            lbStartDate.Size = new System.Drawing.Size(72, 20);
-            lbStartDate.TabIndex = 9;
-            lbStartDate.Text = "StartDate";
-            // 
-            // lbReportType
-            // 
-            lbReportType.AutoSize = true;
-            lbReportType.Location = new System.Drawing.Point(24, 29);
-            lbReportType.Name = "lbReportType";
-            lbReportType.Size = new System.Drawing.Size(89, 20);
-            lbReportType.TabIndex = 8;
-            lbReportType.Text = "Report Type";
-            // 
-            // button1
-            // 
-            button1.Location = new System.Drawing.Point(582, 332);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(94, 29);
-            button1.TabIndex = 53;
-            button1.Text = "Accept";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new System.Drawing.Point(716, 320);
-            button2.Name = "button2";
-            button2.Size = new System.Drawing.Size(94, 29);
-            button2.TabIndex = 54;
-            button2.Text = "Accept";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // frmHR_Staff
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1040,8 +936,6 @@
             tabPage5.ResumeLayout(false);
             tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPayrolls).EndInit();
-            tabPage6.ResumeLayout(false);
-            tabPage6.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1059,7 +953,6 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.Button btnOTDelete;
         private System.Windows.Forms.DataGridView dgvLogOT;
         private System.Windows.Forms.TextBox txtOTDate;
@@ -1091,14 +984,6 @@
         private System.Windows.Forms.Label lxDeductions;
         private System.Windows.Forms.Label lbPayPeriod;
         private System.Windows.Forms.Label lbEName;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label lbDescribe;
-        private System.Windows.Forms.Label lbEndDate;
-        private System.Windows.Forms.Label lbStartDate;
-        private System.Windows.Forms.Label lbReportType;
         private System.Windows.Forms.TextBox txtCSNetSalary;
         private System.Windows.Forms.TextBox txtCSOvertimes;
         private System.Windows.Forms.Label label8;
@@ -1138,7 +1023,6 @@
         private System.Windows.Forms.Button btnPayrollLoad;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtTakeLeaveAccept;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
     }
 }

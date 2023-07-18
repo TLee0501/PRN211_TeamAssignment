@@ -1,5 +1,6 @@
 ﻿using BusinessObjects;
 using BusinessObjects.ViewModel;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -68,17 +69,23 @@ namespace DataAccessObjects
             return result;
 
         }
-        public void Delete(TakeLeaveViewModel takeLeave)
+        public void Reject(int id)
         {
-            var objectDelete = new TakeLeave();
-            objectDelete.Id = takeLeave.Id;
-            objectDelete.EmployeeId = takeLeave.EmployeeId;
-            objectDelete.StartDate = takeLeave.StartDate;
-            objectDelete.EndDate = takeLeave.EndDate;
-            objectDelete.Description = takeLeave.Description;
             using (var context = new PRN211_IT_HR_Management_SystemContext())
             {
-                context.TakeLeaves.Remove(objectDelete);
+                var result = context.TakeLeaves.Find(id);
+                result.IsAccept = false;
+                context.Entry<TakeLeave>(result).State = EntityState.Modified;
+                context.SaveChanges();
+            }
+        }
+        public void Accept(int id)
+        {
+            using (var context = new PRN211_IT_HR_Management_SystemContext())
+            {
+                var result = context.TakeLeaves.Find(id);
+                result.IsAccept = true;
+                context.Entry<TakeLeave>(result).State = EntityState.Modified;
                 context.SaveChanges();
             }
         }

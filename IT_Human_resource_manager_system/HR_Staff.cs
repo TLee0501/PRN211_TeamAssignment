@@ -334,9 +334,9 @@ namespace IT_Human_resource_manager_system
             {
                 try
                 {
-                    var takeLeave = GetTakeLeaveObject();
-                    takeleaveRepo.Delete(takeLeave);
-                    loadTakeLeaves();
+                    /*var takeLeave = GetTakeLeaveObject();
+                    takeleaveRepo.Reject(takeLeave);
+                    loadTakeLeaves();*/
                 }
                 catch (Exception ex)
                 {

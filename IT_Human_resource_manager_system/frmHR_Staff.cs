@@ -196,7 +196,7 @@ namespace IT_Human_resource_manager_system
                 var temp = new int();
                 using (var context = new PRN211_IT_HR_Management_SystemContext())
                 {
-                    var ot = context.Overtimes.SingleOrDefault(a => a.Id.Equals(txtOTID.Text));
+                    var ot = context.Overtimes.Find(int.Parse(txtOTID.Text));
                     temp = (int)ot.EmployeeId;
                 }
                 overtime = new Overtime
@@ -309,27 +309,6 @@ namespace IT_Human_resource_manager_system
             txtTakeLeaveDescription.Text = string.Empty;
             dtpTakeLeaveFrom.Text = string.Empty;
             dtpTakeLeaveTo.Text = string.Empty;
-        }
-
-        /*======================================================================================================================*/
-        private void button10_Click(object sender, EventArgs e)
-        {
-            var confirmResult = MessageBox.Show("Are you sure to delete this item ??",
-                                     "Confirm Delete!!",
-                                     MessageBoxButtons.YesNo);
-            if (confirmResult == DialogResult.Yes)
-            {
-                try
-                {
-                    var takeLeave = GetTakeLeaveObject();
-                    takeleaveRepo.Delete(takeLeave);
-                    loadTakeLeaves();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Delete an TakeLeave");
-                }
-            }
         }
 
         /*======================================================================================================================*/
@@ -499,7 +478,28 @@ namespace IT_Human_resource_manager_system
 
         private void btnTakeLeaveAccept_Click(object sender, EventArgs e)
         {
+            if (Convert.ToBoolean(txtTakeLeaveAccept.Text) == true)
+            {
+                MessageBox.Show("Already Accepted");
+            }
+            else
+            {
+                takeleaveRepo.Accept(int.Parse(txtTakeLeaveID.Text));
+            }
+            loadTakeLeaves();
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToBoolean(txtTakeLeaveAccept.Text) == false)
+            {
+                MessageBox.Show("Already Rejected");
+            }
+            else
+            {
+                takeleaveRepo.Reject(int.Parse(txtTakeLeaveID.Text));
+            }
+            loadTakeLeaves();
         }
     }
 }

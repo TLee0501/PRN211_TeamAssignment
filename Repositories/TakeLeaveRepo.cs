@@ -12,7 +12,8 @@ namespace Repositories
     public class TakeLeaveRepo : ITakeLeaveRepo
     {
         public void AddTakeLeave(TakeLeave takeLeave) => TakeLeaveDAO.addTakeLeave(takeLeave);
-        public void Delete(TakeLeaveViewModel takeLeave) => TakeLeaveDAO.Instance.Delete(takeLeave);
+        public void Reject(int id) => TakeLeaveDAO.Instance.Reject(id);
         public IEnumerable<TakeLeaveViewModel> GetTakeLeaves() => TakeLeaveDAO.Instance.GetTakeLeaves();
+        public void Accept(int id) => TakeLeaveDAO.Instance.Accept(id);
     }
 }
