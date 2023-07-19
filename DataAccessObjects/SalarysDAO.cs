@@ -45,7 +45,6 @@ namespace DataAccessObjects
                     viewModel.EmployeeId = eID;
                     viewModel.NetSalary = (int)temp.NetSalary;
                     viewModel.Bonus = (int)temp.BonusOt;
-                    viewModel.Allowance = (int)temp.Allowance;
                 }
 
                 viewModel.EmployeeName = context.Employees.Find(eID).Name;
