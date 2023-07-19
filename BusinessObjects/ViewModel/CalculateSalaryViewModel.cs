@@ -14,7 +14,8 @@ namespace BusinessObjects.ViewModel
         public int BasicSalary { get; set; }
         public int NetSalary { get; set;}
         public int LayDays { get; set; }
-        public int OT { get; set;}
-        public int Bonus { get; set;}
+        public int OT { get; set; }
+        public int Bonus { get; set; }
+        public int Allowance { get; set; }
     }
 }

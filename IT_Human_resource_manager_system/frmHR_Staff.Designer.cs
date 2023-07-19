@@ -110,6 +110,7 @@ namespace IT_Human_resource_manager_system
             lxDeductions = new System.Windows.Forms.Label();
             lbPayPeriod = new System.Windows.Forms.Label();
             lbEName = new System.Windows.Forms.Label();
+            btnLogout = new System.Windows.Forms.Button();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCandidates).BeginInit();
@@ -912,11 +913,22 @@ namespace IT_Human_resource_manager_system
             lbEName.TabIndex = 44;
             lbEName.Text = "Employee ID";
             // 
+            // btnLogout
+            // 
+            btnLogout.Location = new System.Drawing.Point(989, 21);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new System.Drawing.Size(94, 29);
+            btnLogout.TabIndex = 1;
+            btnLogout.Text = "Logout";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
+            // 
             // frmHR_Staff
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1098, 502);
+            Controls.Add(btnLogout);
             Controls.Add(tabControl1);
             Name = "frmHR_Staff";
             Text = "HR_Staff";
@@ -1024,5 +1036,6 @@ namespace IT_Human_resource_manager_system
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtTakeLeaveAccept;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
