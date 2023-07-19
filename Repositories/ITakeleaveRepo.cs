@@ -14,7 +14,9 @@ namespace Repositories
         void AddTakeLeave(TakeLeave takeLeave);
 
         
-        int CountTakeLeaveInMonth(int id);
+        int CountTakeLeaveInYear(int id, int year);
+        int CountDayTakeLeave(int employeeId, int year);
+        List<TakeLeave> GetTakeLeavesByEmployeeId(int employeeId);
 
         IEnumerable<TakeLeaveViewModel> GetTakeLeaves();
         void Reject(int id);

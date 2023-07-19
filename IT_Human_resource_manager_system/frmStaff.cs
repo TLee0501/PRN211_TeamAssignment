@@ -140,27 +140,44 @@ namespace IT_Human_resource_manager_system
 
         private void btnSubmitTakeLeave_Click(object sender, EventArgs e)
         {
-            DateTime fromdate = dtpTLFromDate.Value;
-            DateTime todate = dtpTLToDate.Value;
+            DateTime fromDate = dtpTLFromDate.Value;
+            DateTime toDate = dtpTLToDate.Value;
+            string reason = rtbReasonTL.Text;
+
+
+            if (fromDate >= toDate)
+            {
+                MessageBox.Show("Invalid date range. Start date must be before or equal to end date.");
+                return;
+            }
+
+
+            List<TakeLeave> takeLeaves = takeLeaveRepo.GetTakeLeavesByEmployeeId(user.Id);
+
+            int totalDaysTakeLeave = takeLeaveRepo.CountDayTakeLeave(user.Id, fromDate.Year);
+
+            int newTakeLeaveDays = (toDate - fromDate).Days + 1;
+            int totalDaysAfterSubmission = totalDaysTakeLeave + newTakeLeaveDays;
+
+            int maxTakeLeavesPerYear = 12;
+            if (totalDaysAfterSubmission > maxTakeLeavesPerYear)
+            {
+                int remainingDay = maxTakeLeavesPerYear - totalDaysTakeLeave;
+                MessageBox.Show($"You have exceeded the maximum number of leave days allowed (12 days per year). You only have {totalDaysTakeLeave} days of leave remaining.");
+                return;
+            }
+            int remainingDays = maxTakeLeavesPerYear - totalDaysAfterSubmission;
+            MessageBox.Show($"You have {remainingDays} days of leave remaining (out of 12).");
             var tl = new TakeLeave
             {
                 EmployeeId = user.Id,
-                StartDate = fromdate,
-                EndDate = todate,
+                StartDate = fromDate,
+                EndDate = toDate,
                 IsAccept = false,
-                Description = rtbReasonTL.Text,
+                Description = reason,
             };
-            int NumberOfTakeLeave = takeLeaveRepo.CountTakeLeaveInMonth(user.Id);
-            bool isAccepted = tl.IsAccept ?? false;
-            if (NumberOfTakeLeave >= 5 && !isAccepted)
-            {
-                MessageBox.Show("You have applied for leave 12 times this month. You are not allowed to apply for further leave.");
-            }
-            else
-            {
-                takeLeaveRepo.AddTakeLeave(tl);
-                MessageBox.Show("Submit takeleave form success");
-            }
+            takeLeaveRepo.AddTakeLeave(tl);
+            MessageBox.Show("Submit take leave form success.");
 
         }
 
@@ -172,7 +189,7 @@ namespace IT_Human_resource_manager_system
                 int currentHour = dateTime.Hour;
                 Boolean isMorning = currentHour >= 7 && currentHour <= 8;
                 Boolean checkAtten = attendanceRepo.CheckAttendanceToDay(user.Id);
-                Boolean soon = currentHour <7;
+                Boolean soon = currentHour < 7;
                 if (checkAtten)
                 {
                     MessageBox.Show("Already Check Attendance for today");
