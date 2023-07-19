@@ -137,5 +137,12 @@ namespace IT_Human_resource_manager_system
             LoadTakeLeaveList();
             LoadOverTimeList();
         }
+
+        private void btnAddEmployee_Click(object sender, EventArgs e)
+        {
+            frmEmployeeDetails frmEmployeeDetails = new frmEmployeeDetails();
+            frmEmployeeDetails.ShowDialog();
+            LoadManageUserRoleList();
+        }
     }
 }

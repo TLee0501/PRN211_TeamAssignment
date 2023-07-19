@@ -17,6 +17,5 @@ namespace BusinessObjects
         public int? Year { get; set; }
 
         public virtual Employee Employee { get; set; }
-
     }
 }

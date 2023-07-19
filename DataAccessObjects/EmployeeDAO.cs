@@ -36,5 +36,61 @@ namespace DataAccessObjects
             }
             return employees;
         }
+
+        public static void AddEmployee(Employee e)
+        {
+            try
+            {
+                using var db = new PRN211_IT_HR_Management_SystemContext();
+                db.Employees.Add(e);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public static void DeleteEmployee(Employee e)
+        {
+            try
+            {
+                using var db = new PRN211_IT_HR_Management_SystemContext();
+                var tmp = db.Employees.SingleOrDefault(t => t.Id == e.Id);
+                db.Employees.Remove(tmp);
+                db.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public static void UpdateEmployee(Employee e)
+        {
+            try
+            {
+                using var db = new PRN211_IT_HR_Management_SystemContext();
+                db.Entry<Employee>(e).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public static void AddSalary(Salary s)
+        {
+            try
+            {
+                using var db = new PRN211_IT_HR_Management_SystemContext();
+                db.Salaries.Add(s);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }

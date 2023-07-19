@@ -12,6 +12,7 @@ namespace BusinessObjects
             Attendances = new HashSet<Attendance>();
             Overtimes = new HashSet<Overtime>();
             Payslips = new HashSet<Payslip>();
+            Salaries = new HashSet<Salary>();
             TakeLeaveCounts = new HashSet<TakeLeaveCount>();
             TakeLeaves = new HashSet<TakeLeave>();
         }
@@ -28,6 +29,7 @@ namespace BusinessObjects
         public virtual ICollection<Attendance> Attendances { get; set; }
         public virtual ICollection<Overtime> Overtimes { get; set; }
         public virtual ICollection<Payslip> Payslips { get; set; }
+        public virtual ICollection<Salary> Salaries { get; set; }
         public virtual ICollection<TakeLeaveCount> TakeLeaveCounts { get; set; }
         public virtual ICollection<TakeLeave> TakeLeaves { get; set; }
     }

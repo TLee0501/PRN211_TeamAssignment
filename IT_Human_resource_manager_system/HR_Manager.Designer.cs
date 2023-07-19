@@ -43,6 +43,7 @@
             label3 = new System.Windows.Forms.Label();
             lbDescription = new System.Windows.Forms.Label();
             lbTimeOut = new System.Windows.Forms.Label();
+            lbTimeIn = new System.Windows.Forms.Label();
             tabPage4 = new System.Windows.Forms.TabPage();
             txtTakeLeaveID = new System.Windows.Forms.TextBox();
             label19 = new System.Windows.Forms.Label();
@@ -83,14 +84,13 @@
             cboStatus = new System.Windows.Forms.ComboBox();
             cboRole = new System.Windows.Forms.ComboBox();
             label12 = new System.Windows.Forms.Label();
-            button16 = new System.Windows.Forms.Button();
-            button17 = new System.Windows.Forms.Button();
-            button18 = new System.Windows.Forms.Button();
+            btnDeleteEmployee = new System.Windows.Forms.Button();
+            btnUpdateEmployee = new System.Windows.Forms.Button();
+            btnAddEmployee = new System.Windows.Forms.Button();
             dgvManageUserRole = new System.Windows.Forms.DataGridView();
             txtName_4 = new System.Windows.Forms.TextBox();
             label10 = new System.Windows.Forms.Label();
             label11 = new System.Windows.Forms.Label();
-            lbTimeIn = new System.Windows.Forms.Label();
             tabControl1.SuspendLayout();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -260,6 +260,16 @@
             lbTimeOut.Size = new System.Drawing.Size(49, 25);
             lbTimeOut.TabIndex = 29;
             lbTimeOut.Text = "Date";
+            // 
+            // lbTimeIn
+            // 
+            lbTimeIn.AutoSize = true;
+            lbTimeIn.Location = new System.Drawing.Point(45, 272);
+            lbTimeIn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lbTimeIn.Name = "lbTimeIn";
+            lbTimeIn.Size = new System.Drawing.Size(50, 25);
+            lbTimeIn.TabIndex = 28;
+            lbTimeIn.Text = "Time";
             // 
             // tabPage4
             // 
@@ -621,9 +631,9 @@
             tabPage7.Controls.Add(cboStatus);
             tabPage7.Controls.Add(cboRole);
             tabPage7.Controls.Add(label12);
-            tabPage7.Controls.Add(button16);
-            tabPage7.Controls.Add(button17);
-            tabPage7.Controls.Add(button18);
+            tabPage7.Controls.Add(btnDeleteEmployee);
+            tabPage7.Controls.Add(btnUpdateEmployee);
+            tabPage7.Controls.Add(btnAddEmployee);
             tabPage7.Controls.Add(dgvManageUserRole);
             tabPage7.Controls.Add(txtName_4);
             tabPage7.Controls.Add(label10);
@@ -683,35 +693,36 @@
             label12.TabIndex = 16;
             label12.Text = "Role";
             // 
-            // button16
+            // btnDeleteEmployee
             // 
-            button16.Location = new System.Drawing.Point(1038, 414);
-            button16.Margin = new System.Windows.Forms.Padding(4);
-            button16.Name = "button16";
-            button16.Size = new System.Drawing.Size(118, 36);
-            button16.TabIndex = 15;
-            button16.Text = "Delete";
-            button16.UseVisualStyleBackColor = true;
+            btnDeleteEmployee.Location = new System.Drawing.Point(1038, 414);
+            btnDeleteEmployee.Margin = new System.Windows.Forms.Padding(4);
+            btnDeleteEmployee.Name = "btnDeleteEmployee";
+            btnDeleteEmployee.Size = new System.Drawing.Size(118, 36);
+            btnDeleteEmployee.TabIndex = 15;
+            btnDeleteEmployee.Text = "Delete";
+            btnDeleteEmployee.UseVisualStyleBackColor = true;
             // 
-            // button17
+            // btnUpdateEmployee
             // 
-            button17.Location = new System.Drawing.Point(758, 414);
-            button17.Margin = new System.Windows.Forms.Padding(4);
-            button17.Name = "button17";
-            button17.Size = new System.Drawing.Size(118, 36);
-            button17.TabIndex = 14;
-            button17.Text = "Update";
-            button17.UseVisualStyleBackColor = true;
+            btnUpdateEmployee.Location = new System.Drawing.Point(758, 414);
+            btnUpdateEmployee.Margin = new System.Windows.Forms.Padding(4);
+            btnUpdateEmployee.Name = "btnUpdateEmployee";
+            btnUpdateEmployee.Size = new System.Drawing.Size(118, 36);
+            btnUpdateEmployee.TabIndex = 14;
+            btnUpdateEmployee.Text = "Update";
+            btnUpdateEmployee.UseVisualStyleBackColor = true;
             // 
-            // button18
+            // btnAddEmployee
             // 
-            button18.Location = new System.Drawing.Point(474, 414);
-            button18.Margin = new System.Windows.Forms.Padding(4);
-            button18.Name = "button18";
-            button18.Size = new System.Drawing.Size(118, 36);
-            button18.TabIndex = 13;
-            button18.Text = "Add";
-            button18.UseVisualStyleBackColor = true;
+            btnAddEmployee.Location = new System.Drawing.Point(474, 414);
+            btnAddEmployee.Margin = new System.Windows.Forms.Padding(4);
+            btnAddEmployee.Name = "btnAddEmployee";
+            btnAddEmployee.Size = new System.Drawing.Size(118, 36);
+            btnAddEmployee.TabIndex = 13;
+            btnAddEmployee.Text = "Add";
+            btnAddEmployee.UseVisualStyleBackColor = true;
+            btnAddEmployee.Click += btnAddEmployee_Click;
             // 
             // dgvManageUserRole
             // 
@@ -751,16 +762,6 @@
             label11.Size = new System.Drawing.Size(59, 25);
             label11.TabIndex = 8;
             label11.Text = "Name";
-            // 
-            // lbTimeIn
-            // 
-            lbTimeIn.AutoSize = true;
-            lbTimeIn.Location = new System.Drawing.Point(45, 272);
-            lbTimeIn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            lbTimeIn.Name = "lbTimeIn";
-            lbTimeIn.Size = new System.Drawing.Size(50, 25);
-            lbTimeIn.TabIndex = 28;
-            lbTimeIn.Text = "Time";
             // 
             // HR_Manager
             // 
@@ -843,9 +844,9 @@
         private System.Windows.Forms.ComboBox cboStatus;
         private System.Windows.Forms.ComboBox cboRole;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button btnDeleteEmployee;
+        private System.Windows.Forms.Button btnUpdateEmployee;
+        private System.Windows.Forms.Button btnAddEmployee;
         private System.Windows.Forms.DataGridView dgvManageUserRole;
         private System.Windows.Forms.TextBox txtName_4;
         private System.Windows.Forms.Label label10;

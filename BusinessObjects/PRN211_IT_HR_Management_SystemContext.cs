@@ -1,9 +1,8 @@
 ﻿using System;
+using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Configuration;
-using System.IO;
-using Microsoft.Extensions.Configuration.Json;
 
 #nullable disable
 
@@ -25,6 +24,7 @@ namespace BusinessObjects
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Overtime> Overtimes { get; set; }
         public virtual DbSet<Payslip> Payslips { get; set; }
+        public virtual DbSet<Salary> Salaries { get; set; }
         public virtual DbSet<TakeLeave> TakeLeaves { get; set; }
         public virtual DbSet<TakeLeaveCount> TakeLeaveCounts { get; set; }
 
@@ -35,16 +35,17 @@ namespace BusinessObjects
 //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
 //                optionsBuilder.UseSqlServer("Server=LAPTOP-PJ9J54RP; Database=PRN211_IT_HR_Management_System; Uid=sa; Pwd=12345");
 //            }
-                optionsBuilder.UseSqlServer(GetConnectionString());
+            optionsBuilder.UseSqlServer(GetConnection());
         }
 
-        private string GetConnectionString()
+        private string GetConnection()
         {
             IConfiguration configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", true, true) .Build();
+                .AddJsonFile("appsettings.json").Build();
             return configuration["ConnectionStrings:DefaultConnectionString"];
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
@@ -53,9 +54,7 @@ namespace BusinessObjects
             {
                 entity.ToTable("Attendance");
 
-                entity.Property(e => e.AttendanceId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("AttendanceID");
+                entity.Property(e => e.AttendanceId).HasColumnName("AttendanceID");
 
                 entity.Property(e => e.Date).HasColumnType("datetime");
 
@@ -73,9 +72,7 @@ namespace BusinessObjects
             {
                 entity.ToTable("Candidate");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Description)
                     .HasMaxLength(500)
@@ -90,9 +87,7 @@ namespace BusinessObjects
             {
                 entity.ToTable("Employee");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Email).IsUnicode(false);
 
@@ -121,9 +116,7 @@ namespace BusinessObjects
             {
                 entity.ToTable("Overtime");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Date).HasColumnType("date");
 
@@ -139,9 +132,7 @@ namespace BusinessObjects
             {
                 entity.ToTable("Payslip");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.BonusOt).HasColumnName("BonusOT");
 
@@ -153,20 +144,34 @@ namespace BusinessObjects
                     .HasConstraintName("FK_Payslip_Employee");
             });
 
-            modelBuilder.Entity<TakeLeave>(entity =>
+            modelBuilder.Entity<Salary>(entity =>
             {
-                entity.ToTable("TakeLeave");
+                entity.ToTable("Salary");
 
                 entity.Property(e => e.Id)
                     .ValueGeneratedNever()
                     .HasColumnName("ID");
+
+                entity.Property(e => e.EmployeeId).HasColumnName("EmployeeID");
+
+                entity.HasOne(d => d.Employee)
+                    .WithMany(p => p.Salaries)
+                    .HasForeignKey(d => d.EmployeeId)
+                    .HasConstraintName("FK_Salary_Employee");
+            });
+
+            modelBuilder.Entity<TakeLeave>(entity =>
+            {
+                entity.ToTable("TakeLeave");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Description)
                     .HasMaxLength(500)
                     .IsUnicode(false);
 
                 entity.Property(e => e.EmployeeId).HasColumnName("EmployeeID");
-                
+
                 entity.Property(e => e.EndDate).HasColumnType("date");
 
                 entity.Property(e => e.IsAccept).HasColumnName("isAccept");
@@ -183,9 +188,7 @@ namespace BusinessObjects
             {
                 entity.ToTable("TakeLeaveCount");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.EmployeeId).HasColumnName("EmployeeID");
 

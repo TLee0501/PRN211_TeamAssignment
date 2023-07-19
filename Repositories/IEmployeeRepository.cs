@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,5 +10,9 @@ namespace Repositories
     public interface IEmployeeRepository
     {
         List<Object> GetEmployees();
+        void AddEmployee(Employee e);
+        void UpdateEmployee(Employee e);
+        void DeleteEmployee(Employee e);
+        void AddSalary(Salary s);
     }
 }
