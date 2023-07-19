@@ -2,6 +2,7 @@
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ namespace DataAccessObjects
             List<Object> employees = new List<Object>();
             try
             {
-                string s = "SELECT ID, Name, Status, RoleName From Employee";
+                string s = "SELECT e.ID, Name, Status, RoleName, s.Amount\r\nFrom Employee e, Salary s\r\nWHERE e.ID = s.EmployeeID and e.RoleName != 'HR_Manager'";
                 DbProviderFactory factory = SqlClientFactory.Instance;
                 using DbConnection connection = factory.CreateConnection();
                 connection.ConnectionString = GetConnection.GetConnectionString();
@@ -92,5 +93,65 @@ namespace DataAccessObjects
                 throw new Exception(e.Message);
             }
         }
+
+        public static void SetRole(string role, int id)
+        {
+            try
+            {
+                string s = $"update Employee \r\n set Rolename = '{role}' \r\n Where Employee.ID = {id}";
+                DbProviderFactory factory = SqlClientFactory.Instance;
+                using DbConnection connection = factory.CreateConnection();
+                connection.ConnectionString = GetConnection.GetConnectionString();
+                connection.Open();
+                DbCommand cmd = connection.CreateCommand();
+                cmd.Connection = connection;
+                cmd.CommandText = s;
+                DbDataReader reader = cmd.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public static void setSalary(int salary, int id)
+        {
+            try
+            {
+                string s = $"update Salary \r\nset Amount = {salary} \r\nWhere EmployeeID = {id}";
+                DbProviderFactory factory = SqlClientFactory.Instance;
+                using DbConnection connection = factory.CreateConnection();
+                connection.ConnectionString = GetConnection.GetConnectionString();
+                connection.Open();
+                DbCommand cmd = connection.CreateCommand();
+                cmd.Connection = connection;
+                cmd.CommandText = s;
+                DbDataReader reader = cmd.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        //public static void SetStatus(string status, int id)
+        //{
+        //    try
+        //    {
+        //        string s = $"update Employee \r\n set Rolename = '{status}' \r\n Where Employee.ID = {id}";
+        //        DbProviderFactory factory = SqlClientFactory.Instance;
+        //        using DbConnection connection = factory.CreateConnection();
+        //        connection.ConnectionString = GetConnection.GetConnectionString();
+        //        connection.Open();
+        //        DbCommand cmd = connection.CreateCommand();
+        //        cmd.Connection = connection;
+        //        cmd.CommandText = s;
+        //        DbDataReader reader = cmd.ExecuteReader();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new Exception(ex.Message);
+        //    }
+        //}
     }
 }

@@ -29,26 +29,22 @@
         private void InitializeComponent()
         {
             label1 = new System.Windows.Forms.Label();
-            label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
-            label7 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
-            txtID = new System.Windows.Forms.TextBox();
             txtName = new System.Windows.Forms.TextBox();
             txtUserName = new System.Windows.Forms.TextBox();
             txtPassword = new System.Windows.Forms.TextBox();
-            txtRole = new System.Windows.Forms.TextBox();
-            txtStatus = new System.Windows.Forms.TextBox();
             txtPhoneNumber = new System.Windows.Forms.TextBox();
             txtEmail = new System.Windows.Forms.TextBox();
             txtBasicSalary = new System.Windows.Forms.TextBox();
             btnConfirm = new System.Windows.Forms.Button();
             btnCancle = new System.Windows.Forms.Button();
+            cboRole = new System.Windows.Forms.ComboBox();
             SuspendLayout();
             // 
             // label1
@@ -62,19 +58,10 @@
             label1.Text = "Employee Information";
             label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(52, 90);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(117, 25);
-            label2.TabIndex = 1;
-            label2.Text = "EmployeeID :";
-            // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(434, 90);
+            label3.Location = new System.Drawing.Point(52, 90);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(68, 25);
             label3.TabIndex = 2;
@@ -107,15 +94,6 @@
             label6.TabIndex = 5;
             label6.Text = "Role :";
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(434, 197);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(69, 25);
-            label7.TabIndex = 6;
-            label7.Text = "Status :";
-            // 
             // label8
             // 
             label8.AutoSize = true;
@@ -143,16 +121,9 @@
             label10.TabIndex = 9;
             label10.Text = "Basic Salary :";
             // 
-            // txtID
-            // 
-            txtID.Location = new System.Drawing.Point(202, 87);
-            txtID.Name = "txtID";
-            txtID.Size = new System.Drawing.Size(226, 31);
-            txtID.TabIndex = 10;
-            // 
             // txtName
             // 
-            txtName.Location = new System.Drawing.Point(536, 90);
+            txtName.Location = new System.Drawing.Point(202, 90);
             txtName.Name = "txtName";
             txtName.Size = new System.Drawing.Size(226, 31);
             txtName.TabIndex = 11;
@@ -170,20 +141,6 @@
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new System.Drawing.Size(226, 31);
             txtPassword.TabIndex = 13;
-            // 
-            // txtRole
-            // 
-            txtRole.Location = new System.Drawing.Point(202, 185);
-            txtRole.Name = "txtRole";
-            txtRole.Size = new System.Drawing.Size(226, 31);
-            txtRole.TabIndex = 14;
-            // 
-            // txtStatus
-            // 
-            txtStatus.Location = new System.Drawing.Point(536, 188);
-            txtStatus.Name = "txtStatus";
-            txtStatus.Size = new System.Drawing.Size(226, 31);
-            txtStatus.TabIndex = 15;
             // 
             // txtPhoneNumber
             // 
@@ -224,32 +181,38 @@
             btnCancle.TabIndex = 20;
             btnCancle.Text = "Cancle";
             btnCancle.UseVisualStyleBackColor = true;
+            btnCancle.Click += btnCancle_Click;
+            // 
+            // cboRole
+            // 
+            cboRole.FormattingEnabled = true;
+            cboRole.Items.AddRange(new object[] { "Staff", "HR_Staff", "HR_Manager" });
+            cboRole.Location = new System.Drawing.Point(202, 188);
+            cboRole.Name = "cboRole";
+            cboRole.Size = new System.Drawing.Size(226, 33);
+            cboRole.TabIndex = 21;
             // 
             // frmEmployeeDetails
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(783, 450);
+            Controls.Add(cboRole);
             Controls.Add(btnCancle);
             Controls.Add(btnConfirm);
             Controls.Add(txtBasicSalary);
             Controls.Add(txtEmail);
             Controls.Add(txtPhoneNumber);
-            Controls.Add(txtStatus);
-            Controls.Add(txtRole);
             Controls.Add(txtPassword);
             Controls.Add(txtUserName);
             Controls.Add(txtName);
-            Controls.Add(txtID);
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(label8);
-            Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(label1);
             Name = "frmEmployeeDetails";
             Text = "frmEmployeeDetails";
@@ -260,25 +223,21 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtRole;
-        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtBasicSalary;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnCancle;
+        private System.Windows.Forms.ComboBox cboRole;
     }
 }

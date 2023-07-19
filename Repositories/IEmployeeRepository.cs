@@ -14,5 +14,7 @@ namespace Repositories
         void UpdateEmployee(Employee e);
         void DeleteEmployee(Employee e);
         void AddSalary(Salary s);
+        void setRole(string role, int id);
+        void setSalary(int salary, int id);
     }
 }
