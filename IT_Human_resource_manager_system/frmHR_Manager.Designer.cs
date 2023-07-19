@@ -79,18 +79,20 @@
             lbPayPeriod = new System.Windows.Forms.Label();
             lbEName = new System.Windows.Forms.Label();
             tabPage7 = new System.Windows.Forms.TabPage();
+            txtSalary = new System.Windows.Forms.TextBox();
+            txtStatus = new System.Windows.Forms.TextBox();
+            label2 = new System.Windows.Forms.Label();
             txtEmployeeID = new System.Windows.Forms.TextBox();
             label20 = new System.Windows.Forms.Label();
-            cboStatus = new System.Windows.Forms.ComboBox();
-            cboRole = new System.Windows.Forms.ComboBox();
             label12 = new System.Windows.Forms.Label();
-            btnDeleteEmployee = new System.Windows.Forms.Button();
+            btnLog = new System.Windows.Forms.Button();
             btnUpdateEmployee = new System.Windows.Forms.Button();
             btnAddEmployee = new System.Windows.Forms.Button();
             dgvManageUserRole = new System.Windows.Forms.DataGridView();
             txtName_4 = new System.Windows.Forms.TextBox();
             label10 = new System.Windows.Forms.Label();
             label11 = new System.Windows.Forms.Label();
+            cboRole = new System.Windows.Forms.ComboBox();
             tabControl1.SuspendLayout();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -626,12 +628,14 @@
             // 
             // tabPage7
             // 
+            tabPage7.Controls.Add(cboRole);
+            tabPage7.Controls.Add(txtSalary);
+            tabPage7.Controls.Add(txtStatus);
+            tabPage7.Controls.Add(label2);
             tabPage7.Controls.Add(txtEmployeeID);
             tabPage7.Controls.Add(label20);
-            tabPage7.Controls.Add(cboStatus);
-            tabPage7.Controls.Add(cboRole);
             tabPage7.Controls.Add(label12);
-            tabPage7.Controls.Add(btnDeleteEmployee);
+            tabPage7.Controls.Add(btnLog);
             tabPage7.Controls.Add(btnUpdateEmployee);
             tabPage7.Controls.Add(btnAddEmployee);
             tabPage7.Controls.Add(dgvManageUserRole);
@@ -647,8 +651,35 @@
             tabPage7.Text = "Manage User/Role";
             tabPage7.UseVisualStyleBackColor = true;
             // 
+            // txtSalary
+            // 
+            txtSalary.Location = new System.Drawing.Point(34, 361);
+            txtSalary.Margin = new System.Windows.Forms.Padding(4);
+            txtSalary.Name = "txtSalary";
+            txtSalary.Size = new System.Drawing.Size(256, 31);
+            txtSalary.TabIndex = 24;
+            // 
+            // txtStatus
+            // 
+            txtStatus.Location = new System.Drawing.Point(34, 188);
+            txtStatus.Margin = new System.Windows.Forms.Padding(4);
+            txtStatus.Name = "txtStatus";
+            txtStatus.Size = new System.Drawing.Size(256, 31);
+            txtStatus.TabIndex = 22;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(34, 317);
+            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(59, 25);
+            label2.TabIndex = 21;
+            label2.Text = "Salary";
+            // 
             // txtEmployeeID
             // 
+            txtEmployeeID.Enabled = false;
             txtEmployeeID.Location = new System.Drawing.Point(34, 48);
             txtEmployeeID.Margin = new System.Windows.Forms.Padding(4);
             txtEmployeeID.Name = "txtEmployeeID";
@@ -665,24 +696,6 @@
             label20.TabIndex = 19;
             label20.Text = "ID";
             // 
-            // cboStatus
-            // 
-            cboStatus.FormattingEnabled = true;
-            cboStatus.Location = new System.Drawing.Point(34, 188);
-            cboStatus.Margin = new System.Windows.Forms.Padding(4);
-            cboStatus.Name = "cboStatus";
-            cboStatus.Size = new System.Drawing.Size(253, 33);
-            cboStatus.TabIndex = 18;
-            // 
-            // cboRole
-            // 
-            cboRole.FormattingEnabled = true;
-            cboRole.Location = new System.Drawing.Point(34, 269);
-            cboRole.Margin = new System.Windows.Forms.Padding(4);
-            cboRole.Name = "cboRole";
-            cboRole.Size = new System.Drawing.Size(253, 33);
-            cboRole.TabIndex = 17;
-            // 
             // label12
             // 
             label12.AutoSize = true;
@@ -693,15 +706,16 @@
             label12.TabIndex = 16;
             label12.Text = "Role";
             // 
-            // btnDeleteEmployee
+            // btnLog
             // 
-            btnDeleteEmployee.Location = new System.Drawing.Point(1038, 414);
-            btnDeleteEmployee.Margin = new System.Windows.Forms.Padding(4);
-            btnDeleteEmployee.Name = "btnDeleteEmployee";
-            btnDeleteEmployee.Size = new System.Drawing.Size(118, 36);
-            btnDeleteEmployee.TabIndex = 15;
-            btnDeleteEmployee.Text = "Delete";
-            btnDeleteEmployee.UseVisualStyleBackColor = true;
+            btnLog.Location = new System.Drawing.Point(1038, 414);
+            btnLog.Margin = new System.Windows.Forms.Padding(4);
+            btnLog.Name = "btnLog";
+            btnLog.Size = new System.Drawing.Size(118, 36);
+            btnLog.TabIndex = 15;
+            btnLog.Text = "Log";
+            btnLog.UseVisualStyleBackColor = true;
+            btnLog.Click += btnLog_Click;
             // 
             // btnUpdateEmployee
             // 
@@ -712,6 +726,7 @@
             btnUpdateEmployee.TabIndex = 14;
             btnUpdateEmployee.Text = "Update";
             btnUpdateEmployee.UseVisualStyleBackColor = true;
+            btnUpdateEmployee.Click += btnUpdateEmployee_Click;
             // 
             // btnAddEmployee
             // 
@@ -763,14 +778,23 @@
             label11.TabIndex = 8;
             label11.Text = "Name";
             // 
-            // HR_Manager
+            // cboRole
+            // 
+            cboRole.FormattingEnabled = true;
+            cboRole.Items.AddRange(new object[] { "Staff", "HR_Staff", "HR_Manager" });
+            cboRole.Location = new System.Drawing.Point(38, 268);
+            cboRole.Name = "cboRole";
+            cboRole.Size = new System.Drawing.Size(252, 33);
+            cboRole.TabIndex = 25;
+            // 
+            // frmHR_Manager
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1372, 665);
             Controls.Add(tabControl1);
             Margin = new System.Windows.Forms.Padding(4);
-            Name = "HR_Manager";
+            Name = "frmHR_Manager";
             Text = "HR_Manager";
             Load += HR_Manager_Load;
             tabControl1.ResumeLayout(false);
@@ -841,10 +865,8 @@
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TextBox txtEmployeeID;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ComboBox cboStatus;
-        private System.Windows.Forms.ComboBox cboRole;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button btnDeleteEmployee;
+        private System.Windows.Forms.Button btnLog;
         private System.Windows.Forms.Button btnUpdateEmployee;
         private System.Windows.Forms.Button btnAddEmployee;
         private System.Windows.Forms.DataGridView dgvManageUserRole;
@@ -854,5 +876,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtYear;
         private System.Windows.Forms.Label lbTimeIn;
+        private System.Windows.Forms.TextBox txtSalary;
+        private System.Windows.Forms.TextBox txtStatus;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cboRole;
     }
 }

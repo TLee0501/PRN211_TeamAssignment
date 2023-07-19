@@ -22,8 +22,8 @@ namespace IT_Human_resource_manager_system
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (txtID.Text == "" || txtID.Name == "" || txtUserName.Text == "" || txtPassword.Text == ""
-                || txtRole.Text == "" || txtStatus.Text == "" || txtPhoneNumber.Text == "" 
+            if (txtName.Text == "" || txtUserName.Text == "" || txtPassword.Text == ""
+                || cboRole.Text == "" || txtPhoneNumber.Text == ""
                 || txtEmail.Text == "" || txtBasicSalary.Text == "")
             {
                 MessageBox.Show("All fields are required!", "Product Management",
@@ -33,25 +33,42 @@ namespace IT_Human_resource_manager_system
             {
                 var emp = new Employee
                 {
-                    //Id = int.Parse(txtID.Text),
                     Name = txtName.Text,
                     Username = txtUserName.Text,
                     Password = txtPassword.Text,
-                    RoleName = txtRole.Text,
-                    Status = txtStatus.Text,
+                    RoleName = cboRole.SelectedItem.ToString(),
+                    Status = "Active",
                     PhoneNumber = int.Parse(txtPhoneNumber.Text),
                     Email = txtEmail.Text,
                 };
-                var s = new Salary
-                { 
-                    //Id = int.Parse(txtID.Text) + 1,
-                    Amount = int.Parse(txtID.Text),
-                    //EmployeeId = int.Parse(txtID.Text),
-                };
                 employee.AddEmployee(emp);
+                var s = new Salary
+                {
+                    Id = emp.Id,
+                    Amount = int.Parse(txtBasicSalary.Text),
+                    EmployeeId = emp.Id,
+                };
                 employee.AddSalary(s);
                 Close();
             }
+        }
+
+        private void btnCancle_Click(object sender, EventArgs e)
+        {
+            if (txtName.Text != null || txtUserName.Text != null || txtPassword.Text != null
+                || cboRole.Text != null || txtPhoneNumber.Text != null
+                || txtEmail.Text != null || txtBasicSalary.Text != null)
+            {
+                DialogResult d;
+                d = MessageBox.Show("Data on the fields!", "HR Management",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+                if (d == DialogResult.OK)
+                {
+                    Close();
+                }
+            }
+            else Close();
         }
     }
 }

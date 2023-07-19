@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace IT_Human_resource_manager_system
 {
@@ -115,13 +116,15 @@ namespace IT_Human_resource_manager_system
 
                 txtEmployeeID.DataBindings.Clear();
                 txtName_4.DataBindings.Clear();
-                cboStatus.DataBindings.Clear();
+                txtStatus.DataBindings.Clear();
                 cboRole.DataBindings.Clear();
+                txtSalary.DataBindings.Clear();
 
                 txtEmployeeID.DataBindings.Add("Text", source, "Id");
                 txtName_4.DataBindings.Add("Text", source, "Name");
-                cboStatus.DataBindings.Add("Text", source, "Status");
+                txtStatus.DataBindings.Add("Text", source, "Status");
                 cboRole.DataBindings.Add("Text", source, "RoleName");
+                txtSalary.DataBindings.Add("Text", source, "Amount");
 
                 dgvManageUserRole.DataSource = null;
                 dgvManageUserRole.DataSource = source;
@@ -144,6 +147,33 @@ namespace IT_Human_resource_manager_system
             frmEmployeeDetails frmEmployeeDetails = new frmEmployeeDetails();
             frmEmployeeDetails.ShowDialog();
             LoadManageUserRoleList();
+        }
+
+        private void btnLog_Click(object sender, EventArgs e)
+        {
+            DialogResult d;
+            d = MessageBox.Show("Confirm to change Status ?", "HR Management",
+            MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+            if (d == DialogResult.OK)
+            {
+            }
+        }
+
+        private void btnUpdateEmployee_Click(object sender, EventArgs e)
+        {
+            if (cboRole.Text == "" || txtSalary.Text == "")
+            {
+                MessageBox.Show("All fields are required!", "Product Management",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                employee.setRole(cboRole.SelectedItem.ToString(), int.Parse(txtEmployeeID.Text));
+                employee.setSalary(int.Parse(txtSalary.Text), int.Parse(txtEmployeeID.Text));
+                LoadManageUserRoleList();
+            }
+            
         }
     }
 }
