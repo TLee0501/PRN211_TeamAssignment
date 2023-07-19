@@ -8,19 +8,19 @@ using System.Threading.Tasks;
 
 namespace DataAccessObjects
 {
-    public class TakeLeaveDAO
+    public class PayslipDAO
     {
-        public static List<TakeLeave> GetTakeLeaves()
+        public static List<Payslip> GetPayslips()
         {
-            var list = new List<TakeLeave>();
+            List<Payslip> list = new List<Payslip>();
             try
             {
                 using var db = new PRN211_IT_HR_Management_SystemContext();
-                list = db.TakeLeaves.Include(t => t.Employee).ToList();
+                list = db.Payslips.Include(p => p.Employee).ToList();
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                Console.WriteLine(ex.Message);
             }
             return list;
         }

@@ -9,9 +9,10 @@ namespace BusinessObjects
     {
         public Employee()
         {
+            Attendances = new HashSet<Attendance>();
             Overtimes = new HashSet<Overtime>();
             Payslips = new HashSet<Payslip>();
-            PersonalContracts = new HashSet<PersonalContract>();
+            TakeLeaveCounts = new HashSet<TakeLeaveCount>();
             TakeLeaves = new HashSet<TakeLeave>();
         }
 
@@ -24,9 +25,10 @@ namespace BusinessObjects
         public int? PhoneNumber { get; set; }
         public string Email { get; set; }
 
+        public virtual ICollection<Attendance> Attendances { get; set; }
         public virtual ICollection<Overtime> Overtimes { get; set; }
         public virtual ICollection<Payslip> Payslips { get; set; }
-        public virtual ICollection<PersonalContract> PersonalContracts { get; set; }
+        public virtual ICollection<TakeLeaveCount> TakeLeaveCounts { get; set; }
         public virtual ICollection<TakeLeave> TakeLeaves { get; set; }
     }
 }

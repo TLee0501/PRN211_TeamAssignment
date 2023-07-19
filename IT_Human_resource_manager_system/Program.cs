@@ -17,7 +17,7 @@ namespace IT_Human_resource_manager_system
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HR_Staff());
+            Application.Run(new HR_Manager());
         }
     }
 }
