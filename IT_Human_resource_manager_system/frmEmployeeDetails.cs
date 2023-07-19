@@ -33,7 +33,7 @@ namespace IT_Human_resource_manager_system
             {
                 var emp = new Employee
                 {
-                    Id = int.Parse(txtID.Text),
+                    //Id = int.Parse(txtID.Text),
                     Name = txtName.Text,
                     Username = txtUserName.Text,
                     Password = txtPassword.Text,
@@ -44,9 +44,9 @@ namespace IT_Human_resource_manager_system
                 };
                 var s = new Salary
                 { 
-                    Id = int.Parse(txtID.Text) + 1,
+                    //Id = int.Parse(txtID.Text) + 1,
                     Amount = int.Parse(txtID.Text),
-                    EmployeeId = int.Parse(txtID.Text),
+                    //EmployeeId = int.Parse(txtID.Text),
                 };
                 employee.AddEmployee(emp);
                 employee.AddSalary(s);
