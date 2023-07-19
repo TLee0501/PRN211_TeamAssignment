@@ -31,51 +31,55 @@
             label1 = new System.Windows.Forms.Label();
             btnLogout = new System.Windows.Forms.Button();
             Payslip_Payroll = new System.Windows.Forms.TabPage();
-            lbEName = new System.Windows.Forms.Label();
-            lxBonusOT = new System.Windows.Forms.Label();
-            lbAllowances = new System.Windows.Forms.Label();
-            lbBasicSalary = new System.Windows.Forms.Label();
-            lbNetSalary = new System.Windows.Forms.Label();
-            button1 = new System.Windows.Forms.Button();
-            txtEName = new System.Windows.Forms.TextBox();
-            txtBasicSalary = new System.Windows.Forms.TextBox();
-            txtAllowances = new System.Windows.Forms.TextBox();
-            txtBonusOT = new System.Windows.Forms.TextBox();
             txtNetSalary = new System.Windows.Forms.TextBox();
+            txtBonusOT = new System.Windows.Forms.TextBox();
+            txtAllowances = new System.Windows.Forms.TextBox();
+            txtBasicSalary = new System.Windows.Forms.TextBox();
+            txtEName = new System.Windows.Forms.TextBox();
+            button1 = new System.Windows.Forms.Button();
+            lbNetSalary = new System.Windows.Forms.Label();
+            lbBasicSalary = new System.Windows.Forms.Label();
+            lbAllowances = new System.Windows.Forms.Label();
+            lxBonusOT = new System.Windows.Forms.Label();
+            lbEName = new System.Windows.Forms.Label();
             Take_Leave = new System.Windows.Forms.TabPage();
-            lbFromDate = new System.Windows.Forms.Label();
-            lbToDate = new System.Windows.Forms.Label();
-            lbReason = new System.Windows.Forms.Label();
-            dtpTLFromDate = new System.Windows.Forms.DateTimePicker();
-            dtpTLToDate = new System.Windows.Forms.DateTimePicker();
-            btnSubmitTakeLeave = new System.Windows.Forms.Button();
-            btnResetL = new System.Windows.Forms.Button();
             rtbReasonTL = new System.Windows.Forms.RichTextBox();
+            btnResetL = new System.Windows.Forms.Button();
+            btnSubmitTakeLeave = new System.Windows.Forms.Button();
+            dtpTLToDate = new System.Windows.Forms.DateTimePicker();
+            dtpTLFromDate = new System.Windows.Forms.DateTimePicker();
+            lbReason = new System.Windows.Forms.Label();
+            lbToDate = new System.Windows.Forms.Label();
+            lbFromDate = new System.Windows.Forms.Label();
             Manage_LogOT = new System.Windows.Forms.TabPage();
-            lbDate = new System.Windows.Forms.Label();
-            lbTimeIn = new System.Windows.Forms.Label();
-            dtpOT = new System.Windows.Forms.DateTimePicker();
-            btnSubmit = new System.Windows.Forms.Button();
-            btnReset = new System.Windows.Forms.Button();
             txtTimeOT = new System.Windows.Forms.TextBox();
+            btnReset = new System.Windows.Forms.Button();
+            btnSubmit = new System.Windows.Forms.Button();
+            dtpOT = new System.Windows.Forms.DateTimePicker();
+            lbTimeIn = new System.Windows.Forms.Label();
+            lbDate = new System.Windows.Forms.Label();
             Person_info = new System.Windows.Forms.TabPage();
-            lbName = new System.Windows.Forms.Label();
-            lbEmail = new System.Windows.Forms.Label();
-            lbPhonenumber = new System.Windows.Forms.Label();
-            txtName = new System.Windows.Forms.TextBox();
-            TxtEmail = new System.Windows.Forms.TextBox();
-            txtPhonenumber = new System.Windows.Forms.TextBox();
-            btnUpdate = new System.Windows.Forms.Button();
             btnChangePass = new System.Windows.Forms.Button();
+            btnUpdate = new System.Windows.Forms.Button();
+            txtPhonenumber = new System.Windows.Forms.TextBox();
+            TxtEmail = new System.Windows.Forms.TextBox();
+            txtName = new System.Windows.Forms.TextBox();
+            lbPhonenumber = new System.Windows.Forms.Label();
+            lbEmail = new System.Windows.Forms.Label();
+            lbName = new System.Windows.Forms.Label();
             CheckAttendance = new System.Windows.Forms.TabPage();
             btnCheckAttendance = new System.Windows.Forms.Button();
             tabControl1 = new System.Windows.Forms.TabControl();
+            ListTLSubmit = new System.Windows.Forms.TabPage();
+            dgvListTakeLeave = new System.Windows.Forms.DataGridView();
             Payslip_Payroll.SuspendLayout();
             Take_Leave.SuspendLayout();
             Manage_LogOT.SuspendLayout();
             Person_info.SuspendLayout();
             CheckAttendance.SuspendLayout();
             tabControl1.SuspendLayout();
+            ListTLSubmit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvListTakeLeave).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -119,50 +123,40 @@
             Payslip_Payroll.Text = "Payslip/Payroll";
             Payslip_Payroll.UseVisualStyleBackColor = true;
             // 
-            // lbEName
+            // txtNetSalary
             // 
-            lbEName.AutoSize = true;
-            lbEName.Location = new System.Drawing.Point(41, 40);
-            lbEName.Name = "lbEName";
-            lbEName.Size = new System.Drawing.Size(123, 20);
-            lbEName.TabIndex = 0;
-            lbEName.Text = " Employee Name";
+            txtNetSalary.Location = new System.Drawing.Point(214, 228);
+            txtNetSalary.Name = "txtNetSalary";
+            txtNetSalary.Size = new System.Drawing.Size(211, 27);
+            txtNetSalary.TabIndex = 14;
             // 
-            // lxBonusOT
+            // txtBonusOT
             // 
-            lxBonusOT.AutoSize = true;
-            lxBonusOT.Location = new System.Drawing.Point(44, 174);
-            lxBonusOT.Name = "lxBonusOT";
-            lxBonusOT.Size = new System.Drawing.Size(67, 20);
-            lxBonusOT.TabIndex = 2;
-            lxBonusOT.Text = "BonusOT";
+            txtBonusOT.Location = new System.Drawing.Point(214, 174);
+            txtBonusOT.Name = "txtBonusOT";
+            txtBonusOT.Size = new System.Drawing.Size(211, 27);
+            txtBonusOT.TabIndex = 12;
             // 
-            // lbAllowances
+            // txtAllowances
             // 
-            lbAllowances.AutoSize = true;
-            lbAllowances.Location = new System.Drawing.Point(44, 129);
-            lbAllowances.Name = "lbAllowances";
-            lbAllowances.Size = new System.Drawing.Size(84, 20);
-            lbAllowances.TabIndex = 3;
-            lbAllowances.Text = "Allowances";
+            txtAllowances.Location = new System.Drawing.Point(212, 129);
+            txtAllowances.Name = "txtAllowances";
+            txtAllowances.Size = new System.Drawing.Size(212, 27);
+            txtAllowances.TabIndex = 11;
             // 
-            // lbBasicSalary
+            // txtBasicSalary
             // 
-            lbBasicSalary.AutoSize = true;
-            lbBasicSalary.Location = new System.Drawing.Point(41, 88);
-            lbBasicSalary.Name = "lbBasicSalary";
-            lbBasicSalary.Size = new System.Drawing.Size(87, 20);
-            lbBasicSalary.TabIndex = 4;
-            lbBasicSalary.Text = "Basic Salary";
+            txtBasicSalary.Location = new System.Drawing.Point(213, 88);
+            txtBasicSalary.Name = "txtBasicSalary";
+            txtBasicSalary.Size = new System.Drawing.Size(212, 27);
+            txtBasicSalary.TabIndex = 10;
             // 
-            // lbNetSalary
+            // txtEName
             // 
-            lbNetSalary.AutoSize = true;
-            lbNetSalary.Location = new System.Drawing.Point(44, 228);
-            lbNetSalary.Name = "lbNetSalary";
-            lbNetSalary.Size = new System.Drawing.Size(77, 20);
-            lbNetSalary.TabIndex = 5;
-            lbNetSalary.Text = "Net Salary";
+            txtEName.Location = new System.Drawing.Point(213, 40);
+            txtEName.Name = "txtEName";
+            txtEName.Size = new System.Drawing.Size(211, 27);
+            txtEName.TabIndex = 8;
             // 
             // button1
             // 
@@ -174,40 +168,50 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // txtEName
+            // lbNetSalary
             // 
-            txtEName.Location = new System.Drawing.Point(213, 40);
-            txtEName.Name = "txtEName";
-            txtEName.Size = new System.Drawing.Size(211, 27);
-            txtEName.TabIndex = 8;
+            lbNetSalary.AutoSize = true;
+            lbNetSalary.Location = new System.Drawing.Point(44, 228);
+            lbNetSalary.Name = "lbNetSalary";
+            lbNetSalary.Size = new System.Drawing.Size(77, 20);
+            lbNetSalary.TabIndex = 5;
+            lbNetSalary.Text = "Net Salary";
             // 
-            // txtBasicSalary
+            // lbBasicSalary
             // 
-            txtBasicSalary.Location = new System.Drawing.Point(213, 88);
-            txtBasicSalary.Name = "txtBasicSalary";
-            txtBasicSalary.Size = new System.Drawing.Size(212, 27);
-            txtBasicSalary.TabIndex = 10;
+            lbBasicSalary.AutoSize = true;
+            lbBasicSalary.Location = new System.Drawing.Point(41, 88);
+            lbBasicSalary.Name = "lbBasicSalary";
+            lbBasicSalary.Size = new System.Drawing.Size(87, 20);
+            lbBasicSalary.TabIndex = 4;
+            lbBasicSalary.Text = "Basic Salary";
             // 
-            // txtAllowances
+            // lbAllowances
             // 
-            txtAllowances.Location = new System.Drawing.Point(212, 129);
-            txtAllowances.Name = "txtAllowances";
-            txtAllowances.Size = new System.Drawing.Size(212, 27);
-            txtAllowances.TabIndex = 11;
+            lbAllowances.AutoSize = true;
+            lbAllowances.Location = new System.Drawing.Point(44, 129);
+            lbAllowances.Name = "lbAllowances";
+            lbAllowances.Size = new System.Drawing.Size(84, 20);
+            lbAllowances.TabIndex = 3;
+            lbAllowances.Text = "Allowances";
             // 
-            // txtBonusOT
+            // lxBonusOT
             // 
-            txtBonusOT.Location = new System.Drawing.Point(214, 174);
-            txtBonusOT.Name = "txtBonusOT";
-            txtBonusOT.Size = new System.Drawing.Size(211, 27);
-            txtBonusOT.TabIndex = 12;
+            lxBonusOT.AutoSize = true;
+            lxBonusOT.Location = new System.Drawing.Point(44, 174);
+            lxBonusOT.Name = "lxBonusOT";
+            lxBonusOT.Size = new System.Drawing.Size(67, 20);
+            lxBonusOT.TabIndex = 2;
+            lxBonusOT.Text = "BonusOT";
             // 
-            // txtNetSalary
+            // lbEName
             // 
-            txtNetSalary.Location = new System.Drawing.Point(214, 228);
-            txtNetSalary.Name = "txtNetSalary";
-            txtNetSalary.Size = new System.Drawing.Size(211, 27);
-            txtNetSalary.TabIndex = 14;
+            lbEName.AutoSize = true;
+            lbEName.Location = new System.Drawing.Point(41, 40);
+            lbEName.Name = "lbEName";
+            lbEName.Size = new System.Drawing.Size(123, 20);
+            lbEName.TabIndex = 0;
+            lbEName.Text = " Employee Name";
             // 
             // Take_Leave
             // 
@@ -227,56 +231,13 @@
             Take_Leave.Text = "Take Leave";
             Take_Leave.UseVisualStyleBackColor = true;
             // 
-            // lbFromDate
+            // rtbReasonTL
             // 
-            lbFromDate.AutoSize = true;
-            lbFromDate.Location = new System.Drawing.Point(31, 59);
-            lbFromDate.Name = "lbFromDate";
-            lbFromDate.Size = new System.Drawing.Size(75, 20);
-            lbFromDate.TabIndex = 0;
-            lbFromDate.Text = "FromDate";
-            // 
-            // lbToDate
-            // 
-            lbToDate.AutoSize = true;
-            lbToDate.Location = new System.Drawing.Point(31, 104);
-            lbToDate.Name = "lbToDate";
-            lbToDate.Size = new System.Drawing.Size(57, 20);
-            lbToDate.TabIndex = 1;
-            lbToDate.Text = "ToDate";
-            // 
-            // lbReason
-            // 
-            lbReason.AutoSize = true;
-            lbReason.Location = new System.Drawing.Point(31, 152);
-            lbReason.Name = "lbReason";
-            lbReason.Size = new System.Drawing.Size(57, 20);
-            lbReason.TabIndex = 2;
-            lbReason.Text = "Reason";
-            // 
-            // dtpTLFromDate
-            // 
-            dtpTLFromDate.Location = new System.Drawing.Point(125, 54);
-            dtpTLFromDate.Name = "dtpTLFromDate";
-            dtpTLFromDate.Size = new System.Drawing.Size(250, 27);
-            dtpTLFromDate.TabIndex = 4;
-            // 
-            // dtpTLToDate
-            // 
-            dtpTLToDate.Location = new System.Drawing.Point(125, 97);
-            dtpTLToDate.Name = "dtpTLToDate";
-            dtpTLToDate.Size = new System.Drawing.Size(250, 27);
-            dtpTLToDate.TabIndex = 5;
-            // 
-            // btnSubmitTakeLeave
-            // 
-            btnSubmitTakeLeave.Location = new System.Drawing.Point(380, 299);
-            btnSubmitTakeLeave.Name = "btnSubmitTakeLeave";
-            btnSubmitTakeLeave.Size = new System.Drawing.Size(94, 29);
-            btnSubmitTakeLeave.TabIndex = 9;
-            btnSubmitTakeLeave.Text = "Submit";
-            btnSubmitTakeLeave.UseVisualStyleBackColor = true;
-            btnSubmitTakeLeave.Click += btnSubmitTakeLeave_Click;
+            rtbReasonTL.Location = new System.Drawing.Point(125, 149);
+            rtbReasonTL.Name = "rtbReasonTL";
+            rtbReasonTL.Size = new System.Drawing.Size(250, 120);
+            rtbReasonTL.TabIndex = 11;
+            rtbReasonTL.Text = "";
             // 
             // btnResetL
             // 
@@ -288,13 +249,56 @@
             btnResetL.UseVisualStyleBackColor = true;
             btnResetL.Click += btnResetL_Click;
             // 
-            // rtbReasonTL
+            // btnSubmitTakeLeave
             // 
-            rtbReasonTL.Location = new System.Drawing.Point(125, 149);
-            rtbReasonTL.Name = "rtbReasonTL";
-            rtbReasonTL.Size = new System.Drawing.Size(250, 120);
-            rtbReasonTL.TabIndex = 11;
-            rtbReasonTL.Text = "";
+            btnSubmitTakeLeave.Location = new System.Drawing.Point(380, 299);
+            btnSubmitTakeLeave.Name = "btnSubmitTakeLeave";
+            btnSubmitTakeLeave.Size = new System.Drawing.Size(94, 29);
+            btnSubmitTakeLeave.TabIndex = 9;
+            btnSubmitTakeLeave.Text = "Submit";
+            btnSubmitTakeLeave.UseVisualStyleBackColor = true;
+            btnSubmitTakeLeave.Click += btnSubmitTakeLeave_Click;
+            // 
+            // dtpTLToDate
+            // 
+            dtpTLToDate.Location = new System.Drawing.Point(125, 97);
+            dtpTLToDate.Name = "dtpTLToDate";
+            dtpTLToDate.Size = new System.Drawing.Size(250, 27);
+            dtpTLToDate.TabIndex = 5;
+            // 
+            // dtpTLFromDate
+            // 
+            dtpTLFromDate.Location = new System.Drawing.Point(125, 54);
+            dtpTLFromDate.Name = "dtpTLFromDate";
+            dtpTLFromDate.Size = new System.Drawing.Size(250, 27);
+            dtpTLFromDate.TabIndex = 4;
+            // 
+            // lbReason
+            // 
+            lbReason.AutoSize = true;
+            lbReason.Location = new System.Drawing.Point(31, 152);
+            lbReason.Name = "lbReason";
+            lbReason.Size = new System.Drawing.Size(57, 20);
+            lbReason.TabIndex = 2;
+            lbReason.Text = "Reason";
+            // 
+            // lbToDate
+            // 
+            lbToDate.AutoSize = true;
+            lbToDate.Location = new System.Drawing.Point(31, 104);
+            lbToDate.Name = "lbToDate";
+            lbToDate.Size = new System.Drawing.Size(57, 20);
+            lbToDate.TabIndex = 1;
+            lbToDate.Text = "ToDate";
+            // 
+            // lbFromDate
+            // 
+            lbFromDate.AutoSize = true;
+            lbFromDate.Location = new System.Drawing.Point(31, 59);
+            lbFromDate.Name = "lbFromDate";
+            lbFromDate.Size = new System.Drawing.Size(75, 20);
+            lbFromDate.TabIndex = 0;
+            lbFromDate.Text = "FromDate";
             // 
             // Manage_LogOT
             // 
@@ -312,40 +316,12 @@
             Manage_LogOT.Text = "Manage Log OT";
             Manage_LogOT.UseVisualStyleBackColor = true;
             // 
-            // lbDate
+            // txtTimeOT
             // 
-            lbDate.AutoSize = true;
-            lbDate.Location = new System.Drawing.Point(33, 50);
-            lbDate.Name = "lbDate";
-            lbDate.Size = new System.Drawing.Size(41, 20);
-            lbDate.TabIndex = 0;
-            lbDate.Text = "Date";
-            // 
-            // lbTimeIn
-            // 
-            lbTimeIn.AutoSize = true;
-            lbTimeIn.Location = new System.Drawing.Point(33, 97);
-            lbTimeIn.Name = "lbTimeIn";
-            lbTimeIn.Size = new System.Drawing.Size(42, 20);
-            lbTimeIn.TabIndex = 1;
-            lbTimeIn.Text = "Time";
-            // 
-            // dtpOT
-            // 
-            dtpOT.Location = new System.Drawing.Point(134, 43);
-            dtpOT.Name = "dtpOT";
-            dtpOT.Size = new System.Drawing.Size(254, 27);
-            dtpOT.TabIndex = 4;
-            // 
-            // btnSubmit
-            // 
-            btnSubmit.Location = new System.Drawing.Point(374, 177);
-            btnSubmit.Name = "btnSubmit";
-            btnSubmit.Size = new System.Drawing.Size(94, 29);
-            btnSubmit.TabIndex = 8;
-            btnSubmit.Text = "Submit";
-            btnSubmit.UseVisualStyleBackColor = true;
-            btnSubmit.Click += btnSubmit_Click;
+            txtTimeOT.Location = new System.Drawing.Point(134, 94);
+            txtTimeOT.Name = "txtTimeOT";
+            txtTimeOT.Size = new System.Drawing.Size(254, 27);
+            txtTimeOT.TabIndex = 6;
             // 
             // btnReset
             // 
@@ -357,12 +333,40 @@
             btnReset.UseVisualStyleBackColor = true;
             btnReset.Click += btnReset_Click;
             // 
-            // txtTimeOT
+            // btnSubmit
             // 
-            txtTimeOT.Location = new System.Drawing.Point(134, 94);
-            txtTimeOT.Name = "txtTimeOT";
-            txtTimeOT.Size = new System.Drawing.Size(254, 27);
-            txtTimeOT.TabIndex = 6;
+            btnSubmit.Location = new System.Drawing.Point(374, 177);
+            btnSubmit.Name = "btnSubmit";
+            btnSubmit.Size = new System.Drawing.Size(94, 29);
+            btnSubmit.TabIndex = 8;
+            btnSubmit.Text = "Submit";
+            btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.Click += btnSubmit_Click;
+            // 
+            // dtpOT
+            // 
+            dtpOT.Location = new System.Drawing.Point(134, 43);
+            dtpOT.Name = "dtpOT";
+            dtpOT.Size = new System.Drawing.Size(254, 27);
+            dtpOT.TabIndex = 4;
+            // 
+            // lbTimeIn
+            // 
+            lbTimeIn.AutoSize = true;
+            lbTimeIn.Location = new System.Drawing.Point(33, 97);
+            lbTimeIn.Name = "lbTimeIn";
+            lbTimeIn.Size = new System.Drawing.Size(42, 20);
+            lbTimeIn.TabIndex = 1;
+            lbTimeIn.Text = "Time";
+            // 
+            // lbDate
+            // 
+            lbDate.AutoSize = true;
+            lbDate.Location = new System.Drawing.Point(33, 50);
+            lbDate.Name = "lbDate";
+            lbDate.Size = new System.Drawing.Size(41, 20);
+            lbDate.TabIndex = 0;
+            lbDate.Text = "Date";
             // 
             // Person_info
             // 
@@ -382,53 +386,15 @@
             Person_info.Text = "Information";
             Person_info.UseVisualStyleBackColor = true;
             // 
-            // lbName
+            // btnChangePass
             // 
-            lbName.AutoSize = true;
-            lbName.Location = new System.Drawing.Point(39, 45);
-            lbName.Name = "lbName";
-            lbName.Size = new System.Drawing.Size(49, 20);
-            lbName.TabIndex = 0;
-            lbName.Text = "Name";
-            // 
-            // lbEmail
-            // 
-            lbEmail.AutoSize = true;
-            lbEmail.Location = new System.Drawing.Point(39, 97);
-            lbEmail.Name = "lbEmail";
-            lbEmail.Size = new System.Drawing.Size(46, 20);
-            lbEmail.TabIndex = 1;
-            lbEmail.Text = "Email";
-            // 
-            // lbPhonenumber
-            // 
-            lbPhonenumber.AutoSize = true;
-            lbPhonenumber.Location = new System.Drawing.Point(39, 151);
-            lbPhonenumber.Name = "lbPhonenumber";
-            lbPhonenumber.Size = new System.Drawing.Size(104, 20);
-            lbPhonenumber.TabIndex = 2;
-            lbPhonenumber.Text = "PhoneNumber";
-            // 
-            // txtName
-            // 
-            txtName.Location = new System.Drawing.Point(234, 45);
-            txtName.Name = "txtName";
-            txtName.Size = new System.Drawing.Size(566, 27);
-            txtName.TabIndex = 4;
-            // 
-            // TxtEmail
-            // 
-            TxtEmail.Location = new System.Drawing.Point(234, 97);
-            TxtEmail.Name = "TxtEmail";
-            TxtEmail.Size = new System.Drawing.Size(566, 27);
-            TxtEmail.TabIndex = 5;
-            // 
-            // txtPhonenumber
-            // 
-            txtPhonenumber.Location = new System.Drawing.Point(234, 144);
-            txtPhonenumber.Name = "txtPhonenumber";
-            txtPhonenumber.Size = new System.Drawing.Size(566, 27);
-            txtPhonenumber.TabIndex = 6;
+            btnChangePass.Location = new System.Drawing.Point(600, 261);
+            btnChangePass.Name = "btnChangePass";
+            btnChangePass.Size = new System.Drawing.Size(128, 51);
+            btnChangePass.TabIndex = 9;
+            btnChangePass.Text = "Change PassWord";
+            btnChangePass.UseVisualStyleBackColor = true;
+            btnChangePass.Click += btnChangePass_Click;
             // 
             // btnUpdate
             // 
@@ -440,15 +406,53 @@
             btnUpdate.UseVisualStyleBackColor = true;
             btnUpdate.Click += btnUpdate_Click;
             // 
-            // btnChangePass
+            // txtPhonenumber
             // 
-            btnChangePass.Location = new System.Drawing.Point(600, 261);
-            btnChangePass.Name = "btnChangePass";
-            btnChangePass.Size = new System.Drawing.Size(128, 51);
-            btnChangePass.TabIndex = 9;
-            btnChangePass.Text = "Change PassWord";
-            btnChangePass.UseVisualStyleBackColor = true;
-            btnChangePass.Click += btnChangePass_Click;
+            txtPhonenumber.Location = new System.Drawing.Point(234, 144);
+            txtPhonenumber.Name = "txtPhonenumber";
+            txtPhonenumber.Size = new System.Drawing.Size(566, 27);
+            txtPhonenumber.TabIndex = 6;
+            // 
+            // TxtEmail
+            // 
+            TxtEmail.Location = new System.Drawing.Point(234, 97);
+            TxtEmail.Name = "TxtEmail";
+            TxtEmail.Size = new System.Drawing.Size(566, 27);
+            TxtEmail.TabIndex = 5;
+            // 
+            // txtName
+            // 
+            txtName.Location = new System.Drawing.Point(234, 45);
+            txtName.Name = "txtName";
+            txtName.Size = new System.Drawing.Size(566, 27);
+            txtName.TabIndex = 4;
+            // 
+            // lbPhonenumber
+            // 
+            lbPhonenumber.AutoSize = true;
+            lbPhonenumber.Location = new System.Drawing.Point(39, 151);
+            lbPhonenumber.Name = "lbPhonenumber";
+            lbPhonenumber.Size = new System.Drawing.Size(104, 20);
+            lbPhonenumber.TabIndex = 2;
+            lbPhonenumber.Text = "PhoneNumber";
+            // 
+            // lbEmail
+            // 
+            lbEmail.AutoSize = true;
+            lbEmail.Location = new System.Drawing.Point(39, 97);
+            lbEmail.Name = "lbEmail";
+            lbEmail.Size = new System.Drawing.Size(46, 20);
+            lbEmail.TabIndex = 1;
+            lbEmail.Text = "Email";
+            // 
+            // lbName
+            // 
+            lbName.AutoSize = true;
+            lbName.Location = new System.Drawing.Point(39, 45);
+            lbName.Name = "lbName";
+            lbName.Size = new System.Drawing.Size(49, 20);
+            lbName.TabIndex = 0;
+            lbName.Text = "Name";
             // 
             // CheckAttendance
             // 
@@ -479,11 +483,33 @@
             tabControl1.Controls.Add(Manage_LogOT);
             tabControl1.Controls.Add(Take_Leave);
             tabControl1.Controls.Add(Payslip_Payroll);
+            tabControl1.Controls.Add(ListTLSubmit);
             tabControl1.Location = new System.Drawing.Point(8, 128);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new System.Drawing.Size(906, 388);
             tabControl1.TabIndex = 0;
+            // 
+            // ListTLSubmit
+            // 
+            ListTLSubmit.Controls.Add(dgvListTakeLeave);
+            ListTLSubmit.Location = new System.Drawing.Point(4, 29);
+            ListTLSubmit.Name = "ListTLSubmit";
+            ListTLSubmit.Padding = new System.Windows.Forms.Padding(3);
+            ListTLSubmit.Size = new System.Drawing.Size(898, 355);
+            ListTLSubmit.TabIndex = 6;
+            ListTLSubmit.Text = "List TakeLeave Submit";
+            ListTLSubmit.UseVisualStyleBackColor = true;
+            // 
+            // dgvListTakeLeave
+            // 
+            dgvListTakeLeave.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvListTakeLeave.Location = new System.Drawing.Point(6, 17);
+            dgvListTakeLeave.Name = "dgvListTakeLeave";
+            dgvListTakeLeave.RowHeadersWidth = 51;
+            dgvListTakeLeave.RowTemplate.Height = 29;
+            dgvListTakeLeave.Size = new System.Drawing.Size(886, 332);
+            dgvListTakeLeave.TabIndex = 0;
             // 
             // frmStaff
             // 
@@ -506,6 +532,8 @@
             Person_info.PerformLayout();
             CheckAttendance.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
+            ListTLSubmit.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvListTakeLeave).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -553,5 +581,7 @@
         private System.Windows.Forms.TabPage CheckAttendance;
         private System.Windows.Forms.Button btnCheckAttendance;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage ListTLSubmit;
+        private System.Windows.Forms.DataGridView dgvListTakeLeave;
     }
 }
