@@ -384,6 +384,7 @@ namespace IT_Human_resource_manager_system
                     txtCSTakeLeave.Text = calculateSalary.LayDays.ToString();
                     txtCSBonus.Text = calculateSalary.Bonus.ToString();
                     txtCSNetSalary.Text = calculateSalary.NetSalary.ToString();
+                    txtCSAllowance.Text = calculateSalary.Allowance.ToString();
                 }
             }
             catch (Exception ex)

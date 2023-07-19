@@ -16,5 +16,6 @@ namespace BusinessObjects.ViewModel
         public int LayDays { get; set; }
         public int OT { get; set;}
         public int Bonus { get; set;}
+        public int Allowance { get; set; }
     }
 }
