@@ -29,6 +29,7 @@ namespace IT_Human_resource_manager_system
         {
             LoadPerInfo();
             LoadPayslip();
+            LoadTakeLeaveEmployee();
         }
 
         public void LoadPerInfo()
@@ -240,6 +241,20 @@ namespace IT_Human_resource_manager_system
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Print success");
+        }
+
+        public void LoadTakeLeaveEmployee()
+        {
+            try
+            {
+                var TakeLeaveList = takeLeaveRepo.GetTakeLeavesByEmployeeId(user.Id);
+
+                dgvListTakeLeave.DataSource = TakeLeaveList;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }
