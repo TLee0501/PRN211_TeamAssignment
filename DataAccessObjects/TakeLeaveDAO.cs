@@ -91,18 +91,17 @@ namespace DataAccessObjects
             }
         }
 
-        public int CountTakeLeaveInMonth(int employeeId)
+        public int CountTakeLeaveInYear(int employeeId, int year)
         {
             try
             {
                 using (var context = new PRN211_IT_HR_Management_SystemContext())
                 {
-                    DateTime today = DateTime.Today;
-                    DateTime firstDayOfMonth = new DateTime(today.Year, today.Month, 1);
-                    DateTime lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
+                    DateTime firstDayOfYear = new DateTime(year, 1, 1);
+                    DateTime lastDayOfYear = new DateTime(year, 12, 31);
 
                     int numberOfTakeLeaves = context.TakeLeaves
-                        .Where(tl => tl.EmployeeId == employeeId && tl.StartDate >= firstDayOfMonth && tl.EndDate <= lastDayOfMonth)
+                        .Where(tl => tl.EmployeeId == employeeId && tl.StartDate >= firstDayOfYear && tl.EndDate <= lastDayOfYear)
                         .Count();
 
                     return numberOfTakeLeaves;
@@ -113,5 +112,46 @@ namespace DataAccessObjects
                 throw new Exception(ex.Message);
             }
         }
+        public int CountDayTakeLeave(int employeeId, int year)
+        {
+            try
+            {
+                using (var context = new PRN211_IT_HR_Management_SystemContext())
+                {
+                    DateTime firstDayOfYear = new DateTime(year, 1, 1);
+                    DateTime lastDayOfYear = new DateTime(year, 12, 31);
+
+                    int totalDaysTakeLeave = context.TakeLeaves
+                        .Where(tl => tl.EmployeeId == employeeId && tl.IsAccept == true && tl.StartDate >= firstDayOfYear && tl.EndDate <= lastDayOfYear)
+                        .ToList()
+                        .Sum(tl => (tl.EndDate - tl.StartDate)?.Days + 1 ) ?? 0;
+
+                    return totalDaysTakeLeave;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public List<TakeLeave> GetTakeLeavesByEmployeeId(int employeeId)
+        {
+            try
+            {
+                using(var context = new PRN211_IT_HR_Management_SystemContext())
+                {
+                    List<TakeLeave> takeLeaves = context.TakeLeaves
+                    .Where(tl => tl.EmployeeId == employeeId)
+                    .ToList();
+
+                return takeLeaves;
+                }          
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
     }
 }
