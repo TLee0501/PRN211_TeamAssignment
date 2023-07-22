@@ -32,5 +32,10 @@ namespace BusinessObjects
         public virtual ICollection<Salary> Salaries { get; set; }
         public virtual ICollection<TakeLeaveCount> TakeLeaveCounts { get; set; }
         public virtual ICollection<TakeLeave> TakeLeaves { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

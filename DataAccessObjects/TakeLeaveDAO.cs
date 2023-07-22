@@ -141,6 +141,7 @@ namespace DataAccessObjects
                 using(var context = new PRN211_IT_HR_Management_SystemContext())
                 {
                     List<TakeLeave> takeLeaves = context.TakeLeaves
+                    .Include(e => e.Employee)
                     .Where(tl => tl.EmployeeId == employeeId)
                     .ToList();
 
