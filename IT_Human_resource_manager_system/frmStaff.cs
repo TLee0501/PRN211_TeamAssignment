@@ -144,9 +144,10 @@ namespace IT_Human_resource_manager_system
             DateTime fromDate = dtpTLFromDate.Value;
             DateTime toDate = dtpTLToDate.Value;
             string reason = rtbReasonTL.Text;
+            if (rtbReasonTL.Text.Length > 0)
+            {
 
-
-            if (fromDate >= toDate)
+                if (fromDate >= toDate)
             {
                 MessageBox.Show("Invalid date range. Start date must be before or equal to end date.");
                 return;
@@ -164,7 +165,7 @@ namespace IT_Human_resource_manager_system
             if (totalDaysAfterSubmission > maxTakeLeavesPerYear)
             {
                 int remainingDay = maxTakeLeavesPerYear - totalDaysTakeLeave;
-                MessageBox.Show($"You have exceeded the maximum number of leave days allowed (12 days per year). You only have {totalDaysTakeLeave} days of leave remaining.");
+                MessageBox.Show($"You have exceeded the maximum number of leave days allowed (12 days per year). You only have {remainingDay} days of leave remaining.");
                 return;
             }
             int remainingDays = maxTakeLeavesPerYear - totalDaysAfterSubmission;
@@ -177,9 +178,14 @@ namespace IT_Human_resource_manager_system
                 IsAccept = false,
                 Description = reason,
             };
-            takeLeaveRepo.AddTakeLeave(tl);
-            MessageBox.Show("Submit take leave form success.");
-
+            
+                takeLeaveRepo.AddTakeLeave(tl);
+                MessageBox.Show("Submit take leave form success.");
+            }
+            else
+            {
+                MessageBox.Show("Please Enter Reason Before Submit");
+            }        
         }
 
         private void btnCheckAttendance_Click(object sender, EventArgs e)
@@ -242,7 +248,10 @@ namespace IT_Human_resource_manager_system
         {
             MessageBox.Show("Print success");
         }
-
+        private void SetVisible()
+        {
+            dgvListTakeLeave.Columns["ID"].Visible = false;
+        }
         public void LoadTakeLeaveEmployee()
         {
             try
@@ -250,6 +259,7 @@ namespace IT_Human_resource_manager_system
                 var TakeLeaveList = takeLeaveRepo.GetTakeLeavesByEmployeeId(user.Id);
 
                 dgvListTakeLeave.DataSource = TakeLeaveList;
+                SetVisible();
             }
             catch (Exception ex)
             {
