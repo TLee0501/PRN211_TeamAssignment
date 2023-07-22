@@ -186,7 +186,7 @@
             // cboRole
             // 
             cboRole.FormattingEnabled = true;
-            cboRole.Items.AddRange(new object[] { "Staff", "HR_Staff", "HR_Manager" });
+            cboRole.Items.AddRange(new object[] { "Staff", "HR_Staff" });
             cboRole.Location = new System.Drawing.Point(202, 188);
             cboRole.Name = "cboRole";
             cboRole.Size = new System.Drawing.Size(226, 33);
