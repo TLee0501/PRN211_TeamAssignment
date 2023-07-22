@@ -157,6 +157,10 @@ namespace IT_Human_resource_manager_system
 
             if (d == DialogResult.OK)
             {
+                bool status;
+                if (txtStatus.Text == "Active") status = false; else status = true;
+                employee.SetStatus(status, int.Parse(txtEmployeeID.Text));
+                LoadManageUserRoleList();
             }
         }
 
@@ -173,7 +177,7 @@ namespace IT_Human_resource_manager_system
                 employee.setSalary(int.Parse(txtSalary.Text), int.Parse(txtEmployeeID.Text));
                 LoadManageUserRoleList();
             }
-            
+
         }
     }
 }

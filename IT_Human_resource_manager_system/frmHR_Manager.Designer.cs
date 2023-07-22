@@ -79,6 +79,7 @@
             lbPayPeriod = new System.Windows.Forms.Label();
             lbEName = new System.Windows.Forms.Label();
             tabPage7 = new System.Windows.Forms.TabPage();
+            cboRole = new System.Windows.Forms.ComboBox();
             txtSalary = new System.Windows.Forms.TextBox();
             txtStatus = new System.Windows.Forms.TextBox();
             label2 = new System.Windows.Forms.Label();
@@ -92,7 +93,6 @@
             txtName_4 = new System.Windows.Forms.TextBox();
             label10 = new System.Windows.Forms.Label();
             label11 = new System.Windows.Forms.Label();
-            cboRole = new System.Windows.Forms.ComboBox();
             tabControl1.SuspendLayout();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -651,6 +651,15 @@
             tabPage7.Text = "Manage User/Role";
             tabPage7.UseVisualStyleBackColor = true;
             // 
+            // cboRole
+            // 
+            cboRole.FormattingEnabled = true;
+            cboRole.Items.AddRange(new object[] { "Staff", "HR_Staff" });
+            cboRole.Location = new System.Drawing.Point(38, 268);
+            cboRole.Name = "cboRole";
+            cboRole.Size = new System.Drawing.Size(252, 33);
+            cboRole.TabIndex = 25;
+            // 
             // txtSalary
             // 
             txtSalary.Location = new System.Drawing.Point(34, 361);
@@ -661,6 +670,7 @@
             // 
             // txtStatus
             // 
+            txtStatus.Enabled = false;
             txtStatus.Location = new System.Drawing.Point(34, 188);
             txtStatus.Margin = new System.Windows.Forms.Padding(4);
             txtStatus.Name = "txtStatus";
@@ -752,6 +762,7 @@
             // 
             // txtName_4
             // 
+            txtName_4.Enabled = false;
             txtName_4.Location = new System.Drawing.Point(34, 110);
             txtName_4.Margin = new System.Windows.Forms.Padding(4);
             txtName_4.Name = "txtName_4";
@@ -777,15 +788,6 @@
             label11.Size = new System.Drawing.Size(59, 25);
             label11.TabIndex = 8;
             label11.Text = "Name";
-            // 
-            // cboRole
-            // 
-            cboRole.FormattingEnabled = true;
-            cboRole.Items.AddRange(new object[] { "Staff", "HR_Staff", "HR_Manager" });
-            cboRole.Location = new System.Drawing.Point(38, 268);
-            cboRole.Name = "cboRole";
-            cboRole.Size = new System.Drawing.Size(252, 33);
-            cboRole.TabIndex = 25;
             // 
             // frmHR_Manager
             // 

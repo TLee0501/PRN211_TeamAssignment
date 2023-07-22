@@ -16,5 +16,6 @@ namespace Repositories
         void AddSalary(Salary s);
         void setRole(string role, int id);
         void setSalary(int salary, int id);
+        void SetStatus(bool b, int id);
     }
 }

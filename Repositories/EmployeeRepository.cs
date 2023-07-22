@@ -18,5 +18,6 @@ namespace Repositories
         public void AddSalary(Salary s) => EmployeesDAO.AddSalary(s);
         public void setRole(string role, int id) => EmployeesDAO.SetRole(role, id);
         public void setSalary(int salary, int id) => EmployeesDAO.setSalary(salary, id);
+        public  void SetStatus(bool b, int id) => EmployeesDAO.SetStatus(b, id);
     }
 }

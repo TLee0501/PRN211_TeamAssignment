@@ -134,24 +134,27 @@ namespace DataAccessObjects
             }
         }
 
-        //public static void SetStatus(string status, int id)
-        //{
-        //    try
-        //    {
-        //        string s = $"update Employee \r\n set Rolename = '{status}' \r\n Where Employee.ID = {id}";
-        //        DbProviderFactory factory = SqlClientFactory.Instance;
-        //        using DbConnection connection = factory.CreateConnection();
-        //        connection.ConnectionString = GetConnection.GetConnectionString();
-        //        connection.Open();
-        //        DbCommand cmd = connection.CreateCommand();
-        //        cmd.Connection = connection;
-        //        cmd.CommandText = s;
-        //        DbDataReader reader = cmd.ExecuteReader();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //}
+        public static void SetStatus(bool b, int id)
+        {
+            try
+            {
+                string status = "";
+                if (b == true) status = "Active";
+                else status = "Not Active";
+                string s = $"update Employee \r\n set Status = '{status}' \r\n Where Employee.ID = {id}";
+                DbProviderFactory factory = SqlClientFactory.Instance;
+                using DbConnection connection = factory.CreateConnection();
+                connection.ConnectionString = GetConnection.GetConnectionString();
+                connection.Open();
+                DbCommand cmd = connection.CreateCommand();
+                cmd.Connection = connection;
+                cmd.CommandText = s;
+                DbDataReader reader = cmd.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
