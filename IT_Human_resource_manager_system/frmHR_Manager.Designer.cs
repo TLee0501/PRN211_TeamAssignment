@@ -32,9 +32,6 @@
             tabPage3 = new System.Windows.Forms.TabPage();
             label18 = new System.Windows.Forms.Label();
             txtOverTimeID = new System.Windows.Forms.TextBox();
-            button4 = new System.Windows.Forms.Button();
-            button5 = new System.Windows.Forms.Button();
-            button6 = new System.Windows.Forms.Button();
             dataGridView2 = new System.Windows.Forms.DataGridView();
             txtTime_1 = new System.Windows.Forms.TextBox();
             txtDate_1 = new System.Windows.Forms.TextBox();
@@ -47,9 +44,6 @@
             tabPage4 = new System.Windows.Forms.TabPage();
             txtTakeLeaveID = new System.Windows.Forms.TextBox();
             label19 = new System.Windows.Forms.Label();
-            button10 = new System.Windows.Forms.Button();
-            button11 = new System.Windows.Forms.Button();
-            button12 = new System.Windows.Forms.Button();
             txtName_2 = new System.Windows.Forms.TextBox();
             label5 = new System.Windows.Forms.Label();
             dgvTakeLeave = new System.Windows.Forms.DataGridView();
@@ -62,9 +56,6 @@
             tabPage5 = new System.Windows.Forms.TabPage();
             label1 = new System.Windows.Forms.Label();
             txtYear = new System.Windows.Forms.TextBox();
-            btnDalete_3 = new System.Windows.Forms.Button();
-            btnUpdate_3 = new System.Windows.Forms.Button();
-            btnAdd_3 = new System.Windows.Forms.Button();
             dgvPayslip = new System.Windows.Forms.DataGridView();
             txtMonth = new System.Windows.Forms.TextBox();
             txtNetSalary = new System.Windows.Forms.TextBox();
@@ -121,9 +112,6 @@
             // 
             tabPage3.Controls.Add(label18);
             tabPage3.Controls.Add(txtOverTimeID);
-            tabPage3.Controls.Add(button4);
-            tabPage3.Controls.Add(button5);
-            tabPage3.Controls.Add(button6);
             tabPage3.Controls.Add(dataGridView2);
             tabPage3.Controls.Add(txtTime_1);
             tabPage3.Controls.Add(txtDate_1);
@@ -154,41 +142,12 @@
             // 
             // txtOverTimeID
             // 
+            txtOverTimeID.Enabled = false;
             txtOverTimeID.Location = new System.Drawing.Point(41, 40);
             txtOverTimeID.Margin = new System.Windows.Forms.Padding(4);
             txtOverTimeID.Name = "txtOverTimeID";
             txtOverTimeID.Size = new System.Drawing.Size(215, 31);
             txtOverTimeID.TabIndex = 42;
-            // 
-            // button4
-            // 
-            button4.Location = new System.Drawing.Point(1025, 416);
-            button4.Margin = new System.Windows.Forms.Padding(4);
-            button4.Name = "button4";
-            button4.Size = new System.Drawing.Size(118, 36);
-            button4.TabIndex = 39;
-            button4.Text = "Delete";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Location = new System.Drawing.Point(745, 416);
-            button5.Margin = new System.Windows.Forms.Padding(4);
-            button5.Name = "button5";
-            button5.Size = new System.Drawing.Size(118, 36);
-            button5.TabIndex = 38;
-            button5.Text = "Update";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            button6.Location = new System.Drawing.Point(461, 416);
-            button6.Margin = new System.Windows.Forms.Padding(4);
-            button6.Name = "button6";
-            button6.Size = new System.Drawing.Size(118, 36);
-            button6.TabIndex = 37;
-            button6.Text = "Add";
-            button6.UseVisualStyleBackColor = true;
             // 
             // dataGridView2
             // 
@@ -203,6 +162,7 @@
             // 
             // txtTime_1
             // 
+            txtTime_1.Enabled = false;
             txtTime_1.Location = new System.Drawing.Point(41, 301);
             txtTime_1.Margin = new System.Windows.Forms.Padding(4);
             txtTime_1.Name = "txtTime_1";
@@ -211,6 +171,7 @@
             // 
             // txtDate_1
             // 
+            txtDate_1.Enabled = false;
             txtDate_1.Location = new System.Drawing.Point(41, 235);
             txtDate_1.Margin = new System.Windows.Forms.Padding(4);
             txtDate_1.Name = "txtDate_1";
@@ -219,6 +180,7 @@
             // 
             // txtName_1
             // 
+            txtName_1.Enabled = false;
             txtName_1.Location = new System.Drawing.Point(41, 169);
             txtName_1.Margin = new System.Windows.Forms.Padding(4);
             txtName_1.Name = "txtName_1";
@@ -227,6 +189,7 @@
             // 
             // txtEmployeeID_1
             // 
+            txtEmployeeID_1.Enabled = false;
             txtEmployeeID_1.Location = new System.Drawing.Point(41, 102);
             txtEmployeeID_1.Margin = new System.Windows.Forms.Padding(4);
             txtEmployeeID_1.Name = "txtEmployeeID_1";
@@ -277,9 +240,6 @@
             // 
             tabPage4.Controls.Add(txtTakeLeaveID);
             tabPage4.Controls.Add(label19);
-            tabPage4.Controls.Add(button10);
-            tabPage4.Controls.Add(button11);
-            tabPage4.Controls.Add(button12);
             tabPage4.Controls.Add(txtName_2);
             tabPage4.Controls.Add(label5);
             tabPage4.Controls.Add(dgvTakeLeave);
@@ -300,6 +260,7 @@
             // 
             // txtTakeLeaveID
             // 
+            txtTakeLeaveID.Enabled = false;
             txtTakeLeaveID.Location = new System.Drawing.Point(141, 25);
             txtTakeLeaveID.Margin = new System.Windows.Forms.Padding(4);
             txtTakeLeaveID.Name = "txtTakeLeaveID";
@@ -316,38 +277,9 @@
             label19.TabIndex = 47;
             label19.Text = "ID";
             // 
-            // button10
-            // 
-            button10.Location = new System.Drawing.Point(1128, 400);
-            button10.Margin = new System.Windows.Forms.Padding(4);
-            button10.Name = "button10";
-            button10.Size = new System.Drawing.Size(118, 36);
-            button10.TabIndex = 46;
-            button10.Text = "Delete";
-            button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            button11.Location = new System.Drawing.Point(848, 400);
-            button11.Margin = new System.Windows.Forms.Padding(4);
-            button11.Name = "button11";
-            button11.Size = new System.Drawing.Size(118, 36);
-            button11.TabIndex = 45;
-            button11.Text = "Update";
-            button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            button12.Location = new System.Drawing.Point(564, 400);
-            button12.Margin = new System.Windows.Forms.Padding(4);
-            button12.Name = "button12";
-            button12.Size = new System.Drawing.Size(118, 36);
-            button12.TabIndex = 44;
-            button12.Text = "Add";
-            button12.UseVisualStyleBackColor = true;
-            // 
             // txtName_2
             // 
+            txtName_2.Enabled = false;
             txtName_2.Location = new System.Drawing.Point(141, 66);
             txtName_2.Margin = new System.Windows.Forms.Padding(4);
             txtName_2.Name = "txtName_2";
@@ -377,6 +309,7 @@
             // 
             // rtxtReason
             // 
+            rtxtReason.Enabled = false;
             rtxtReason.Location = new System.Drawing.Point(141, 235);
             rtxtReason.Margin = new System.Windows.Forms.Padding(4);
             rtxtReason.Name = "rtxtReason";
@@ -386,6 +319,7 @@
             // 
             // dtpToDate
             // 
+            dtpToDate.Enabled = false;
             dtpToDate.Location = new System.Drawing.Point(141, 170);
             dtpToDate.Margin = new System.Windows.Forms.Padding(4);
             dtpToDate.Name = "dtpToDate";
@@ -394,6 +328,7 @@
             // 
             // dtpFromDate
             // 
+            dtpFromDate.Enabled = false;
             dtpFromDate.Location = new System.Drawing.Point(141, 116);
             dtpFromDate.Margin = new System.Windows.Forms.Padding(4);
             dtpFromDate.Name = "dtpFromDate";
@@ -434,9 +369,6 @@
             // 
             tabPage5.Controls.Add(label1);
             tabPage5.Controls.Add(txtYear);
-            tabPage5.Controls.Add(btnDalete_3);
-            tabPage5.Controls.Add(btnUpdate_3);
-            tabPage5.Controls.Add(btnAdd_3);
             tabPage5.Controls.Add(dgvPayslip);
             tabPage5.Controls.Add(txtMonth);
             tabPage5.Controls.Add(txtNetSalary);
@@ -471,41 +403,12 @@
             // 
             // txtYear
             // 
+            txtYear.Enabled = false;
             txtYear.Location = new System.Drawing.Point(30, 427);
             txtYear.Margin = new System.Windows.Forms.Padding(4);
             txtYear.Name = "txtYear";
             txtYear.Size = new System.Drawing.Size(263, 31);
             txtYear.TabIndex = 62;
-            // 
-            // btnDalete_3
-            // 
-            btnDalete_3.Location = new System.Drawing.Point(1039, 406);
-            btnDalete_3.Margin = new System.Windows.Forms.Padding(4);
-            btnDalete_3.Name = "btnDalete_3";
-            btnDalete_3.Size = new System.Drawing.Size(118, 36);
-            btnDalete_3.TabIndex = 61;
-            btnDalete_3.Text = "Delete";
-            btnDalete_3.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdate_3
-            // 
-            btnUpdate_3.Location = new System.Drawing.Point(759, 406);
-            btnUpdate_3.Margin = new System.Windows.Forms.Padding(4);
-            btnUpdate_3.Name = "btnUpdate_3";
-            btnUpdate_3.Size = new System.Drawing.Size(118, 36);
-            btnUpdate_3.TabIndex = 60;
-            btnUpdate_3.Text = "Update";
-            btnUpdate_3.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd_3
-            // 
-            btnAdd_3.Location = new System.Drawing.Point(475, 406);
-            btnAdd_3.Margin = new System.Windows.Forms.Padding(4);
-            btnAdd_3.Name = "btnAdd_3";
-            btnAdd_3.Size = new System.Drawing.Size(118, 36);
-            btnAdd_3.TabIndex = 59;
-            btnAdd_3.Text = "Add";
-            btnAdd_3.UseVisualStyleBackColor = true;
             // 
             // dgvPayslip
             // 
@@ -520,6 +423,7 @@
             // 
             // txtMonth
             // 
+            txtMonth.Enabled = false;
             txtMonth.Location = new System.Drawing.Point(27, 365);
             txtMonth.Margin = new System.Windows.Forms.Padding(4);
             txtMonth.Name = "txtMonth";
@@ -528,6 +432,7 @@
             // 
             // txtNetSalary
             // 
+            txtNetSalary.Enabled = false;
             txtNetSalary.Location = new System.Drawing.Point(26, 301);
             txtNetSalary.Margin = new System.Windows.Forms.Padding(4);
             txtNetSalary.Name = "txtNetSalary";
@@ -536,6 +441,7 @@
             // 
             // txtBonusOT
             // 
+            txtBonusOT.Enabled = false;
             txtBonusOT.Location = new System.Drawing.Point(26, 235);
             txtBonusOT.Margin = new System.Windows.Forms.Padding(4);
             txtBonusOT.Name = "txtBonusOT";
@@ -544,6 +450,7 @@
             // 
             // txtBasicSalary
             // 
+            txtBasicSalary.Enabled = false;
             txtBasicSalary.Location = new System.Drawing.Point(26, 169);
             txtBasicSalary.Margin = new System.Windows.Forms.Padding(4);
             txtBasicSalary.Name = "txtBasicSalary";
@@ -552,6 +459,7 @@
             // 
             // txtAllowances
             // 
+            txtAllowances.Enabled = false;
             txtAllowances.Location = new System.Drawing.Point(26, 102);
             txtAllowances.Margin = new System.Windows.Forms.Padding(4);
             txtAllowances.Name = "txtAllowances";
@@ -560,6 +468,7 @@
             // 
             // txtName_3
             // 
+            txtName_3.Enabled = false;
             txtName_3.Location = new System.Drawing.Point(26, 36);
             txtName_3.Margin = new System.Windows.Forms.Padding(4);
             txtName_3.Name = "txtName_3";
@@ -821,9 +730,6 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtOverTimeID;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TextBox txtTime_1;
         private System.Windows.Forms.TextBox txtDate_1;
@@ -835,9 +741,6 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TextBox txtTakeLeaveID;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
         private System.Windows.Forms.TextBox txtName_2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvTakeLeave;
@@ -848,9 +751,6 @@
         private System.Windows.Forms.Label lbToDate;
         private System.Windows.Forms.Label lbFromDate;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.Button btnDalete_3;
-        private System.Windows.Forms.Button btnUpdate_3;
-        private System.Windows.Forms.Button btnAdd_3;
         private System.Windows.Forms.DataGridView dgvPayslip;
         private System.Windows.Forms.TextBox txtMonth;
         private System.Windows.Forms.TextBox txtNetSalary;
